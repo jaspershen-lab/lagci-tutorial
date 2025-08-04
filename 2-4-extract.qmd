@@ -1,0 +1,3 @@
+# 2.4 Extract
+
+Extract relevant signals.

@@ -1,0 +1,8 @@
+---
+title: "laggedcor Tutorial"
+author: "laggedcor Development Team"
+date: "2025-08-04"
+cover-image: cover.png
+---
+
+Welcome to the **laggedcor** tutorial!
