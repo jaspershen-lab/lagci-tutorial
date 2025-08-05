@@ -1,8 +1,40 @@
 ---
 title: "laggedcor Tutorial"
-author: "laggedcor Development Team"
-date: "2025-08-04"
-cover-image: cover.png
+description: >
+  A hands-on guide to *laggedcor*, part of the tidywearable ecosystem,
+  for discovering time-lagged relationships in multi-omics and wearable
+  time–series data.
+format:
+  html:
+    theme: flatly
 ---
 
-Welcome to the **laggedcor** tutorial!
+![](images/shen_lab_logo.png){width="90%"}
+
+`laggedcor` helps you answer questions such as:
+
+> *How long after a glucose spike does my heart-rate change?*\
+> *Which biomarker moves first—cortisol or cytokine?*
+
+Based on the algorithm published in *Nature Communications* (2019),\
+it combines sliding windows, LOESS smoothing and bootstrap correction to estimate robust lagged correlations.
+
+### Learning path
+
+| Chapter                | Goal                                                 |
+|------------------------|------------------------------------------------------|
+| **1 Installation**     | Get *laggedcor* and all dependencies running locally |
+| **2 Data Preparation** | Convert wide tables to long, clean timestamps        |
+| **3 Basic Workflow**   | Ten lines of R to obtain a lagged correlation curve  |
+| **4 Advanced Options** | Batch analysis, parallelism, fine-tuning             |
+| **5 Shiny Module**     | Drop-in UI for interactive dashboards                |
+| **6 FAQ & Citation**   | Troubleshooting and academic citation                |
+
+### 📬 Contact us
+
+-   📧 Email [xiaotao.shen\@outlook.com](mailto:xiaotao.shen@outlook.com)\
+-   🔗 Shen Lab website [shen-lab.org](https://shen-lab.org)\
+-   💬 WeChat @jaspershen1990\
+-   🐦 Twitter [\@xiaotaoshen1990](https://twitter.com/xiaotaoshen1990)
+
+Welcome to the **laggedcor** tutorial! Enjoy, and feel free to send pull requests!

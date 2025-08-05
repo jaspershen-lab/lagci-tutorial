@@ -3,8 +3,15 @@ project:
 
 book:
   title: "laggedcor Tutorial"
-  author: "laggedcor Development Team"
+  author: "Xiaotao Shen & Zirui QIANG & Shunpeng BAI"
   date: "2025-08-04"
+  sidebar:
+    logo: images/laggedcor_logo.png    
+    style: "docked"                     
+    collapse-level: 1                   
+  repo-url: https://github.com/ZiruiQIANG/laggedcor-tutorial
+  repo-branch: main
+  repo-actions: [edit, issue, source]   
   chapters:
     - index.qmd
     - 1-1-installation.qmd
@@ -23,6 +30,8 @@ book:
 
 format:
   html:
-    theme: flatly
-    toc: true
-  pdf: default
+    theme: flatly          
+    toc: true              
+    number-sections: false 
+    title-block-style: default
+    title-block-banner: false
