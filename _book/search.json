@@ -1,0 +1,132 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "laggedcor Tutorial",
+    "section": "",
+    "text": "laggedcor helps you answer questions such as:\n\nHow long after a glucose spike does my heart-rate change?\nWhich biomarker moves first—cortisol or cytokine?\n\nBased on the algorithm published in Nature Communications (2019),\nit combines sliding windows, LOESS smoothing and bootstrap correction to estimate robust lagged correlations.\n\nLearning path\n\n\n\n\n\n\n\nChapter\nGoal\n\n\n\n\n1 Installation\nGet laggedcor and all dependencies running locally\n\n\n2 Data Preparation\nConvert wide tables to long, clean timestamps\n\n\n3 Basic Workflow\nTen lines of R to obtain a lagged correlation curve\n\n\n4 Advanced Options\nBatch analysis, parallelism, fine-tuning\n\n\n5 Shiny Module\nDrop-in UI for interactive dashboards\n\n\n6 FAQ & Citation\nTroubleshooting and academic citation\n\n\n\n\n\n📬 Contact us\n\n📧 Email xiaotao.shen@outlook.com\n\n🔗 Shen Lab website shen-lab.org\n\n💬 WeChat @jaspershen1990\n\n🐦 Twitter @xiaotaoshen1990\n\nWelcome to the laggedcor tutorial! Enjoy, and feel free to send pull requests!",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>laggedcor Tutorial</span>"
+    ]
+  },
+  {
+    "objectID": "1-1-installation.html",
+    "href": "1-1-installation.html",
+    "title": "1.1 installation",
+    "section": "",
+    "text": "1.1 一行安装（GitHub 开发版）\n```r if (!requireNamespace(“devtools”)) install.packages(“devtools”) devtools::install_github(“jaspershen/laggedcor”, dependencies = TRUE) laggedcor::laggedcor_install() # 安装 8 个子包及系统依赖",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1.1 installation</span>"
+    ]
+  },
+  {
+    "objectID": "1-2-update.html",
+    "href": "1-2-update.html",
+    "title": "1.2 Update",
+    "section": "",
+    "text": "How to update the package.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>1.2 Update</span>"
+    ]
+  },
+  {
+    "objectID": "1-3-docker_laggedcor.html",
+    "href": "1-3-docker_laggedcor.html",
+    "title": "1.3 Docker laggedcor",
+    "section": "",
+    "text": "Run laggedcor in Docker.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>1.3 Docker laggedcor</span>"
+    ]
+  },
+  {
+    "objectID": "1-4-build_own_docker.html",
+    "href": "1-4-build_own_docker.html",
+    "title": "1.4 Build your own Docker",
+    "section": "",
+    "text": "Customizing Docker image.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>1.4 Build your own Docker</span>"
+    ]
+  },
+  {
+    "objectID": "2-1-create_dataset.html",
+    "href": "2-1-create_dataset.html",
+    "title": "2.1 Create dataset",
+    "section": "",
+    "text": "Prepare data for laggedcor.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>2.1 Create dataset</span>"
+    ]
+  },
+  {
+    "objectID": "2-2-add_metadata.html",
+    "href": "2-2-add_metadata.html",
+    "title": "7  2.2 Add metadata",
+    "section": "",
+    "text": "Metadata integration.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>2.2 Add metadata</span>"
+    ]
+  },
+  {
+    "objectID": "2-3-dataset_other_tools.html",
+    "href": "2-3-dataset_other_tools.html",
+    "title": "2.3 Dataset with other tools",
+    "section": "",
+    "text": "Interoperability.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>2.3 Dataset with other tools</span>"
+    ]
+  },
+  {
+    "objectID": "2-4-extract.html",
+    "href": "2-4-extract.html",
+    "title": "2.4 Extract",
+    "section": "",
+    "text": "Extract relevant signals.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>2.4 Extract</span>"
+    ]
+  },
+  {
+    "objectID": "2-5-processing_information.html",
+    "href": "2-5-processing_information.html",
+    "title": "10  2.5 Processing information",
+    "section": "",
+    "text": "Track processing steps.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>2.5 Processing information</span>"
+    ]
+  },
+  {
+    "objectID": "3-1-shiny_module.html",
+    "href": "3-1-shiny_module.html",
+    "title": "11  3.1 Shiny module",
+    "section": "",
+    "text": "Integrate laggedcor into Shiny.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>3.1 Shiny module</span>"
+    ]
+  },
+  {
+    "objectID": "3-2-data_convert.html",
+    "href": "3-2-data_convert.html",
+    "title": "12  3.2 Data convert",
+    "section": "",
+    "text": "Convert data formats.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>3.2 Data convert</span>"
+    ]
+  },
+  {
+    "objectID": "4-1-analysis_workflow.html",
+    "href": "4-1-analysis_workflow.html",
+    "title": "13  4.1 Analysis workflow",
+    "section": "",
+    "text": "Complete analysis pipeline.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>4.1 Analysis workflow</span>"
+    ]
+  }
+]

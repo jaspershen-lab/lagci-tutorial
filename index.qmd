@@ -22,7 +22,7 @@ it combines sliding windows, LOESS smoothing and bootstrap correction to estimat
 ### Learning path
 
 | Chapter                | Goal                                                 |
-|------------------------|------------------------------------------------------|
+|-------------------------------------------|-----------------------------|
 | **1 Installation**     | Get *laggedcor* and all dependencies running locally |
 | **2 Data Preparation** | Convert wide tables to long, clean timestamps        |
 | **3 Basic Workflow**   | Ten lines of R to obtain a lagged correlation curve  |
