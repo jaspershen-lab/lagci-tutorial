@@ -103,3 +103,15 @@ remove.packages(pkgs = "lagci")
 # 3) Install the lagci once again
 pak::pak("jaspershen-lab/lagci")
 ```
+
+If you can't install or update `lagci` successfully, please contact us by
+
+{{< cta cta_text="📥 Contact us" cta_link="https://www.shen-lab.org/#contact" >}}
+
+or leave me a comment below.
+
+## Session information
+
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+sessionInfo()
+```

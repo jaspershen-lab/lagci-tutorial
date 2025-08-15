@@ -477,6 +477,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#update-r" id="toc-update-r" class="nav-link" data-scroll-target="#update-r"><span class="header-section-number">1.4</span> Update R</a></li>
   <li><a href="#safe-installation-of-lagci" id="toc-safe-installation-of-lagci" class="nav-link" data-scroll-target="#safe-installation-of-lagci"><span class="header-section-number">1.5</span> Safe Installation of <code>lagci</code></a></li>
   <li><a href="#update-the-lagci-package" id="toc-update-the-lagci-package" class="nav-link" data-scroll-target="#update-the-lagci-package"><span class="header-section-number">1.6</span> Update the <code>lagci</code> package</a></li>
+  <li><a href="#session-information" id="toc-session-information" class="nav-link" data-scroll-target="#session-information"><span class="header-section-number">1.7</span> Session information</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ZiruiQIANG/laggedcor-tutorial/edit/main/1-1-Installation and Update.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ZiruiQIANG/laggedcor-tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/ZiruiQIANG/laggedcor-tutorial/blob/main/1-1-Installation and Update.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -582,7 +583,7 @@ nickname       Trophy Case                      </code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"jaspershen-lab/lagci"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Get the <code>lagci</code> package dependencies tree:</p>
+<p>Get the <code>lagci</code> package dependencies tree (Optinal):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_deps_tree</span>(<span class="st">"jaspershen-lab/lagci"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -1089,6 +1090,43 @@ Key:  [new] new | [upd] update | [dl] download | [bld] build | [cmp] compile</co
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) Install the lagci once again</span></span>
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"jaspershen-lab/lagci"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you can’t install or update <code>lagci</code> successfully, please contact us by</p>
+{{&lt; cta cta_text="📥 Contact us" cta_link="https://www.shen-lab.org/#contact" &gt;}}
+<p>or leave me a comment below.</p>
+</section>
+<section id="session-information" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="session-information"><span class="header-section-number">1.7</span> Session information</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.4.3 (2025-02-28 ucrt)
+Platform: x86_64-w64-mingw32/x64
+Running under: Windows 11 x64 (build 26100)
+
+Matrix products: default
+
+
+locale:
+[1] LC_COLLATE=Chinese (Simplified)_China.utf8 
+[2] LC_CTYPE=Chinese (Simplified)_China.utf8   
+[3] LC_MONETARY=Chinese (Simplified)_China.utf8
+[4] LC_NUMERIC=C                               
+[5] LC_TIME=Chinese (Simplified)_China.utf8    
+
+time zone: Asia/Shanghai
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+ [1] digest_0.6.37     R6_2.6.1          fastmap_1.2.0     xfun_0.52        
+ [5] knitr_1.50        htmltools_0.5.8.1 rmarkdown_2.29    ps_1.9.1         
+ [9] cli_3.6.5         processx_3.8.6    callr_3.7.6       pak_0.9.0        
+[13] compiler_4.4.3    rstudioapi_0.17.1 tools_4.4.3       evaluate_1.0.4   
+[17] rlang_1.1.6       jsonlite_2.0.0    htmlwidgets_1.6.4</code></pre>
+</div>
 </div>
 
 
