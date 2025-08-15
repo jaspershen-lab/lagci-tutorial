@@ -1,8 +1,9 @@
 project:
   type: book
+  output-dir: docs
 
 book:
-  title: "laggedcor Tutorial"
+  title: "lagci Tutorial"
   author: "Xiaotao SHEN & Zirui QIANG & Shunpeng BAI & Yitong WU"
   date: "2025-08-04"
   sidebar:
@@ -14,24 +15,41 @@ book:
   repo-actions: [edit, issue, source]   
   chapters:
     - index.qmd
-    - 1-1-installation.qmd
-    - 1-2-update.qmd
-    - 1-3-docker_laggedcor.qmd
-    - 1-4-build_own_docker.qmd
-    - 2-1-create_dataset.qmd
-    - 2-2-add_metadata.qmd
-    - 2-3-dataset_other_tools.qmd
-    - 2-4-extract.qmd
-    - 2-5-processing_information.qmd
-    - 3-1-shiny_module.qmd
-    - 3-2-data_convert.qmd
-    - 4-1-analysis_workflow.qmd
-    - references.qmd
+    
+    - part: "Install lagci and Docker"
+      chapters:
+        - 1-1-Installation and Update.qmd
+        - 1-2-Docker Version of lagci.qmd
+        # - 1-3-Docker Version of lagcishiny.qmd
+        - 1-4-Build your own Docker Image.qmd
+        - references.qmd
+
+    - part: "Raw Data Processing and Preview"
+      chapters:
+        - 2-1-Raw Data Processing.qmd
+        - 2-2-Preview and Time Plot.qmd
+
+    - part: "Calculation and Plotting"
+      chapters:
+        - 3-1-Calculation.qmd
+        - 3-2-Extract Data form Calculation Result.qmd
+        - 3-3-Alignment Plot.qmd
+        - 3-4-Scatter Plot.qmd
+        - 3-5-Evaluated Plot.qmd
+        
+    - part: "lagcishiny Web Application"
+      chapters:
+        - 4-1-Installation of lagcishiny.qmd
+        - 1-3-Docker Version of lagcishiny.qmd
+        - 4-2-Run lagcishiny on your PC.qmd
+        - 4-3-Deploy lagcishiny on your server.qmd
+        
+    - FAQ and Citation.qmd
 
 format:
   html:
-    theme: flatly          
-    toc: true              
-    number-sections: false 
-    title-block-style: default
-    title-block-banner: false
+    theme:
+      light: cosmo
+      dark: superhero
+
+editor: visual

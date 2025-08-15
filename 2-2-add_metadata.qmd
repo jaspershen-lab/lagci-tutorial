@@ -1,3 +1,0 @@
-# 2.2 Add metadata
-
-Metadata integration.

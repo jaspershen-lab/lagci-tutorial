@@ -1,3 +1,3 @@
-# 3.1 Shiny module
+# Calculation
 
 Integrate laggedcor into Shiny.

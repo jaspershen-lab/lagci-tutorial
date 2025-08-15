@@ -1,0 +1,210 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "lagci Tutorial",
+    "section": "",
+    "text": "Preface\n\nlagci helps you answer questions such as:\n\nHow long after a glucose spike does my heart-rate change?\nWhich biomarker moves first—cortisol or cytokine?\n\nBased on the algorithm published in Nature Communications (2019),\nit combines sliding windows, LOESS smoothing and bootstrap correction to estimate robust lagged correlations.\n\nLearning path\n\n\n\n\n\n\n\nChapter\nGoal\n\n\n\n\n1 Install lagci and Docker\nGet lagci and all dependencies running locally\n\n\n2 Raw Data Processing and Preview\nConvert wide tables to long, clean timestamps\n\n\n3 Calculation and Plotting\nTen lines of R to obtain a lagged correlation curve\n\n\n4 lagcishiny Web Application\nDrop-in UI for interactive dashboards\n\n\n5 FAQ & Citation\nTroubleshooting and academic citation\n\n\n\n\n\n📬 Contact us\n\n📧 Email xiaotao.shen@outlook.com\n\n🔗 Shen Lab website shen-lab.org\n\n💬 WeChat @jaspershen1990\n\n🐦 Twitter @xiaotaoshen1990\n\nWelcome to the laggedcor tutorial! Enjoy, and feel free to send pull requests!",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "1-1-Installation and Update.html",
+    "href": "1-1-Installation and Update.html",
+    "title": "1  Installation and Update",
+    "section": "",
+    "text": "1.1 Install R\nIf you haven’t installed R or RStudio on your PC or Mac, please install them before proceeding. Otherwise, you can skip these steps.\nDownload the R and install it.\n👉 Refer this blog",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
+    ]
+  },
+  {
+    "objectID": "1-1-Installation and Update.html#dependencies-of-laggedcor",
+    "href": "1-1-Installation and Update.html#dependencies-of-laggedcor",
+    "title": "1  Installation and Update",
+    "section": "1.5 Dependencies of laggedcor",
+    "text": "1.5 Dependencies of laggedcor\nif (!requireNamespace(\"devtools\")) install.packages(\"devtools\")\ndevtools::install_github(\"jaspershen-lab/laggedcor\", dependencies = TRUE)",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
+    ]
+  },
+  {
+    "objectID": "1-3-Docker Version of lagcishiny.html",
+    "href": "1-3-Docker Version of lagcishiny.html",
+    "title": "4  1.3 Docker laggedcor",
+    "section": "",
+    "text": "Run laggedcor in Docker.",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Docker Version of lagcishiny</span>"
+    ]
+  },
+  {
+    "objectID": "1-4-Build your own Docker Image.html",
+    "href": "1-4-Build your own Docker Image.html",
+    "title": "5  1.4 Build your own Docker",
+    "section": "",
+    "text": "Customizing Docker image.",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Build your own Docker Image</span>"
+    ]
+  },
+  {
+    "objectID": "2-1-Raw Data Processing.html",
+    "href": "2-1-Raw Data Processing.html",
+    "title": "7  2.1 Create dataset",
+    "section": "",
+    "text": "Prepare data for laggedcor.",
+    "crumbs": [
+      "Raw Data Processing and Preview",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Raw Data Processing</span>"
+    ]
+  },
+  {
+    "objectID": "2-2-Preview and Time Plot.html",
+    "href": "2-2-Preview and Time Plot.html",
+    "title": "8  2.2 Add metadata",
+    "section": "",
+    "text": "Metadata integration.",
+    "crumbs": [
+      "Raw Data Processing and Preview",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Preview and Time Plot</span>"
+    ]
+  },
+  {
+    "objectID": "3-1-Calculation.html",
+    "href": "3-1-Calculation.html",
+    "title": "9  3.1 Shiny module",
+    "section": "",
+    "text": "Integrate laggedcor into Shiny.",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Calculation</span>"
+    ]
+  },
+  {
+    "objectID": "3-2-Extract Data form Calculation Result.html",
+    "href": "3-2-Extract Data form Calculation Result.html",
+    "title": "10  3.2 Data convert",
+    "section": "",
+    "text": "Convert data formats.",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Extract Data form Calculation Result</span>"
+    ]
+  },
+  {
+    "objectID": "3-3-Alignment Plot.html",
+    "href": "3-3-Alignment Plot.html",
+    "title": "11  2.3 Dataset with other tools",
+    "section": "",
+    "text": "Interoperability.",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Alignment Plot</span>"
+    ]
+  },
+  {
+    "objectID": "3-4-Scatter Plot.html",
+    "href": "3-4-Scatter Plot.html",
+    "title": "12  2.4 Extract",
+    "section": "",
+    "text": "Extract relevant signals.",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Scatter Plot</span>"
+    ]
+  },
+  {
+    "objectID": "3-5-Evaluated Plot.html",
+    "href": "3-5-Evaluated Plot.html",
+    "title": "13  2.5 Processing information",
+    "section": "",
+    "text": "Track processing steps.",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Evaluated Plot</span>"
+    ]
+  },
+  {
+    "objectID": "4-1-Installation of lagcishiny.html",
+    "href": "4-1-Installation of lagcishiny.html",
+    "title": "14  4.1 Analysis workflow",
+    "section": "",
+    "text": "Complete analysis pipeline.",
+    "crumbs": [
+      "lagcishiny Web Application",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Installation of lagcishiny</span>"
+    ]
+  },
+  {
+    "objectID": "1-1-Installation and Update.html#install-rstudio",
+    "href": "1-1-Installation and Update.html#install-rstudio",
+    "title": "1  Installation and Update",
+    "section": "1.2 Install RStudio",
+    "text": "1.2 Install RStudio\nThen install RStudio. Download the RStudio and then install it.\nSelect the free version of RStudio Desktop.\n 👉 Refer this blog",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
+    ]
+  },
+  {
+    "objectID": "1-1-Installation and Update.html#open-the-rstudio",
+    "href": "1-1-Installation and Update.html#open-the-rstudio",
+    "title": "1  Installation and Update",
+    "section": "1.3 Open the RStudio",
+    "text": "1.3 Open the RStudio\nThen open the RStudio",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
+    ]
+  },
+  {
+    "objectID": "1-1-Installation and Update.html#update-r",
+    "href": "1-1-Installation and Update.html#update-r",
+    "title": "1  Installation and Update",
+    "section": "1.4 Update R",
+    "text": "1.4 Update R\nlagci require R version &gt; 4.1. Please update your R if the version &lt; 4.1.\nYou can check your R version in your console:\n\nversion\n\n               _                                \nplatform       x86_64-w64-mingw32               \narch           x86_64                           \nos             mingw32                          \ncrt            ucrt                             \nsystem         x86_64, mingw32                  \nstatus                                          \nmajor          4                                \nminor          4.3                              \nyear           2025                             \nmonth          02                               \nday            28                               \nsvn rev        87843                            \nlanguage       R                                \nversion.string R version 4.4.3 (2025-02-28 ucrt)\nnickname       Trophy Case                      \n\n\nIf your R version is &lt; 4.1, please download and install the latest version of R, and then restart your R.",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
+    ]
+  },
+  {
+    "objectID": "1-1-Installation and Update.html#dependencies-of-lagci",
+    "href": "1-1-Installation and Update.html#dependencies-of-lagci",
+    "title": "1  Installation and Update",
+    "section": "1.5 Dependencies of lagci",
+    "text": "1.5 Dependencies of lagci\nlagci needs a lot of dependent packages. When you install lagci via devtools:: install_github(\"jaspershen-lab/lagci\") directly, it will spend lots of time, meanwhile it will encounter errors easily.\nTo install lagci safely, please run the script below.\nInstall devtools, pak and BiocManager packages first.\n```r, eval=false if (!requireNamespace(“devtools”)) install.packages(“devtools”)\nif (!require(“BiocManager”, quietly = TRUE)) install.packages(“BiocManager”)\nif (!require(“pak”, quietly = TRUE)) install.packages(“pak”)\n\nGet the available mirror of `CRAN` and `BioConductor` from [CRAN mirrors](https://cran.r-project.org/mirrors.html) and [BioConductor mirrors](https://www.bioconductor.org/about/mirrors/)\n\nConfig the mirror of `CRAN` and `BioConductor` that `pak` can use:\n\n```r, eval=false\nGet the lagci package dependencies tree:\npak::pkg_deps_tree(\"jaspershen-lab/lagci\")",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
+    ]
+  },
+  {
+    "objectID": "1-1-Installation and Update.html#safe-installation-of-lagci",
+    "href": "1-1-Installation and Update.html#safe-installation-of-lagci",
+    "title": "1  Installation and Update",
+    "section": "1.5 Safe Installation of lagci",
+    "text": "1.5 Safe Installation of lagci\nlagci needs a lot of dependent packages. When you install lagci via devtools:: install_github(\"jaspershen-lab/lagci\") directly, it will spend lots of time, meanwhile it will encounter errors easily.\nTo install lagci safely, please run the script below.\nInstall devtools, pak and BiocManager packages first.\n\nif (!requireNamespace(\"devtools\")) \n  install.packages(\"devtools\")\n\nif (!require(\"BiocManager\", quietly = TRUE))\n  install.packages(\"BiocManager\")\n\nif (!require(\"pak\", quietly = TRUE)) \n  install.packages(\"pak\")\n\nGet the available mirror of CRAN and BioConductor from CRAN mirrors and BioConductor mirrors\nConfigure the mirror of CRAN and BioConductor that pak can use (just for this R session):\n\n# 1) Pick your Bioconductor mirror (do this first)\noptions(BioC_mirror = \"https://bioconductor.posit.co\")  # any Bioc mirror URL works\n\n# 2) Pick your CRAN mirror\noptions(repos = c(CRAN = \"https://cloud.r-project.org\"))\n\n# 3) Populate a consistent set of CRAN + Bioc repos for your R/Bioc version\nif (!requireNamespace(\"BiocManager\", quietly = TRUE)) install.packages(\"BiocManager\")\noptions(repos = BiocManager::repositories())\n\n# 4) Verify what pak will use\npak::repo_get()\n\nRun this command to install lagci safely:\n\npak::pak(\"jaspershen-lab/lagci\")\n\nGet the lagci package dependencies tree:\n\npak::pkg_deps_tree(\"jaspershen-lab/lagci\")\n\nℹ Loading metadata database\n\n\n✔ Loading metadata database ... done\n\n\n\n\n\njaspershen-lab/lagci 0.99.5 [new][bld][cmp][dl] (unknown size)\n├─crayon 1.5.3 [new][dl] (165.17 kB)\n├─purrr 1.1.0 [new][dl] (568.14 kB)\n│ ├─cli 3.6.5 [new][dl] (1.40 MB)\n│ ├─lifecycle 1.0.4 [new][dl] (140.93 kB)\n│ │ ├─cli\n│ │ ├─glue 1.8.0 [new][dl] (183.78 kB)\n│ │ └─rlang 1.1.6 [new][dl] (1.63 MB)\n│ ├─magrittr 2.0.3 [new][dl] (229.42 kB)\n│ ├─rlang\n│ └─vctrs 0.6.5 [new][dl] (1.36 MB)\n│   ├─cli\n│   ├─glue\n│   ├─lifecycle\n│   └─rlang\n├─stringr 1.5.1 [new][dl] (323.42 kB)\n│ ├─cli\n│ ├─glue\n│ ├─lifecycle\n│ ├─magrittr\n│ ├─rlang\n│ ├─stringi 1.8.7 [new][dl] (15.03 MB)\n│ └─vctrs\n├─cli\n├─magrittr\n├─rstudioapi 0.17.1 [new][dl] (342.23 kB)\n├─dplyr 1.1.4 [new][dl] (1.58 MB)\n│ ├─cli\n│ ├─generics 0.1.4 [new][dl] (85.14 kB)\n│ ├─glue\n│ ├─lifecycle\n│ ├─magrittr\n│ ├─pillar 1.11.0 [new][dl] (673.46 kB)\n│ │ ├─cli\n│ │ ├─glue\n│ │ ├─lifecycle\n│ │ ├─rlang\n│ │ ├─utf8 1.2.6 [new][dl] (154.70 kB)\n│ │ └─vctrs\n│ ├─R6 2.6.1 [new][dl] (88.64 kB)\n│ ├─rlang\n│ ├─tibble 3.3.0 [new][dl] (698.31 kB)\n│ │ ├─cli\n│ │ ├─lifecycle\n│ │ ├─magrittr\n│ │ ├─pillar\n│ │ ├─pkgconfig 2.0.3 [new][dl] (22.81 kB)\n│ │ ├─rlang\n│ │ └─vctrs\n│ ├─tidyselect 1.2.1 [new][dl] (228.15 kB)\n│ │ ├─cli\n│ │ ├─glue\n│ │ ├─lifecycle\n│ │ ├─rlang\n│ │ ├─vctrs\n│ │ └─withr 3.0.2 [new][dl] (231.37 kB)\n│ └─vctrs\n├─rlang\n├─tibble\n├─ggplot2 3.5.2 [new][dl] (5.02 MB)\n│ ├─cli\n│ ├─glue\n│ ├─gtable 0.3.6 [new][dl] (249.79 kB)\n│ │ ├─cli\n│ │ ├─glue\n│ │ ├─lifecycle\n│ │ └─rlang\n│ ├─isoband 0.2.7 [new][dl] (1.93 MB)\n│ ├─lifecycle\n│ ├─MASS 7.3-65 \n│ ├─mgcv 1.9-3 \n│ │ ├─nlme 3.1-168 \n│ │ │ └─lattice 0.22-6 -&gt; 0.22-7 [upd][dl] (1.40 MB)\n│ │ └─Matrix 1.7-2 -&gt; 1.7-3 [upd][dl] (4.98 MB)\n│ │   └─lattice\n│ ├─rlang\n│ ├─scales 1.4.0 [new][dl] (882.99 kB)\n│ │ ├─cli\n│ │ ├─farver 2.1.2 [new][dl] (1.52 MB)\n│ │ ├─glue\n│ │ ├─labeling 0.4.3 [new][dl] (63.36 kB)\n│ │ ├─lifecycle\n│ │ ├─R6\n│ │ ├─RColorBrewer 1.1-3 [new][dl] (54.47 kB)\n│ │ ├─rlang\n│ │ └─viridisLite 0.4.2 [new][dl] (1.30 MB)\n│ ├─tibble\n│ ├─vctrs\n│ └─withr\n├─plyr 1.8.9 [new][dl] (1.11 MB)\n│ └─Rcpp 1.1.0 [new][dl] (2.90 MB)\n├─BiocParallel 1.40.2 [new][bld][cmp][dl] (unknown size)\n│ ├─BH 1.87.0-1 [new][dl] (21.80 MB)\n│ ├─codetools 0.2-20 \n│ ├─cpp11 0.5.2 [new][dl] (310.77 kB)\n│ ├─futile.logger 1.4.3 [new][dl] (97.93 kB)\n│ │ ├─futile.options 1.0.1 [new][dl] (21.49 kB)\n│ │ └─lambda.r 1.2.4 [new][dl] (112.74 kB)\n│ │   └─formatR 1.14 [new][dl] (155.91 kB)\n│ └─snow 0.4-4 [new][dl] (99.91 kB)\n├─ggrepel 0.9.6 [new][dl] (603.96 kB)\n│ ├─ggplot2\n│ ├─Rcpp\n│ ├─rlang\n│ ├─scales\n│ └─withr\n├─ggsci 3.2.0 [new][dl] (2.40 MB)\n│ ├─ggplot2\n│ └─scales\n├─lubridate 1.9.4 [new][dl] (989.17 kB)\n│ ├─generics\n│ └─timechange 0.3.0 [new][dl] (514.48 kB)\n│   └─cpp11\n├─scales\n├─tidymass/massdataset 0.99.0 [new][bld][cmp][dl] (unknown size)\n│ ├─dplyr\n│ ├─magrittr\n│ ├─tibble\n│ ├─stringr\n│ ├─rstudioapi\n│ ├─ggplot2\n│ ├─openxlsx 4.2.8 [new][dl] (2.48 MB)\n│ │ ├─Rcpp\n│ │ ├─stringi\n│ │ └─zip 2.3.3 [new][dl] (453.44 kB)\n│ ├─crayon\n│ ├─cli\n│ ├─purrr\n│ ├─readr 2.1.5 [new][dl] (1.19 MB)\n│ │ ├─cli\n│ │ ├─clipr 0.8.0 [new][dl] (55.53 kB)\n│ │ ├─cpp11\n│ │ ├─crayon\n│ │ ├─hms 1.1.3 [new][dl] (105.34 kB)\n│ │ │ ├─lifecycle\n│ │ │ ├─pkgconfig\n│ │ │ ├─rlang\n│ │ │ └─vctrs\n│ │ ├─lifecycle\n│ │ ├─R6\n│ │ ├─rlang\n│ │ ├─tibble\n│ │ ├─tzdb 0.5.0 [new][dl] (1.04 MB)\n│ │ │ └─cpp11\n│ │ └─vroom 1.6.5 [new][dl] (1.34 MB)\n│ │   ├─bit64 4.6.0-1 [new][dl] (512.02 kB)\n│ │   │ └─bit 4.6.0 [new][dl] (637.12 kB)\n│ │   ├─cli\n│ │   ├─cpp11\n│ │   ├─crayon\n│ │   ├─glue\n│ │   ├─hms\n│ │   ├─lifecycle\n│ │   ├─rlang\n│ │   ├─tibble\n│ │   ├─tidyselect\n│ │   ├─tzdb\n│ │   ├─vctrs\n│ │   └─withr\n│ ├─rlang\n│ ├─github::tidymass/masstools 0.99.0 [new][bld][cmp][dl] (unknown size)\n│ │ ├─dplyr\n│ │ ├─jsonlite 2.0.0 [new][dl] (1.11 MB)\n│ │ ├─remotes 2.5.0 [new][dl] (435.52 kB)\n│ │ ├─magrittr\n│ │ ├─tibble\n│ │ ├─tidyr 1.3.1 [new][dl] (1.27 MB)\n│ │ │ ├─cli\n│ │ │ ├─cpp11\n│ │ │ ├─dplyr\n│ │ │ ├─glue\n│ │ │ ├─lifecycle\n│ │ │ ├─magrittr\n│ │ │ ├─purrr\n│ │ │ ├─rlang\n│ │ │ ├─stringr\n│ │ │ ├─tibble\n│ │ │ ├─tidyselect\n│ │ │ └─vctrs\n│ │ ├─stringr\n│ │ ├─crayon\n│ │ ├─cli\n│ │ ├─purrr\n│ │ ├─pbapply 1.7-4 [new][dl] (102.70 kB)\n│ │ ├─httr 1.4.7 [new][dl] (496.83 kB)\n│ │ │ ├─curl 6.4.0 [new][dl] (3.66 MB)\n│ │ │ ├─jsonlite\n│ │ │ ├─mime 0.13 [new][dl] (52.39 kB)\n│ │ │ ├─openssl 2.3.3 [new][dl] (3.47 MB)\n│ │ │ │ └─askpass 1.2.1 [new][dl] (74.69 kB)\n│ │ │ │   └─sys 3.4.3 [new][dl] (47.84 kB)\n│ │ │ └─R6\n│ │ ├─rvest 1.0.4 [new][dl] (308.62 kB)\n│ │ │ ├─cli\n│ │ │ ├─glue\n│ │ │ ├─httr\n│ │ │ ├─lifecycle\n│ │ │ ├─magrittr\n│ │ │ ├─rlang\n│ │ │ ├─selectr 0.4-2 [new][dl] (501.28 kB)\n│ │ │ │ ├─R6\n│ │ │ │ └─stringr\n│ │ │ ├─tibble\n│ │ │ └─xml2 1.3.8 [new][dl] (1.61 MB)\n│ │ │   ├─cli\n│ │ │   └─rlang\n│ │ ├─xml2\n│ │ ├─MSnbase 2.32.0 [new][dl] (unknown size)\n│ │ │ ├─affy 1.84.0 [new][dl] (unknown size)\n│ │ │ │ ├─affyio 1.76.0 [new][dl] (unknown size)\n│ │ │ │ │ └─zlibbioc 1.52.0 [new][dl] (unknown size)\n│ │ │ │ ├─Biobase 2.66.0 [new][dl] (unknown size)\n│ │ │ │ │ └─BiocGenerics 0.52.0 [new][dl] (unknown size)\n│ │ │ │ ├─BiocGenerics\n│ │ │ │ ├─BiocManager 1.30.26 [new][dl] (507.69 kB)\n│ │ │ │ ├─preprocessCore 1.68.0 [new][dl] (unknown size)\n│ │ │ │ └─zlibbioc\n│ │ │ ├─Biobase\n│ │ │ ├─BiocGenerics\n│ │ │ ├─BiocParallel\n│ │ │ ├─digest 0.6.37 [new][dl] (223.14 kB)\n│ │ │ ├─ggplot2\n│ │ │ ├─impute 1.80.0 [new][dl] (unknown size)\n│ │ │ ├─IRanges 2.40.1 [new][dl] (unknown size)\n│ │ │ │ ├─BiocGenerics\n│ │ │ │ └─S4Vectors 0.44.0 [new][dl] (unknown size)\n│ │ │ │   └─BiocGenerics\n│ │ │ ├─lattice\n│ │ │ ├─MALDIquant 1.22.3 [new][dl] (2.88 MB)\n│ │ │ ├─MASS\n│ │ │ ├─MsCoreUtils 1.18.0 [new][dl] (unknown size)\n│ │ │ │ ├─clue 0.3-66 [new][dl] (1.01 MB)\n│ │ │ │ │ └─cluster 2.1.8 -&gt; 2.1.8.1 [upd][dl] (608.29 kB)\n│ │ │ │ ├─MASS\n│ │ │ │ ├─Rcpp\n│ │ │ │ └─S4Vectors\n│ │ │ ├─mzID 1.44.0 [new][dl] (unknown size)\n│ │ │ │ ├─doParallel 1.0.17 [new][dl] (192.19 kB)\n│ │ │ │ │ ├─foreach 1.5.2 [new][dl] (149.34 kB)\n│ │ │ │ │ │ ├─codetools\n│ │ │ │ │ │ └─iterators 1.0.14 [new][dl] (353.39 kB)\n│ │ │ │ │ └─iterators\n│ │ │ │ ├─foreach\n│ │ │ │ ├─iterators\n│ │ │ │ ├─plyr\n│ │ │ │ ├─ProtGenerics 1.38.0 [new][dl] (unknown size)\n│ │ │ │ └─XML 3.99-0.18 [new][dl] (3.11 MB)\n│ │ │ ├─mzR 2.40.0 [new][dl] (unknown size)\n│ │ │ │ ├─Biobase\n│ │ │ │ ├─BiocGenerics\n│ │ │ │ ├─ncdf4 1.24 [new][dl] (7.51 MB)\n│ │ │ │ ├─ProtGenerics\n│ │ │ │ └─Rcpp\n│ │ │ ├─pcaMethods 1.98.0 [new][dl] (unknown size)\n│ │ │ │ ├─Biobase\n│ │ │ │ ├─BiocGenerics\n│ │ │ │ ├─MASS\n│ │ │ │ └─Rcpp\n│ │ │ ├─plyr\n│ │ │ ├─ProtGenerics\n│ │ │ ├─PSMatch 1.10.0 [new][dl] (unknown size)\n│ │ │ │ ├─BiocGenerics\n│ │ │ │ ├─BiocParallel\n│ │ │ │ ├─igraph 2.1.4 [new][dl] (7.17 MB)\n│ │ │ │ │ ├─cli\n│ │ │ │ │ ├─cpp11\n│ │ │ │ │ ├─lifecycle\n│ │ │ │ │ ├─magrittr\n│ │ │ │ │ ├─Matrix\n│ │ │ │ │ ├─pkgconfig\n│ │ │ │ │ ├─rlang\n│ │ │ │ │ └─vctrs\n│ │ │ │ ├─Matrix\n│ │ │ │ ├─MsCoreUtils\n│ │ │ │ ├─ProtGenerics\n│ │ │ │ ├─QFeatures 1.16.0 [new][dl] (unknown size)\n│ │ │ │ │ ├─AnnotationFilter 1.30.0 [new][dl] (unknown size)\n│ │ │ │ │ │ ├─GenomicRanges 1.58.0 [new][dl] (unknown size)\n│ │ │ │ │ │ │ ├─BiocGenerics\n│ │ │ │ │ │ │ ├─GenomeInfoDb 1.42.3 [new][dl] (unknown size)\n│ │ │ │ │ │ │ │ ├─BiocGenerics\n│ │ │ │ │ │ │ │ ├─GenomeInfoDbData 1.2.13 [new][bld][dl] (unknown size)\n│ │ │ │ │ │ │ │ ├─IRanges\n│ │ │ │ │ │ │ │ ├─S4Vectors\n│ │ │ │ │ │ │ │ └─UCSC.utils 1.2.0 [new][dl] (unknown size)\n│ │ │ │ │ │ │ │   ├─httr\n│ │ │ │ │ │ │ │   ├─jsonlite\n│ │ │ │ │ │ │ │   └─S4Vectors\n│ │ │ │ │ │ │ ├─IRanges\n│ │ │ │ │ │ │ ├─S4Vectors\n│ │ │ │ │ │ │ └─XVector 0.46.0 [new][dl] (unknown size)\n│ │ │ │ │ │ │   ├─BiocGenerics\n│ │ │ │ │ │ │   ├─IRanges\n│ │ │ │ │ │ │   ├─S4Vectors\n│ │ │ │ │ │ │   └─zlibbioc\n│ │ │ │ │ │ └─lazyeval 0.2.2 [new][dl] (162.85 kB)\n│ │ │ │ │ ├─Biobase\n│ │ │ │ │ ├─BiocGenerics\n│ │ │ │ │ ├─igraph\n│ │ │ │ │ ├─IRanges\n│ │ │ │ │ ├─lazyeval\n│ │ │ │ │ ├─MsCoreUtils\n│ │ │ │ │ ├─MultiAssayExperiment 1.32.0 [new][dl] (unknown size)\n│ │ │ │ │ │ ├─Biobase\n│ │ │ │ │ │ ├─BiocBaseUtils 1.8.0 [new][dl] (unknown size)\n│ │ │ │ │ │ ├─BiocGenerics\n│ │ │ │ │ │ ├─DelayedArray 0.32.0 [new][dl] (unknown size)\n│ │ │ │ │ │ │ ├─BiocGenerics\n│ │ │ │ │ │ │ ├─IRanges\n│ │ │ │ │ │ │ ├─Matrix\n│ │ │ │ │ │ │ ├─MatrixGenerics 1.18.1 [new][dl] (unknown size)\n│ │ │ │ │ │ │ │ └─matrixStats 1.5.0 [new][dl] (540.83 kB)\n│ │ │ │ │ │ │ ├─S4Arrays 1.6.0 [new][dl] (unknown size)\n│ │ │ │ │ │ │ │ ├─abind 1.4-8 [new][dl] (67.21 kB)\n│ │ │ │ │ │ │ │ ├─BiocGenerics\n│ │ │ │ │ │ │ │ ├─crayon\n│ │ │ │ │ │ │ │ ├─IRanges\n│ │ │ │ │ │ │ │ ├─Matrix\n│ │ │ │ │ │ │ │ └─S4Vectors\n│ │ │ │ │ │ │ ├─S4Vectors\n│ │ │ │ │ │ │ └─SparseArray 1.6.2 [new][dl] (unknown size)\n│ │ │ │ │ │ │   ├─BiocGenerics\n│ │ │ │ │ │ │   ├─IRanges\n│ │ │ │ │ │ │   ├─Matrix\n│ │ │ │ │ │ │   ├─MatrixGenerics\n│ │ │ │ │ │ │   ├─matrixStats\n│ │ │ │ │ │ │   ├─S4Arrays\n│ │ │ │ │ │ │   ├─S4Vectors\n│ │ │ │ │ │ │   └─XVector\n│ │ │ │ │ │ ├─GenomicRanges\n│ │ │ │ │ │ ├─IRanges\n│ │ │ │ │ │ ├─S4Vectors\n│ │ │ │ │ │ ├─SummarizedExperiment 1.36.0 [new][dl] (unknown size)\n│ │ │ │ │ │ │ ├─Biobase\n│ │ │ │ │ │ │ ├─BiocGenerics\n│ │ │ │ │ │ │ ├─DelayedArray\n│ │ │ │ │ │ │ ├─GenomeInfoDb\n│ │ │ │ │ │ │ ├─GenomicRanges\n│ │ │ │ │ │ │ ├─IRanges\n│ │ │ │ │ │ │ ├─Matrix\n│ │ │ │ │ │ │ ├─MatrixGenerics\n│ │ │ │ │ │ │ ├─S4Arrays\n│ │ │ │ │ │ │ └─S4Vectors\n│ │ │ │ │ │ └─tidyr\n│ │ │ │ │ ├─plotly 4.11.0 [new][dl] (3.92 MB)\n│ │ │ │ │ │ ├─base64enc 0.1-3 [new][dl] (33.12 kB)\n│ │ │ │ │ │ ├─crosstalk 1.2.1 [new][dl] (416.29 kB)\n│ │ │ │ │ │ │ ├─htmltools 0.5.8.1 [new][dl] (363.20 kB)\n│ │ │ │ │ │ │ │ ├─base64enc\n│ │ │ │ │ │ │ │ ├─digest\n│ │ │ │ │ │ │ │ ├─fastmap 1.2.0 [new][dl] (135.36 kB)\n│ │ │ │ │ │ │ │ └─rlang\n│ │ │ │ │ │ │ ├─jsonlite\n│ │ │ │ │ │ │ ├─lazyeval\n│ │ │ │ │ │ │ └─R6\n│ │ │ │ │ │ ├─data.table 1.17.8 [new][dl] (2.89 MB)\n│ │ │ │ │ │ ├─digest\n│ │ │ │ │ │ ├─dplyr\n│ │ │ │ │ │ ├─ggplot2\n│ │ │ │ │ │ ├─htmltools\n│ │ │ │ │ │ ├─htmlwidgets 1.6.4 [new][dl] (813.36 kB)\n│ │ │ │ │ │ │ ├─htmltools\n│ │ │ │ │ │ │ ├─jsonlite\n│ │ │ │ │ │ │ ├─knitr 1.50 [new][dl] (1.16 MB)\n│ │ │ │ │ │ │ │ ├─evaluate 1.0.4 [new][dl] (104.89 kB)\n│ │ │ │ │ │ │ │ ├─highr 0.11 [new][dl] (44.22 kB)\n│ │ │ │ │ │ │ │ │ └─xfun 0.52 [new][dl] (605.63 kB)\n│ │ │ │ │ │ │ │ ├─xfun\n│ │ │ │ │ │ │ │ └─yaml 2.3.10 [new][dl] (119.45 kB)\n│ │ │ │ │ │ │ ├─rmarkdown 2.29 [new][dl] (2.70 MB)\n│ │ │ │ │ │ │ │ ├─bslib 0.9.0 [new][dl] (5.92 MB)\n│ │ │ │ │ │ │ │ │ ├─base64enc\n│ │ │ │ │ │ │ │ │ ├─cachem 1.1.0 [new][dl] (73.84 kB)\n│ │ │ │ │ │ │ │ │ │ ├─fastmap\n│ │ │ │ │ │ │ │ │ │ └─rlang\n│ │ │ │ │ │ │ │ │ ├─fastmap\n│ │ │ │ │ │ │ │ │ ├─htmltools\n│ │ │ │ │ │ │ │ │ ├─jquerylib 0.1.4 [new][dl] (526.06 kB)\n│ │ │ │ │ │ │ │ │ │ └─htmltools\n│ │ │ │ │ │ │ │ │ ├─jsonlite\n│ │ │ │ │ │ │ │ │ ├─lifecycle\n│ │ │ │ │ │ │ │ │ ├─memoise 2.0.1 [new][dl] (51.10 kB)\n│ │ │ │ │ │ │ │ │ │ ├─cachem\n│ │ │ │ │ │ │ │ │ │ └─rlang\n│ │ │ │ │ │ │ │ │ ├─mime\n│ │ │ │ │ │ │ │ │ ├─rlang\n│ │ │ │ │ │ │ │ │ └─sass 0.4.10 [new][dl] (2.61 MB)\n│ │ │ │ │ │ │ │ │   ├─fs 1.6.6 [new][dl] (415.38 kB)\n│ │ │ │ │ │ │ │ │   ├─htmltools\n│ │ │ │ │ │ │ │ │   ├─R6\n│ │ │ │ │ │ │ │ │   ├─rappdirs 0.3.3 [new][dl] (52.59 kB)\n│ │ │ │ │ │ │ │ │   └─rlang\n│ │ │ │ │ │ │ │ ├─evaluate\n│ │ │ │ │ │ │ │ ├─fontawesome 0.5.3 [new][dl] (1.39 MB)\n│ │ │ │ │ │ │ │ │ ├─htmltools\n│ │ │ │ │ │ │ │ │ └─rlang\n│ │ │ │ │ │ │ │ ├─htmltools\n│ │ │ │ │ │ │ │ ├─jquerylib\n│ │ │ │ │ │ │ │ ├─jsonlite\n│ │ │ │ │ │ │ │ ├─knitr\n│ │ │ │ │ │ │ │ ├─tinytex 0.57 [new][dl] (146.71 kB)\n│ │ │ │ │ │ │ │ │ └─xfun\n│ │ │ │ │ │ │ │ ├─xfun\n│ │ │ │ │ │ │ │ └─yaml\n│ │ │ │ │ │ │ └─yaml\n│ │ │ │ │ │ ├─httr\n│ │ │ │ │ │ ├─jsonlite\n│ │ │ │ │ │ ├─lazyeval\n│ │ │ │ │ │ ├─magrittr\n│ │ │ │ │ │ ├─promises 1.3.3 [new][dl] (2.03 MB)\n│ │ │ │ │ │ │ ├─fastmap\n│ │ │ │ │ │ │ ├─later 1.4.2 [new][dl] (468.20 kB)\n│ │ │ │ │ │ │ │ ├─Rcpp\n│ │ │ │ │ │ │ │ └─rlang\n│ │ │ │ │ │ │ ├─magrittr\n│ │ │ │ │ │ │ ├─R6\n│ │ │ │ │ │ │ ├─Rcpp\n│ │ │ │ │ │ │ └─rlang\n│ │ │ │ │ │ ├─purrr\n│ │ │ │ │ │ ├─RColorBrewer\n│ │ │ │ │ │ ├─rlang\n│ │ │ │ │ │ ├─scales\n│ │ │ │ │ │ ├─tibble\n│ │ │ │ │ │ ├─tidyr\n│ │ │ │ │ │ ├─vctrs\n│ │ │ │ │ │ └─viridisLite\n│ │ │ │ │ ├─ProtGenerics\n│ │ │ │ │ ├─reshape2 1.4.4 [new][dl] (438.87 kB)\n│ │ │ │ │ │ ├─plyr\n│ │ │ │ │ │ ├─Rcpp\n│ │ │ │ │ │ └─stringr\n│ │ │ │ │ ├─S4Vectors\n│ │ │ │ │ ├─SummarizedExperiment\n│ │ │ │ │ ├─tidyr\n│ │ │ │ │ └─tidyselect\n│ │ │ │ └─S4Vectors\n│ │ │ ├─Rcpp\n│ │ │ ├─S4Vectors\n│ │ │ ├─scales\n│ │ │ └─vsn 3.74.0 [new][dl] (unknown size)\n│ │ │   ├─affy\n│ │ │   ├─Biobase\n│ │ │   ├─ggplot2\n│ │ │   ├─lattice\n│ │ │   └─limma 3.62.2 [new][dl] (unknown size)\n│ │ │     └─statmod 1.5.0 [new][dl] (321.50 kB)\n│ │ ├─ProtGenerics\n│ │ ├─lifecycle\n│ │ └─ggplot2\n│ ├─ComplexHeatmap 2.22.0 [new][dl] (unknown size)\n│ │ ├─circlize 0.4.16 [new][dl] (3.32 MB)\n│ │ │ ├─colorspace 2.1-1 [new][dl] (2.67 MB)\n│ │ │ ├─GlobalOptions 0.1.2 [new][dl] (469.42 kB)\n│ │ │ └─shape 1.4.6.1 [new][dl] (753.94 kB)\n│ │ ├─clue\n│ │ ├─codetools\n│ │ ├─colorspace\n│ │ ├─digest\n│ │ ├─doParallel\n│ │ ├─foreach\n│ │ ├─GetoptLong 1.0.5 [new][dl] (1.07 MB)\n│ │ │ ├─crayon\n│ │ │ ├─GlobalOptions\n│ │ │ └─rjson 0.2.23 [new][dl] (438.00 kB)\n│ │ ├─GlobalOptions\n│ │ ├─IRanges\n│ │ ├─matrixStats\n│ │ ├─png 0.1-8 [new][dl] (194.23 kB)\n│ │ └─RColorBrewer\n│ ├─tidyselect\n│ ├─vctrs\n│ ├─tidyr\n│ ├─SummarizedExperiment\n│ └─S4Vectors\n└─hms\n\nKey:  [new] new | [upd] update | [dl] download | [bld] build | [cmp] compile",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
+    ]
+  },
+  {
+    "objectID": "1-1-Installation and Update.html#update-the-lagci-package",
+    "href": "1-1-Installation and Update.html#update-the-lagci-package",
+    "title": "1  Installation and Update",
+    "section": "1.6 Update the lagci package",
+    "text": "1.6 Update the lagci package\n\n# 0) See if you have libraried the lagci package\nprint(\"package:lagci\" %in% search()) # if you libraried the lagci, it will echo `TRUE`\n\n# 1) Detach the libraried lagci package\ndetach(name = \"package:lagci\", unload = TRUE)\n\n# 2) Uninstall the lagci package that already existed\nremove.packages(pkgs = \"lagci\")\n\n# 3) Install the lagci once again\npak::pak(\"jaspershen-lab/lagci\")",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
+    ]
+  }
+]

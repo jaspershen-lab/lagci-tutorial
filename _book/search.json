@@ -14,7 +14,7 @@
     "href": "1-1-installation.html",
     "title": "1.1 installation",
     "section": "",
-    "text": "1.1 一行安装（GitHub 开发版）\n```r if (!requireNamespace(“devtools”)) install.packages(“devtools”) devtools::install_github(“jaspershen/laggedcor”, dependencies = TRUE) laggedcor::laggedcor_install() # 安装 8 个子包及系统依赖",
+    "text": "1.1 Dependencies of laggedcor",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>1.1 installation</span>"
     ]
@@ -62,7 +62,7 @@
   {
     "objectID": "2-2-add_metadata.html",
     "href": "2-2-add_metadata.html",
-    "title": "7  2.2 Add metadata",
+    "title": "2.2 Add metadata",
     "section": "",
     "text": "Metadata integration.",
     "crumbs": [
@@ -122,11 +122,21 @@
   {
     "objectID": "4-1-analysis_workflow.html",
     "href": "4-1-analysis_workflow.html",
-    "title": "13  4.1 Analysis workflow",
+    "title": "4.1 Analysis workflow",
     "section": "",
     "text": "Complete analysis pipeline.",
     "crumbs": [
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>4.1 Analysis workflow</span>"
+    ]
+  },
+  {
+    "objectID": "1-1-installation.html#dependencies-of-laggedcor",
+    "href": "1-1-installation.html#dependencies-of-laggedcor",
+    "title": "1.1 installation",
+    "section": "",
+    "text": "if (!requireNamespace(\"devtools\")) install.packages(\"devtools\")\ndevtools::install_github(\"jaspershen-lab/laggedcor\", dependencies = TRUE)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>1.1 installation</span>"
     ]
   }
 ]

@@ -1,0 +1,3 @@
+# Docker Version of lagcishiny
+
+Run laggedcor in Docker.

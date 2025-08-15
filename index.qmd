@@ -1,17 +1,8 @@
----
-title: "laggedcor Tutorial"
-description: >
-  A hands-on guide to *laggedcor*, part of the tidywearable ecosystem,
-  for discovering time-lagged relationships in multi-omics and wearable
-  time–series data.
-format:
-  html:
-    theme: flatly
----
+# Preface {.unnumbered}
 
 ![](images/shen_lab_logo.png){width="90%"}
 
-`laggedcor` helps you answer questions such as:
+`lagci` helps you answer questions such as:
 
 > *How long after a glucose spike does my heart-rate change?*\
 > *Which biomarker moves first—cortisol or cytokine?*
@@ -23,12 +14,11 @@ it combines sliding windows, LOESS smoothing and bootstrap correction to estimat
 
 | Chapter                | Goal                                                 |
 |-------------------------------------------|-----------------------------|
-| **1 Installation**     | Get *laggedcor* and all dependencies running locally |
-| **2 Data Preparation** | Convert wide tables to long, clean timestamps        |
-| **3 Basic Workflow**   | Ten lines of R to obtain a lagged correlation curve  |
-| **4 Advanced Options** | Batch analysis, parallelism, fine-tuning             |
-| **5 Shiny Module**     | Drop-in UI for interactive dashboards                |
-| **6 FAQ & Citation**   | Troubleshooting and academic citation                |
+| **1 Install lagci and Docker**     | Get *lagci* and all dependencies running locally |
+| **2 Raw Data Processing and Preview** | Convert wide tables to long, clean timestamps        |
+| **3 Calculation and Plotting**   | Ten lines of R to obtain a lagged correlation curve  |
+| **4 lagcishiny Web Application**     | Drop-in UI for interactive dashboards                |
+| **5 FAQ & Citation**   | Troubleshooting and academic citation                |
 
 ### 📬 Contact us
 
