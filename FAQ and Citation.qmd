@@ -1,1 +1,20 @@
 # FAQ and Citation {.unnumbered}
+
+
+## Citation (BibTex)
+
+@ARTICLE{Shen2019-xv,
+  title     = "Metabolic reaction network-based recursive metabolite annotation
+               for untargeted metabolomics",
+  author    = "Shen, Xiaotao and Wang, Ruohong and Xiong, Xin and Yin, Yandong
+               and Cai, Yuping and Ma, Zaijun and Liu, Nan and Zhu, Zheng-Jiang",
+  journal   = "Nat. Commun.",
+  publisher = "Springer Science and Business Media LLC",
+  volume    =  10,
+  number    =  1,
+  pages     = "1516",
+  month     =  apr,
+  year      =  2019,
+  copyright = "https://creativecommons.org/licenses/by/4.0",
+  language  = "en"
+}

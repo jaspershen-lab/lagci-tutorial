@@ -1,3 +1,9 @@
 # Build your own Docker Image
 
 Customizing Docker image.
+
+
+## Session information
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+sessionInfo()
+```

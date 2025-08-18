@@ -105,3 +105,9 @@ for (i in 1:ncol(full_data)) {
 
 head(df_list[[1]])
 ```
+
+
+## Session information
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+sessionInfo()
+```

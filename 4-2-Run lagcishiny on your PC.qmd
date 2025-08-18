@@ -1,2 +1,7 @@
 # Run lagcishiny on your PC
 
+
+## Session information
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+sessionInfo()
+```

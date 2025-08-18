@@ -56,3 +56,9 @@ time_plot(x = example_data_1$value,
           add_point = TRUE,
           facet = TRUE)
 ```
+
+
+## Session information
+```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
+sessionInfo()
+```
