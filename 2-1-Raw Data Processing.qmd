@@ -1,3 +1,107 @@
 # Raw Data Processing
 
-Prepare data for laggedcor.
+Before analysis the lagged correlation by `lagci`, you may get lots of data.
+This tutorial will get started with you on processing raw data, until get the
+data with correct format.
+
+## Get started with example data
+
+Run this chunk, you will get the correct format of the data needed in `lagci`
+package. The data structure should have two columns at least, one of the columns
+is `time` column with `POSIXct` format, and another column is `value`.
+
+```{r,eval=TRUE}
+example_data_1 <- data.frame(
+  datetime = seq(from = as.POSIXct("2003-01-09"),to = as.POSIXct("2004-01-09"),by = "day")
+)
+
+example_data_1$value <- sin(seq(from = 0, to = 2*pi, length.out = nrow(example_data_1)))
+
+head(example_data_1)
+
+class(example_data_1$datetime)
+```
+
+### Type one: separated date
+
+If the structure of your raw date is like below:
+
+```{r,eval=TRUE}
+example_data_2 <- data.frame(
+  year = rep(x = 2000:2025, each = 12),
+  month = rep(x = 1:12, times = 26),
+  value = sin(seq(from = 0, to = 2*pi, length.out = 12*26))
+)
+
+head(example_data_2)
+
+```
+
+you should use this script to correct your format:
+
+```{r,eval=TRUE}
+example_data_2_correct <- data.frame(
+  time = paste0(example_data_2$year,"-",example_data_2$month,"-01"),
+  value = example_data_2$value
+)
+
+class(example_data_2_correct$time)
+
+example_data_2_correct$time <- as.POSIXct(example_data_2_correct$time)
+
+head(example_data_2_correct)
+
+class(example_data_2_correct$time)
+```
+
+### Type two: omics data format
+
+You may get several files, when you get the omics data:
+
+```{r,eval=TRUE}
+IDs <- data.frame(
+  ids = ids::adjective_animal(n = 5)
+    )
+
+head(IDs)
+
+library(magrittr)
+
+time_index <- seq.POSIXt(as.POSIXct("2019-04-29 03:30"),
+                         as.POSIXct("2019-05-06 21:30"),
+                         by = "30 min")
+
+omics_data <- replicate(5, 
+                  sin(seq(0, 10, length.out = length(time_index))) + rnorm(length(time_index), 0, 0.2)) %>%
+        t() %>% as.data.frame()
+colnames(omics_data) <- time_index
+
+head(omics_data)
+
+
+```
+
+you should transform them into five files with correct format:
+
+```{r,eval=TRUE}
+full_data <- omics_data %>% 
+  t() %>% 
+  as.data.frame()
+
+colnames(full_data) <- IDs$ids
+
+head(full_data)
+
+df_list <- list()
+
+for (i in 1:ncol(full_data)) {
+  varname <- colnames(full_data)[i]
+  df_list[[varname]] <- data.frame(
+    time = as.POSIXct(rownames(full_data), format = "%Y-%m-%d %H:%M:%S"),
+    value = full_data[[i]]
+  )
+}
+
+
+head(df_list[[1]])
+```
