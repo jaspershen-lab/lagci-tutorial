@@ -1,3 +1,58 @@
 # Time Plot
 
-Metadata integration.
+Before start with this tutorial, please load `lagci` package first.
+
+```{r,eval=TRUE}
+library(lagci)
+```
+
+By using the `time_plot` function, you can obtain the visualization results of the time series.
+
+```{r,eval=TRUE}
+example_data_1 <- data.frame(
+  datetime = seq(from = as.POSIXct("2003-01-09 00:00:00"),
+                 to = as.POSIXct("2003-01-10 00:00:00"),
+                 by = "10 min")
+)
+
+example_data_1$value <- sin(seq(from = 0, to = 2*pi,
+                                length.out = nrow(example_data_1)))
+
+head(example_data_1)
+```
+
+```{r,eval=TRUE}
+time_plot(x = example_data_1$value,
+          time = example_data_1$datetime,
+          color = "green",
+          y_axis_name = "y_axis",
+          sun_rise_time = "6:00:00",
+          sun_set_time = "18:00:00",
+          time_gap = 6,
+          add_point = FALSE,
+          facet = FALSE)
+```
+
+```{r,eval=TRUE}
+time_plot(x = example_data_1$value,
+          time = example_data_1$datetime,
+          color = "blue",
+          y_axis_name = "value",
+          sun_rise_time = "8:00:00",
+          sun_set_time = "20:00:00",
+          time_gap = 1,
+          add_point = FALSE,
+          facet = TRUE)
+```
+
+```{r,eval=TRUE}
+time_plot(x = example_data_1$value,
+          time = example_data_1$datetime,
+          color = "red",
+          y_axis_name = "name",
+          sun_rise_time = "6:00:00",
+          sun_set_time = "18:00:00",
+          time_gap = 3,
+          add_point = TRUE,
+          facet = TRUE)
+```

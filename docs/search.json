@@ -217,5 +217,16 @@
       "Install lagci and Docker",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
     ]
+  },
+  {
+    "objectID": "2-2-Time Plot.html",
+    "href": "2-2-Time Plot.html",
+    "title": "6  Time Plot",
+    "section": "",
+    "text": "Before start with this tutorial, please load lagci package first.\n\nlibrary(lagci)\n\nWarning in fun(libname, pkgname): mzR has been built against a different Rcpp version (1.0.13)\nthan is installed on your system (1.1.0). This might lead to errors\nwhen loading mzR. If you encounter such issues, please send a report,\nincluding the output of sessionInfo() to the Bioc support forum at \nhttps://support.bioconductor.org/. For details see also\nhttps://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.\n\n\n── Attaching packages ────────────────────────────────────────── lagci 0.99.5 ──\n\n\n✔ dplyr   1.1.4     ✔ ggplot2 3.5.2\n\n\n── Conflicts ────────────────────────────────────────────── lagci_conflicts() ──\n✖ methods::body&lt;-()    masks base::body&lt;-()\n✖ dplyr::filter()      masks stats::filter()\n✖ methods::kronecker() masks base::kronecker()\n✖ dplyr::lag()         masks stats::lag()\n\n\nBy using the time_plot function, you can obtain the visualization results of the time series.\n\nexample_data_1 &lt;- data.frame(\n  datetime = seq(from = as.POSIXct(\"2003-01-09 00:00:00\"),\n                 to = as.POSIXct(\"2003-01-10 00:00:00\"),\n                 by = \"10 min\")\n)\n\nexample_data_1$value &lt;- sin(seq(from = 0, to = 2*pi,\n                                length.out = nrow(example_data_1)))\n\nhead(example_data_1)\n\n             datetime      value\n1 2003-01-09 00:00:00 0.00000000\n2 2003-01-09 00:10:00 0.04361939\n3 2003-01-09 00:20:00 0.08715574\n4 2003-01-09 00:30:00 0.13052619\n5 2003-01-09 00:40:00 0.17364818\n6 2003-01-09 00:50:00 0.21643961\n\n\n\ntime_plot(x = example_data_1$value,\n          time = example_data_1$datetime,\n          color = \"green\",\n          y_axis_name = \"y_axis\",\n          sun_rise_time = \"6:00:00\",\n          sun_set_time = \"18:00:00\",\n          time_gap = 6,\n          add_point = FALSE,\n          facet = FALSE)\n\n\n\n\n\n\n\n\n\ntime_plot(x = example_data_1$value,\n          time = example_data_1$datetime,\n          color = \"blue\",\n          y_axis_name = \"value\",\n          sun_rise_time = \"8:00:00\",\n          sun_set_time = \"20:00:00\",\n          time_gap = 1,\n          add_point = FALSE,\n          facet = TRUE)\n\n\n\n\n\n\n\n\n\ntime_plot(x = example_data_1$value,\n          time = example_data_1$datetime,\n          color = \"red\",\n          y_axis_name = \"name\",\n          sun_rise_time = \"6:00:00\",\n          sun_set_time = \"18:00:00\",\n          time_gap = 3,\n          add_point = TRUE,\n          facet = TRUE)",
+    "crumbs": [
+      "Raw Data Processing and Preview",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Time Plot</span>"
+    ]
   }
 ]

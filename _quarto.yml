@@ -27,7 +27,7 @@ book:
     - part: "Raw Data Processing and Preview"
       chapters:
         - 2-1-Raw Data Processing.qmd
-        - 2-2-Preview and Time Plot.qmd
+        - 2-2-Time Plot.qmd
 
     - part: "Calculation and Plotting"
       chapters:

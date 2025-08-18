@@ -1,4 +1,2 @@
----
-title: "Docker Version of lagci"
----
+# Docker Version of lagci
 
