@@ -76,7 +76,7 @@ omics_data <- replicate(5,
         t() %>% as.data.frame()
 colnames(omics_data) <- time_index
 
-head(omics_data)
+head(omics_data[1])
 
 
 ```
