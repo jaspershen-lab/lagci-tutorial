@@ -1,3 +1,147 @@
 # Calculation
 
-Integrate laggedcor into Shiny.
+This tutorial will help you to calculate the lagged correlation between two time series.
+It will use `calculate_lagged_correlation` function of `lagci` package.
+
+## Prepare your data
+
+You can get started with the example data in `lagci` package. And the format of `time` column is `POSIXct`
+
+```{r,eval=TRUE}
+library(lagci)
+
+data("heart_data")
+data("step_data")
+
+head(heart_data)
+head(step_data)
+
+class(heart_data$time)
+class(step_data$time)
+```
+
+## Calculation
+
+Calculate with `calculate_lagged_correlation` function of `lagci` package.
+### x, y
+
+Type: Numeric vectors
+
+Purpose: The two time-series to be compared.
+
+Details: Each vector represents the observed values of one variable. Internally, both vectors are standardized (centered and scaled to unit variance) to make the correlation unbiased by different magnitudes or units.
+
+### time1, time2
+
+Type: POSIXct vectors (or convertible to POSIXct)
+
+Purpose: Timestamps corresponding to x and y.
+
+Role: Used to align the two time-series onto a shared, regularly spaced timeline before computing correlations.
+
+### time_tol
+
+Type: Numeric (hours)
+
+Default: 1
+
+Meaning: The maximum time lag to evaluate in both positive and negative directions.
+
+Unit: Hours. For example:
+
+time_tol = 1 → ±1 hour
+
+time_tol = 0.5 → ±30 minutes
+
+time_tol = 1/60 → ±1 minute
+
+### step
+
+Type: Numeric (hours)
+
+Default: 1/60 (i.e., 1 minute)
+
+Meaning: The resolution of the regular time grid used for alignment.
+
+Unit: Hours. For example:
+
+step = 1 → 1-hour sampling
+
+step = 1/60 → 1-minute sampling
+
+step = 1/3600 → 1-second sampling
+
+### min_matched_sample
+
+Type: Integer
+
+Default: 10
+
+Purpose: Minimum number of overlapping (non-missing) samples required after alignment. If fewer matched samples remain, the function returns NULL to avoid unstable correlations.
+
+### progressbar
+
+Type: Logical
+
+Default: TRUE
+
+Purpose: Whether to display progress information. Particularly useful when applying the function to many pairs of series in batch analyses.
+
+### align_method
+
+Type: Character string
+
+Options: "linear" or "constant"
+
+Default: "linear"
+
+Purpose: Method used for interpolation when mapping the irregular time-series onto the regular grid.
+
+"linear": Interpolates linearly between neighboring observations.
+
+"constant": Uses the nearest neighbor (step-wise constant).
+
+### cor_method
+
+Type: Character string
+
+Options: "spearman" or "pearson"
+
+Default: "spearman"
+
+Purpose: The statistical correlation measure.
+
+"pearson": Measures linear correlation between the raw values.
+
+"spearman": Measures rank correlation, robust to monotonic but non-linear relationships and less sensitive to outliers.
+
+```{r,eval=TRUE}
+result_1 <- lagci::calculate_lagged_correlation(
+  x = heart_data$heart,
+  y = step_data$step,
+  time1 = heart_data$time,
+  time2 = step_data$time,
+  time_tol = 0.5,
+  step = 1/60,
+  align_method = "linear",
+  cor_method = "spearman"
+)
+
+print(result_1)
+```
+
+```{r,eval=TRUE}
+result_2 <- lagci::calculate_lagged_correlation(
+  y = heart_data$heart,
+  x = step_data$step,
+  time2 = heart_data$time,
+  time1 = step_data$time,
+  time_tol = 0.5, # 
+  step = 1/60,
+  align_method = "linear",
+  cor_method = "spearman"
+)
+
+print(result_2)
+```
+

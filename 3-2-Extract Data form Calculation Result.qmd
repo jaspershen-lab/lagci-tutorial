@@ -1,3 +1,57 @@
 # Extract Data form Calculation Result
 
-Convert data formats.
+This tutorial we get started with extracting infomations from calculation results.
+
+```{r,eval=TRUE}
+library(lagci)
+data("heart_data")
+data("step_data")
+result <- lagci::calculate_lagged_correlation(
+  x = heart_data$heart,
+  y = step_data$step,
+  time1 = heart_data$time,
+  time2 = step_data$time,
+  time_tol = 0.5,
+  step = 1/60,
+  align_method = "linear",
+  cor_method = "spearman"
+)
+```
+
+## extract_shift_time
+
+```{r,eval=TRUE}
+shift_time_numeric <- extract_shift_time(object = result,numeric = TRUE)
+shift_time_numeric
+```
+
+```{r,eval=TRUE}
+shift_time <- extract_shift_time(object = result,numeric = FALSE)
+shift_time
+```
+
+## extract_all_cor
+
+```{r,eval=TRUE}
+all_cor <- extract_all_cor(object = result)
+all_cor
+```
+
+## extract_all_cor_p
+```{r,eval=TRUE}
+all_cor_p <- extract_all_cor_p(object = result)
+all_cor_p
+```
+## extract_max_cor
+
+```{r,eval=TRUE}
+max_cor <- extract_max_cor(object = result)
+max_cor
+```
+
+## extract_global_cor
+
+```{r,eval=TRUE}
+global_cor <- extract_global_cor(object = result)
+global_cor
+```

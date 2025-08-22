@@ -1,3 +1,25 @@
 # Evaluated Plot
 
-Track processing steps.
+## Calculation
+
+```{r,eval=TRUE}
+library(lagci)
+data("heart_data")
+data("step_data")
+result <- lagci::calculate_lagged_correlation(
+  y = heart_data$heart,
+  x = step_data$step,
+  time2 = heart_data$time,
+  time1 = step_data$time,
+  time_tol = 0.5,
+  step = 1/60,
+  align_method = "linear",
+  cor_method = "spearman"
+)
+```
+
+## evaluate_lagged_cor
+
+```{r,eval=TRUE}
+evaluate_lagged_cor(object = result,plot = TRUE)
+```

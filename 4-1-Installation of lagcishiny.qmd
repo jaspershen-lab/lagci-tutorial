@@ -1,6 +1,15 @@
 # Installation of lagcishiny
 
-Complete analysis pipeline.
+You can install `lagcishiny` successfully follow the following steps:
+
+## Installation
+
+```{r,eval=FALSE}
+if (!require("pak", quietly = TRUE)) 
+  install.packages("pak")
+pak::pak("jaspershen-lab/lagci")
+pak::pak("jaspershen-lab/lagcishiny")
+```
 
 
 ## Session information

@@ -1,3 +1,75 @@
 # Alignment Plot
 
-Interoperability.
+## Calculation
+```{r,eval=TRUE}
+library(lagci)
+data("heart_data")
+data("step_data")
+result <- lagci::calculate_lagged_correlation(
+  x = heart_data$heart,
+  y = step_data$step,
+  time1 = heart_data$time,
+  time2 = step_data$time,
+  time_tol = 0.5,
+  step = 1/60,
+  align_method = "linear",
+  cor_method = "spearman"
+)
+```
+
+## Alignment Plot
+
+Here is an example plot:
+
+```{r,eval=TRUE}
+lagged_alignment_plot(object = result,
+                      x_color = "blue",
+                      y_color = "red",
+                      x_name = "x",
+                      y_name = "y",
+                      which = "max",
+                      x_limit = c(1,100000),
+                      non_matched_point_size = 0.1,
+                      y_point_size = 1,
+                      x_point_size = 1,
+                      integrated = FALSE,
+                      add_connect_line = FALSE,
+                      add_point = TRUE,
+                      time_gap = 12)
+```
+
+### which
+```{r,eval=TRUE}
+p_global <- lagged_alignment_plot(result, which = "global", add_point = TRUE,x_limit = c(2000,50000),)
+p_max    <- lagged_alignment_plot(result, which = "max",    add_point = TRUE,x_limit = c(2000,50000),)
+p_global; p_max
+```
+
+### x_limit
+```{r,eval=TRUE}
+p_limit_1 <- lagged_alignment_plot(result, x_limit = c(1, 5000),time_gap = 1)
+p_limit_2  <- lagged_alignment_plot(result, x_limit = c(1, 10000),time_gap = 1)
+p_limit_3  <- lagged_alignment_plot(result, x_limit = c(5000, 50000),time_gap = 12)
+p_limit_1; p_limit_2; p_limit_3
+```
+
+### point
+
+```{r,eval=TRUE}
+p_points <- lagged_alignment_plot(result, 
+                                        add_point = TRUE,
+                                        x_limit = c(1, 10000),
+                                        x_point_size = 1,
+                                        y_point_size = 1, 
+                                        non_matched_point_size = 0.1)
+
+p_points_no   <- lagged_alignment_plot(result, 
+                                        add_point = FALSE,
+                                        x_limit = c(1, 10000),
+                                        x_point_size = 1,
+                                        y_point_size = 1, 
+                                        non_matched_point_size = 0.1)
+
+p_points; p_points_no
+```
+

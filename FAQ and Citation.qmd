@@ -2,7 +2,7 @@
 
 
 ## Citation (BibTex)
-
+```BibTex
 @ARTICLE{Shen2019-xv,
   title     = "Metabolic reaction network-based recursive metabolite annotation
                for untargeted metabolomics",
@@ -18,3 +18,4 @@
   copyright = "https://creativecommons.org/licenses/by/4.0",
   language  = "en"
 }
+```
