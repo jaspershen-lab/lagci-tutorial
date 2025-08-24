@@ -1,6 +1,6 @@
 # Docker Version of lagcishiny
 
-Run laggedcor in Docker.
+Run lagcishiny in Docker.
 
 ## Session information
 

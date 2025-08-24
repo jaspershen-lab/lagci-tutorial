@@ -8,4 +8,5 @@ library(lagcishiny)
 lagcishiny::lagci_shiny()
 ```
 
-In `lagcishiny` web APP, you can operate `lagci` in a visual way, and we support exporting images in eight formats, as well as reports in PDF (`TinyTex` is needed), PPTX and HTML formats
+In `lagcishiny` web APP, you can operate `lagci` in a visual way, and we support exporting images in eight formats, as well as reports in PDF (`TinyTex` is needed), PPTX and HTML formats.
+

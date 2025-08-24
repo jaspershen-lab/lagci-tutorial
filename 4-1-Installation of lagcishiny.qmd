@@ -11,6 +11,38 @@ pak::pak("jaspershen-lab/lagci")
 pak::pak("jaspershen-lab/lagcishiny")
 ```
 
+### Install TinyTex
+
+If you want to export reports in PDF format, you should install `TinyTex`. `TinyTex` is a simple `Tex` suite to compile `PDF` files, it is convenient to use in PC.
+
+There are two ways to install `TinyTex` for different users respectively.
+
+#### Directly install TinyTex
+
+After installing `lagcishiny`, you can install `TinyTex` via this command:
+```{r,eval=FALSE}
+tinytex::install_tinytex()
+```
+
+Check if the `TinyTex` is installed successfully:
+```{r,eval=FALSE}
+tinytex::is_tinytex()
+tinytex::tlmgr_version()
+```
+
+#### Locally install TinyTex
+
+You can download the correct `TinyTex` release at [Github release](https://github.com/rstudio/tinytex-releases), then install it via:
+```{r,eval=FALSE}
+tinytex:::install_prebuilt(pkg = "PATH/TO/YOUR/FILE")
+```
+
+Check if the `TinyTex` is installed successfully:
+```{r,eval=FALSE}
+tinytex::is_tinytex()
+tinytex::tlmgr_version()
+```
+
 ## Session information
 
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
