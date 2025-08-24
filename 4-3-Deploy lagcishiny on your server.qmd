@@ -2,22 +2,18 @@
 
 ## Before starting
 
-You need to prepare the following things:
-- A server with a public IP address
-- Domain name with DNS record
-- non-root account, such as `ubuntu`
-- Opening ufw
+You need to prepare the following things: - A server with a public IP address - Domain name with DNS record - non-root account, such as `ubuntu` - Opening ufw
 
 In this tutorial, We use `Ubuntu 22.04`.
 
-```bash
+``` bash
 sudo ufw allow OpenSSH
 sudo ufw allow "Nginx Full"
 sudo ufw enable
 sudo ufw status
 ```
 
-```bash
+``` bash
 sudo apt install -y nginx
 
 sudo apt install -y certbot python3-certbot-nginx
@@ -25,44 +21,42 @@ sudo apt install -y certbot python3-certbot-nginx
 
 ### Install R
 
-```bash
+``` bash
 sudo apt update -qq
 sudo apt install --no-install-recommends -y software-properties-common dirmngr
 ```
 
-```bash
+``` bash
 wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc \
 | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
 
 gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
 # Fingerprint should be: E298A3A825C0D65DFD57CBB651716619E084DAB9
-
 ```
 
-```bash
+``` bash
 sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/"
 sudo apt update
 sudo apt install --no-install-recommends -y r-base
 # (optional, needed for compiling packages from source)
 sudo apt install -y r-base-dev
-
 ```
+
 Check it.
 
-```bash
+``` bash
 R --version
-
 ```
 
 ## Shiny Server + Nginx
 
 ### Install Shiny Server
 
-```bash
+``` bash
 sudo apt update && sudo apt upgrade -y
 ```
 
-```bash
+``` bash
 # Install R from Ubuntu repo (basic)
 sudo apt install -y r-base gdebi-core
 
@@ -72,15 +66,14 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
 sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/"
 sudo apt update
 sudo apt install -y r-base
-
 ```
 
-```bash
+``` bash
 sudo su - \
 -c "R -e \"install.packages('shiny', repos='https://cloud.r-project.org/')\""
 ```
 
-```bash
+``` bash
 # Download the latest .deb (for Ubuntu 22.04, use bionic build)
 wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.20.1002-amd64.deb
 
@@ -88,19 +81,21 @@ wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.20.1002-
 sudo gdebi shiny-server-1.5.20.1002-amd64.deb
 ```
 
-```bash
+``` bash
 sudo systemctl enable shiny-server
 sudo systemctl start shiny-server
 sudo systemctl status shiny-server
 ```
+
 Check it:
-```bash
+
+``` bash
 curl -I http://localhost:3838
 ```
 
 ### Deploy Shiny APP
 
-```bash
+``` bash
 sudo mkdir -p /srv/shiny-server/app1
 sudo chown -R shiny:shiny /srv/shiny-server/app1
 sudo -u shiny bash -lc 'R -q -e "sessionInfo()"'
@@ -109,19 +104,19 @@ sudo cp -r ~/your_local_app/* /srv/shiny-server/app1/
 sudo chown -R shiny:shiny /srv/shiny-server/app1
 ```
 
-Then you can access the app via 
-`curl -I http://your_server_ip:3838/app1`
+Then you can access the app via `curl -I http://your_server_ip:3838/app1`
 
 ### Configure Nginx
 
 Create a new Nginx site configuration (taking the root path mapping to Shiny Server as an example, /app1 is the application path) :
 
-```bash
+``` bash
 sudo vim /etc/nginx/sites-available/shiny.conf
 ```
+
 Insert these content:
 
-```vim
+``` vim
 # /etc/nginx/sites-available/shiny.conf
 map $http_upgrade $connection_upgrade {
   default upgrade;
@@ -165,31 +160,34 @@ server {
   }
 }
 ```
+
 Enable and check the configuration:
 
-```bash
+``` bash
 sudo ln -s /etc/nginx/sites-available/shiny.conf /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl reload nginx
 ```
+
 Now, you can access your shiny app via:`http://yourdomain.com/app1`
 
 ### Get HTTPS certification
 
-```bash
+``` bash
 sudo certbot --nginx -d yourdomain.com
 ```
+
 Select `1` Automatically redirect to HTTPS
 
 ## Docker + Nginx
 
 ### Download docker image
 
-```bash
+``` bash
 docker pull jaspershenlab/laggedcorshiny:latest
 ```
 
-```bash
+``` bash
 docker run -p 3838:3838 -v /Path/In/Your/Server:/home jaspershenlab/laggedcorshiny:latest
 ```
 

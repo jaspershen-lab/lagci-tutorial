@@ -20,6 +20,8 @@ result <- lagci::calculate_lagged_correlation(
 
 ## Scatter Plot
 
+To interpret, compare how tight the cloud is at the peak lag versus the global view: a noticeably tighter, monotonic pattern at the peak lag supports a genuine lagged relationship; similar patterns across both views suggest mainly contemporaneous variation or a weak/unstable lag. If desired, you can overlay a smooth trend with `+ ggplot2::geom_smooth(method = "loess", se = FALSE)` and export with `ggplot2::ggsave(...)`.
+
 ```{r,eval=TRUE}
 max_scatter <- lagged_scatter_plot(object = result,
                     x_name = "x_name",

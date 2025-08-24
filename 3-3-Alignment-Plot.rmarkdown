@@ -1,0 +1,85 @@
+---
+title: "3-3 Alignment Plot"
+execute:
+  echo: true
+  message: false
+  warning: false
+format:
+  html:
+    number-sections: false
+---
+
+Visualize how the two series align under a chosen lag.
+
+```{r}
+suppressPackageStartupMessages({
+  library(laggedcor); library(dplyr); library(readr); library(tibble); library(ggplot2)
+})
+
+# Prepare data: use demo_data/sample_long.csv if present, otherwise simulate
+if (file.exists("demo_data/sample_long.csv")) {
+  df <- read_csv("demo_data/sample_long.csv", show_col_types = FALSE)
+} else {
+  set.seed(123)
+  n  <- 600L
+  t0 <- as.POSIXct("2025-01-01 00:00:00", tz = "UTC")
+  time_vec <- t0 + seq(0, by = 60, length.out = n) # 1-min interval
+  x <- sin(seq(0, 12*pi, length.out = n)) + rnorm(n, sd = 0.05)
+  shift <- 20L
+  y <- dplyr::lag(x, n = shift)
+  y[is.na(y)] <- x[is.na(y)]
+  df <- tibble::tibble(
+    time = rep(time_vec, 2),
+    molecule = rep(c("cortisol","cytokine"), each = n),
+    value = c(x, y + rnorm(n, sd = 0.05))
+  )
+}
+
+df <- df |> arrange(time, molecule)
+pair <- df |> filter(molecule %in% c("cortisol","cytokine"))
+
+# Compute with robust retry
+res <- tryCatch({
+  calculate_lagged_correlation(
+    x       = pair$value[pair$molecule == "cortisol"],
+    y       = pair$value[pair$molecule == "cytokine"],
+    time1   = pair$time [pair$molecule == "cortisol"],
+    time2   = pair$time [pair$molecule == "cytokine"],
+    time_tol = 0.25, step = 1/60, min_matched_sample = 5,
+    threads  = 2, cor_method = "spearman"
+  )
+}, error = function(e) {
+  message("Retrying with relaxed parameters: ", conditionMessage(e))
+  calculate_lagged_correlation(
+    x       = pair$value[pair$molecule == "cortisol"],
+    y       = pair$value[pair$molecule == "cytokine"],
+    time1   = pair$time [pair$molecule == "cortisol"],
+    time2   = pair$time [pair$molecule == "cytokine"],
+    time_tol = 1, step = 5/60, min_matched_sample = 3,
+    threads  = 1, cor_method = "spearman"
+  )
+})
+
+# Alignment under the global setting
+p_global <- laggedcor::lagged_alignment_plot(
+  object = res,
+  which  = "global",
+  x_name = "Cortisol",
+  y_name = "Cytokine",
+  add_point        = TRUE,
+  add_connect_line = TRUE,
+  integrated       = TRUE,
+  time_gap         = 1
+)
+print(p_global)
+
+# Alignment at the peak lag
+p_max <- laggedcor::lagged_alignment_plot(
+  object = res,
+  which  = "max",
+  x_name = "Cortisol",
+  y_name = "Cytokine",
+  time_gap = 0.5
+) + ggplot2::theme_minimal(base_size = 12)
+print(p_max)
+```

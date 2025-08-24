@@ -20,6 +20,8 @@ result <- lagci::calculate_lagged_correlation(
 
 ## evaluate_lagged_cor
 
+If evaluation fails or looks poor, ensure both series overlap sufficiently, reduce sparsity by increasing `time_tol` or coarsening `step`, and require enough matched points (e.g., raise `min_matched_sample`) before re-evaluating.
+
 ```{r,eval=TRUE}
 evaluate_lagged_cor(object = result,plot = TRUE)
 ```

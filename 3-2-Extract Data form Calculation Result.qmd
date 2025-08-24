@@ -38,10 +38,12 @@ all_cor
 ```
 
 ## extract_all_cor_p
+
 ```{r,eval=TRUE}
 all_cor_p <- extract_all_cor_p(object = result)
 all_cor_p
 ```
+
 ## extract_max_cor
 
 ```{r,eval=TRUE}

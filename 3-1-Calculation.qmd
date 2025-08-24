@@ -1,7 +1,6 @@
 # Calculation
 
-This tutorial will help you to calculate the lagged correlation between two time series.
-It will use `calculate_lagged_correlation` function of `lagci` package.
+This tutorial will help you to calculate the lagged correlation between two time series. It will use `calculate_lagged_correlation` function of `lagci` package.
 
 ## Prepare your data
 
@@ -22,8 +21,7 @@ class(step_data$time)
 
 ## Calculation
 
-Calculate with `calculate_lagged_correlation` function of `lagci` package.
-### x, y
+Calculate with `calculate_lagged_correlation` function of `lagci` package. \### x, y
 
 Type: Numeric vectors
 
@@ -144,4 +142,3 @@ result_2 <- lagci::calculate_lagged_correlation(
 
 print(result_2)
 ```
-

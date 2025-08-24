@@ -1,0 +1,96 @@
+---
+title: "3-2 Extract Data from Calculation Result"
+execute:
+  echo: true
+  message: false
+  warning: false
+format:
+  html:
+    number-sections: false
+---
+
+This section converts the lag–correlation result into tidy tables for statistics and export.
+
+```{r}
+suppressPackageStartupMessages({
+  library(laggedcor); library(dplyr); library(readr); library(tibble); library(ggplot2)
+})
+
+# Prepare data: use demo_data/sample_long.csv if present, otherwise simulate
+if (file.exists("demo_data/sample_long.csv")) {
+  df <- read_csv("demo_data/sample_long.csv", show_col_types = FALSE)
+} else {
+  set.seed(123)
+  n  <- 600L
+  t0 <- as.POSIXct("2025-01-01 00:00:00", tz = "UTC")
+  time_vec <- t0 + seq(0, by = 60, length.out = n) # 1-min interval
+  x <- sin(seq(0, 12*pi, length.out = n)) + rnorm(n, sd = 0.05)
+  shift <- 20L                                   # 20-minute lag
+  y <- dplyr::lag(x, n = shift)
+  y[is.na(y)] <- x[is.na(y)]
+  df <- tibble::tibble(
+    time = rep(time_vec, 2),
+    molecule = rep(c("cortisol","cytokine"), each = n),
+    value = c(x, y + rnorm(n, sd = 0.05))
+  )
+}
+
+df <- df |> arrange(time, molecule)
+pair <- df |> filter(molecule %in% c("cortisol","cytokine"))
+
+# Compute lagged correlation with a robust retry
+res <- tryCatch({
+  calculate_lagged_correlation(
+    x       = pair$value[pair$molecule == "cortisol"],
+    y       = pair$value[pair$molecule == "cytokine"],
+    time1   = pair$time [pair$molecule == "cortisol"],
+    time2   = pair$time [pair$molecule == "cytokine"],
+    time_tol = 0.25,             # hours (≈15 min)
+    step     = 1/60,             # 1 minute
+    min_matched_sample = 5,
+    threads  = 2,
+    cor_method = "spearman"
+  )
+}, error = function(e) {
+  message("Retrying with relaxed parameters: ", conditionMessage(e))
+  calculate_lagged_correlation(
+    x       = pair$value[pair$molecule == "cortisol"],
+    y       = pair$value[pair$molecule == "cytokine"],
+    time1   = pair$time [pair$molecule == "cortisol"],
+    time2   = pair$time [pair$molecule == "cytokine"],
+    time_tol = 1,                # 1 hour tolerance
+    step     = 5/60,             # 5 minutes
+    min_matched_sample = 3,
+    threads  = 1,
+    cor_method = "spearman"
+  )
+})
+
+# Extract the lag–correlation curve and key metrics
+cor_all <- laggedcor::extract_all_cor(res)       # correlation per lag window
+p_all   <- laggedcor::extract_all_cor_p(res)     # p-value per lag window
+lag_mid <- laggedcor::extract_shift_time(res, numeric = TRUE)  # lag midpoints
+
+curve_tbl <- tibble(
+  lag_mid = lag_mid,
+  cor     = as.numeric(cor_all),
+  p       = as.numeric(p_all)
+) |>
+  arrange(lag_mid) |>
+  mutate(p_adj = p.adjust(p, method = "BH"))
+
+# Global correlation and peak correlation with its lag interval
+cor_global <- laggedcor::extract_global_cor(res)
+cor_max    <- laggedcor::extract_max_cor(res)
+
+# Save outputs
+dir.create("results", showWarnings = FALSE, recursive = TRUE)
+readr::write_csv(curve_tbl, "results/laggedcor_curve.csv")
+
+# Display summary
+list(
+  global_correlation = cor_global,
+  peak = cor_max,
+  top_abs_cor = curve_tbl |> dplyr::slice_max(abs(cor), n = 5)
+)
+```
