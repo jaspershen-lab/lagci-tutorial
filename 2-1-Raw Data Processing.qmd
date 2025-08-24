@@ -1,14 +1,10 @@
 # Raw Data Processing
 
-Before analysis the lagged correlation by `lagci`, you may get lots of data.
-This tutorial will get started with you on processing raw data, until get the
-data with correct format.
+Before analysis the lagged correlation by `lagci`, you may get lots of data. This tutorial will get started with you on processing raw data, until get the data with correct format.
 
 ## Get started with example data
 
-Run this chunk, you will get the correct format of the data needed in `lagci`
-package. The data structure should have two columns at least, one of the columns
-is `time` column with `POSIXct` format, and another column is `value`.
+Run this chunk, you will get the correct format of the data needed in `lagci` package. The data structure should have two columns at least, one of the columns is `time` column with `POSIXct` format, and another column is `value`.
 
 ```{r,eval=TRUE}
 example_data_1 <- data.frame(
@@ -39,6 +35,14 @@ head(example_data_2)
 
 you should use this script to correct your format:
 
+This code builds a two-column data frame where `time` is first created as a character string by concatenating `year`, `month`, and the fixed day `"01"`, and `value` is copied from the original data;
+
+it then shows that `time` is initially of class `"character"`, converts it to a real timestamp with `as.POSIXct()` (you can add `tz = "UTC"` for reproducibility), prints the first few rows to verify the result, and finally confirms that `time` is now of class `c("POSIXct","POSIXt")`.
+
+In short, it turns separate year/month information into a proper POSIXct time column plus a numeric value column—i.e., the tidy format expected by downstream lagged-correlation tools;
+
+if you want stricter parsing, use zero-padded months via `sprintf("%04d-%02d-01", year, month)` before the conversion.
+
 ```{r,eval=TRUE}
 example_data_2_correct <- data.frame(
   time = paste0(example_data_2$year,"-",example_data_2$month,"-01"),
@@ -57,6 +61,14 @@ class(example_data_2_correct$time)
 ### Type two: omics data format
 
 You may get several files, when you get the omics data:
+
+This chunk creates a toy omics-style **wide table**: it generates 5 human-readable feature IDs via `ids::adjective_animal()`, builds a half-hourly POSIXct time vector from 2019-04-29 03:30 to 2019-05-06 21:30, and simulates 5 time series using a noisy sine curve.
+
+The `replicate()` output is transposed with `t()` so **rows = features, columns = time**; column names are set to the timestamps, and `head(omics_data[1])` previews the first time column.
+
+For robustness and reproducibility: call `set.seed(1)` before `replicate()`, explicitly coerce column names with `as.character(time_index)`, and ensure `nrow(omics_data) == nrow(IDs)` so IDs match features.
+
+If the `ids` package isn’t installed, fall back to `data.frame(ids = paste0("id_", 1:5))`. Later, convert this wide table to a tidy long format (`id/time/value`) before lagged-correlation analysis.
 
 ```{r,eval=TRUE}
 IDs <- data.frame(
@@ -83,6 +95,10 @@ head(omics_data[1])
 
 you should transform them into five files with correct format:
 
+This code converts the omics **wide table** into per-feature tidy frames. First, `omics_data` is transposed so **rows = time, columns = features** (`full_data <- omics_data %>% t() %>% as.data.frame()`), then column names are set from `IDs$ids`.
+
+The loop builds `df_list`: for each feature, it creates a two-column data frame with `time` parsed from the row names (timestamps) and the corresponding `value`; `head(df_list[[1]])` previews the first feature’s time–value series.
+
 ```{r,eval=TRUE}
 full_data <- omics_data %>% 
   t() %>% 
@@ -106,8 +122,8 @@ for (i in 1:ncol(full_data)) {
 head(df_list[[1]])
 ```
 
-
 ## Session information
+
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
 sessionInfo()
 ```

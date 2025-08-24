@@ -12,35 +12,36 @@ Please refer to the [offical website](https://www.docker.com/get-started) to dow
 
 Open you terminal and then type code below:
 
-```bash
+``` bash
 docker pull jaspershenlab/laggedcor
 ```
+
 ![](/images/part1/pull.png)
 
 ## Run `lagci` docker image
 
 In you terminal, run the code below:
 
-```bash
+``` bash
 docker run -e PASSWORD=lagci -p 8787:8787 jaspershen/laggedcor:latest
 ```
 
 The below command will link the RStudio home folder with the desktop of the local machine running the container. Anything saved or edited in the home folder when using the container will be stored on the local desktop.
 
-```bash
+``` bash
 docker run -e PASSWORD=lagci -v ~/Desktop:/home/rstudio/ -p 8787:8787 jaspershen/laggedcor:latest
 ```
+
 ![](/images/part1/run.png)
 
 ## Open the RStudio server
 
 Then open the browser and visit http://localhost:8787 to power on RStudio server. The user name is `rstudio` and the password is `lagci`.
 
-![](/images/part1/passwd.png)
-![](/images/part1/rstudio.png)
-
+![](/images/part1/passwd.png) ![](/images/part1/rstudio.png)
 
 ## Session information
+
 ```{r,eval=TRUE,warning=FALSE, R.options="", message=FALSE, cache=TRUE}
 sessionInfo()
 ```

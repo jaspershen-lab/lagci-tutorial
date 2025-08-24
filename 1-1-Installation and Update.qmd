@@ -52,12 +52,11 @@ if (!require("BiocManager", quietly = TRUE))
 
 if (!require("pak", quietly = TRUE)) 
   install.packages("pak")
-```         
+```
 
 Get the available mirror of `CRAN` and `BioConductor` from [CRAN mirrors](https://cran.r-project.org/mirrors.html) and [BioConductor mirrors](https://www.bioconductor.org/about/mirrors/)
 
 Configure the mirror of `CRAN` and `BioConductor` that `pak` can use (just for this R session):
-
 
 ```{r,eval=FALSE}
 # 1) Pick your Bioconductor mirror (do this first)
@@ -74,7 +73,6 @@ options(repos = BiocManager::repositories())
 pak::repo_get()
 ```
 
-
 Run this command to install `lagci` safely:
 
 ```{r, eval=FALSE}
@@ -86,7 +84,6 @@ Get the `lagci` package dependencies tree (Optinal):
 ```{r, echo=TRUE, eval=TRUE}
 pak::pkg_deps_tree("jaspershen-lab/lagci")
 ```
-
 
 ## Update the `lagci` package
 

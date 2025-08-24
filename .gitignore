@@ -4,3 +4,7 @@
 .Ruserdata
 
 /.quarto/
+/docs/
+/1-4-Build-your-own-Docker-Image_cache/
+/2-2-Time-Plot_cache/
+/2-2-Time-Plot_files/
