@@ -115,6 +115,8 @@ Purpose: The statistical correlation measure.
 
 "spearman": Measures rank correlation, robust to monotonic but non-linear relationships and less sensitive to outliers.
 
+### Calculation
+
 ```{r,eval=TRUE}
 result_1 <- lagci::calculate_lagged_correlation(
   x = heart_data$heart,
