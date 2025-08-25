@@ -1,6 +1,8 @@
 # Build your own Docker Image
 
-Customizing Docker image.
+You can customize your own docker image based on `lagci` or `lagcishiny` docker.
+
+If you do not familiar with build docker, you can check this [LINK](https://devopscube.com/build-docker-image/) to realize the command in `Dockerfile`.
 
 ## Session information
 

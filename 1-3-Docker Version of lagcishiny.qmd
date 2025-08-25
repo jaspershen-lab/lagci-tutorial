@@ -1,6 +1,44 @@
 # Docker Version of lagcishiny
 
-Run lagcishiny in Docker.
+[Docker](https://www.docker.com/) is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. So it is useful for people who want to share the code, data, and even analysis environment with other people to repeat their analysis and results.
+
+We provide a docker version of `lagcishiny`, all the packages in `lagcishiny` and the dependent packages have been installed.
+
+## Install docker
+
+Please refer to the [offical website](https://www.docker.com/get-started) to download and install docker. And then run docker.
+
+## Pull the `lagcishiny` image
+
+Open you terminal and then type code below:
+
+``` bash
+docker pull jaspershenlab/lagcishiny
+```
+
+![](/images/part1/pull.png)
+
+## Run `lagcishiny` docker image
+
+In you terminal, run the code below:
+
+``` bash
+docker run -e PASSWORD=lagcishiny -p 3838:3838 jaspershen/lagcishiny:latest
+```
+
+The below command will link the RStudio home folder with the desktop of the local machine running the container. Anything saved or edited in the home folder when using the container will be stored on the local desktop.
+
+``` bash
+docker run -e PASSWORD=lagcishiny -v ~/Desktop:/home -p 3838:3838 jaspershen/lagcishiny:latest
+```
+
+![](/images/part1/run.png)
+
+## Open the `lagcishiny` app
+
+Then open the browser and visit http://localhost:3838 to power on `lagcishiny` app. The user name is `rstudio` and the password is `lagcishiny`.
+
+
 
 ## Session information
 

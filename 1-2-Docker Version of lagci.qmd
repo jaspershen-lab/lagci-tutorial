@@ -2,7 +2,7 @@
 
 [Docker](https://www.docker.com/) is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. So it is useful for people who want to share the code, data, and even analysis environment with other people to repeat their analysis and results.
 
-We provide a docker version of `tidymass`, all the packages in `lagci` and the dependent packages have been installed.
+We provide a docker version of `lagci`, all the packages in `lagci` and the dependent packages have been installed.
 
 ## Install docker
 
@@ -13,7 +13,7 @@ Please refer to the [offical website](https://www.docker.com/get-started) to dow
 Open you terminal and then type code below:
 
 ``` bash
-docker pull jaspershenlab/laggedcor
+docker pull jaspershenlab/lagci
 ```
 
 ![](/images/part1/pull.png)
@@ -23,13 +23,13 @@ docker pull jaspershenlab/laggedcor
 In you terminal, run the code below:
 
 ``` bash
-docker run -e PASSWORD=lagci -p 8787:8787 jaspershen/laggedcor:latest
+docker run -e PASSWORD=lagci -p 8787:8787 jaspershen/lagci:latest
 ```
 
 The below command will link the RStudio home folder with the desktop of the local machine running the container. Anything saved or edited in the home folder when using the container will be stored on the local desktop.
 
 ``` bash
-docker run -e PASSWORD=lagci -v ~/Desktop:/home/rstudio/ -p 8787:8787 jaspershen/laggedcor:latest
+docker run -e PASSWORD=lagci -v ~/Desktop:/home/rstudio/ -p 8787:8787 jaspershen/lagci:latest
 ```
 
 ![](/images/part1/run.png)
