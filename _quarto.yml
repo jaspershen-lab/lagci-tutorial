@@ -6,13 +6,15 @@ book:
   title: "lagci Tutorial"
   author: "Xiaotao SHEN & Zirui QIANG & Shunpeng BAI & Yitong WU"
   date: "2025-08-04"
+  favicon: "images/lagci_logo.png"
+  url: http://www.shen-lab.org/lagci-tutorial/
   sidebar:
-    logo: images/lagci_logo.png    
-    style: "docked"                     
-    collapse-level: 1                   
+    search: true
+    logo: "images/lagci_logo.png"
   repo-url: https://github.com/jaspershen-lab/lagci-tutorial
-  repo-branch: main
-  repo-actions: [edit, issue, source]   
+  repo-actions: [edit, issue, source] 
+  image: "images/lagci_logo.pn"
+    
   chapters:
     - index.qmd
     
@@ -45,6 +47,8 @@ book:
         - 4-3-Deploy lagcishiny on your server.qmd
         
     - FAQ and Citation.qmd
+
+bibliography: references.bib
 
 format:
   html:
