@@ -7,10 +7,10 @@ book:
   author: "Xiaotao SHEN & Zirui QIANG & Shunpeng BAI & Yitong WU"
   date: "2025-08-04"
   sidebar:
-    logo: images/laggedcor_logo.png    
+    logo: images/lagci_logo.png    
     style: "docked"                     
     collapse-level: 1                   
-  repo-url: https://github.com/ZiruiQIANG/laggedcor-tutorial
+  repo-url: https://github.com/jaspershen-lab/lagci-tutorial
   repo-branch: main
   repo-actions: [edit, issue, source]   
   chapters:

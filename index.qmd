@@ -7,18 +7,17 @@
 > *How long after a glucose spike does my heart-rate change?*\
 > *Which biomarker moves first—cortisol or cytokine?*
 
-Based on the algorithm published in *Nature Communications* (2019),\
-it combines sliding windows, LOESS smoothing and bootstrap correction to estimate robust lagged correlations.
+It combines sliding windows, LOESS smoothing and bootstrap correction to estimate robust lagged correlations, and identify the causal relationships between molecules.
 
 ### Learning path
 
-| Chapter                | Goal                                                 |
+| Chapter | Goal |
 |-------------------------------------------|-----------------------------|
-| **1 Install lagci and Docker**     | Get *lagci* and all dependencies running locally |
-| **2 Raw Data Processing and Preview** | Convert wide tables to long, clean timestamps        |
-| **3 Calculation and Plotting**   | Ten lines of R to obtain a lagged correlation curve  |
-| **4 lagcishiny Web Application**     | Drop-in UI for interactive dashboards                |
-| **5 FAQ & Citation**   | Troubleshooting and academic citation                |
+| **1 Install lagci and Docker** | Get *lagci* and all dependencies running locally |
+| **2 Raw Data Processing and Preview** | Convert wide tables to long, clean timestamps |
+| **3 Calculation and Plotting** | Ten lines of R to obtain a lagged correlation curve |
+| **4 lagcishiny Web Application** | Drop-in UI for interactive dashboards |
+| **5 FAQ & Citation** | Troubleshooting and academic citation |
 
 ### 📬 Contact us
 
@@ -27,4 +26,4 @@ it combines sliding windows, LOESS smoothing and bootstrap correction to estimat
 -   💬 WeChat @jaspershen1990\
 -   🐦 Twitter [\@xiaotaoshen1990](https://twitter.com/xiaotaoshen1990)
 
-Welcome to the **laggedcor** tutorial! Enjoy, and feel free to send pull requests!
+Welcome to the **lagci** tutorial! Enjoy, and feel free to send pull requests!
