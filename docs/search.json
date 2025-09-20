@@ -1,0 +1,505 @@
+[
+  {
+    "objectID": "1-1-Installation and Update.html",
+    "href": "1-1-Installation and Update.html",
+    "title": "1  Installation and Update",
+    "section": "",
+    "text": "1.1 Install R\nIf you haven’t installed R or RStudio on your PC or Mac, please install them before proceeding. Otherwise, you can skip these steps.\nDownload the R and install it.\n👉 Refer this blog",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
+    ]
+  },
+  {
+    "objectID": "1-1-Installation and Update.html#install-rstudio",
+    "href": "1-1-Installation and Update.html#install-rstudio",
+    "title": "1  Installation and Update",
+    "section": "1.2 Install RStudio",
+    "text": "1.2 Install RStudio\nThen install RStudio. Download the RStudio and then install it.\nSelect the free version of RStudio Desktop.\n 👉 Refer this blog",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
+    ]
+  },
+  {
+    "objectID": "1-1-Installation and Update.html#open-the-rstudio",
+    "href": "1-1-Installation and Update.html#open-the-rstudio",
+    "title": "1  Installation and Update",
+    "section": "1.3 Open the RStudio",
+    "text": "1.3 Open the RStudio\nThen open the RStudio",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
+    ]
+  },
+  {
+    "objectID": "1-1-Installation and Update.html#update-r",
+    "href": "1-1-Installation and Update.html#update-r",
+    "title": "1  Installation and Update",
+    "section": "1.4 Update R",
+    "text": "1.4 Update R\nlagci require R version &gt; 4.1. Please update your R if the version &lt; 4.1.\nYou can check your R version in your console:\n\nversion\n\n               _                           \nplatform       aarch64-apple-darwin20      \narch           aarch64                     \nos             darwin20                    \nsystem         aarch64, darwin20           \nstatus                                     \nmajor          4                           \nminor          5.1                         \nyear           2025                        \nmonth          06                          \nday            13                          \nsvn rev        88306                       \nlanguage       R                           \nversion.string R version 4.5.1 (2025-06-13)\nnickname       Great Square Root           \n\n\nIf your R version is &lt; 4.1, please download and install the latest version of R, and then restart your R.",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
+    ]
+  },
+  {
+    "objectID": "1-1-Installation and Update.html#safe-installation-of-lagci",
+    "href": "1-1-Installation and Update.html#safe-installation-of-lagci",
+    "title": "1  Installation and Update",
+    "section": "1.5 Safe Installation of lagci",
+    "text": "1.5 Safe Installation of lagci\nlagci needs a lot of dependent packages. When you install lagci via devtools:: install_github(\"jaspershen-lab/lagci\") directly, it will spend lots of time, meanwhile it will encounter errors easily.\nTo install lagci safely, please run the script below.\nInstall devtools, pak and BiocManager packages first.\n\nif (!requireNamespace(\"devtools\")) \n  install.packages(\"devtools\")\n\nif (!require(\"BiocManager\", quietly = TRUE))\n  install.packages(\"BiocManager\")\n\nif (!require(\"pak\", quietly = TRUE)) \n  install.packages(\"pak\")\n\nGet the available mirror of CRAN and BioConductor from CRAN mirrors and BioConductor mirrors\nConfigure the mirror of CRAN and BioConductor that pak can use (just for this R session):\n\n# 1) Pick your Bioconductor mirror (do this first)\noptions(BioC_mirror = \"https://bioconductor.posit.co\")  # any Bioc mirror URL works\n\n# 2) Pick your CRAN mirror\noptions(repos = c(CRAN = \"https://cloud.r-project.org\"))\n\n# 3) Populate a consistent set of CRAN + Bioc repos for your R/Bioc version\nif (!requireNamespace(\"BiocManager\", quietly = TRUE)) install.packages(\"BiocManager\")\noptions(repos = BiocManager::repositories())\n\n# 4) Verify what pak will use\npak::repo_get()\n\nRun this command to install lagci safely:\n\npak::pak(\"jaspershen-lab/lagci\")\n\nGet the lagci package dependencies tree (Optinal):\n\npak::pkg_deps_tree(\"jaspershen-lab/lagci\")\n\n! Using bundled GitHub PAT. Please add your own PAT using `gitcreds::gitcreds_set()`.\n\n\nℹ Loading metadata database\n\n\n✔ Loading metadata database ... done\n\n\n\n\n\njaspershen-lab/lagci 0.99.5 ✨👷🏽🔧 ⬇ (unknown size)\n├─crayon 1.5.3 ✨ ⬇ (164.91 kB)\n├─purrr 1.1.0 ✨🔧 ⬇ (585.88 kB)\n│ ├─cli 3.6.5 ✨🔧 ⬇ (1.47 MB)\n│ ├─lifecycle 1.0.4 ✨ ⬇ (125.64 kB)\n│ │ ├─cli\n│ │ ├─glue 1.8.0 ✨🔧 ⬇ (175.14 kB)\n│ │ └─rlang 1.1.6 ✨🔧 ⬇ (1.91 MB)\n│ ├─magrittr 2.0.4 ✨🔧 ⬇ (231.97 kB)\n│ ├─rlang\n│ └─vctrs 0.6.5 ✨🔧 ⬇ (1.89 MB)\n│   ├─cli\n│   ├─glue\n│   ├─lifecycle\n│   └─rlang\n├─stringr 1.5.2 ✨ ⬇ (313.18 kB)\n│ ├─cli\n│ ├─glue\n│ ├─lifecycle\n│ ├─magrittr\n│ ├─rlang\n│ ├─stringi 1.8.7 ✨🔧 ⬇ (14.79 MB)\n│ └─vctrs\n├─cli\n├─magrittr\n├─rstudioapi 0.17.1 ✨ ⬇ (317.26 kB)\n├─dplyr 1.1.4 ✨🔧 ⬇ (1.61 MB)\n│ ├─cli\n│ ├─generics 0.1.4 ✨ ⬇ (82.60 kB)\n│ ├─glue\n│ ├─lifecycle\n│ ├─magrittr\n│ ├─pillar 1.11.1 ✨ ⬇ (660.11 kB)\n│ │ ├─cli\n│ │ ├─glue\n│ │ ├─lifecycle\n│ │ ├─rlang\n│ │ ├─utf8 1.2.6 ✨🔧 ⬇ (209.74 kB)\n│ │ └─vctrs\n│ ├─R6 2.6.1 ✨ ⬇ (87.28 kB)\n│ ├─rlang\n│ ├─tibble 3.3.0 ✨🔧 ⬇ (692.99 kB)\n│ │ ├─cli\n│ │ ├─lifecycle\n│ │ ├─magrittr\n│ │ ├─pillar\n│ │ ├─pkgconfig 2.0.3 ✨ ⬇ (18.47 kB)\n│ │ ├─rlang\n│ │ └─vctrs\n│ ├─tidyselect 1.2.1 ✨ ⬇ (226.89 kB)\n│ │ ├─cli\n│ │ ├─glue\n│ │ ├─lifecycle\n│ │ ├─rlang\n│ │ ├─vctrs\n│ │ └─withr 3.0.2 ✨ ⬇ (224.91 kB)\n│ └─vctrs\n├─rlang\n├─tibble\n├─ggplot2 4.0.0 ✨ ⬇ (5.92 MB)\n│ ├─cli\n│ ├─gtable 0.3.6 ✨ ⬇ (225.12 kB)\n│ │ ├─cli\n│ │ ├─glue\n│ │ ├─lifecycle\n│ │ └─rlang\n│ ├─isoband 0.2.7 ✨🔧 ⬇ (1.87 MB)\n│ ├─lifecycle\n│ ├─rlang\n│ ├─S7 0.2.0 ✨🔧 ⬇ (343.17 kB)\n│ ├─scales 1.4.0 ✨ ⬇ (873.34 kB)\n│ │ ├─cli\n│ │ ├─farver 2.1.2 ✨🔧 ⬇ (1.97 MB)\n│ │ ├─glue\n│ │ ├─labeling 0.4.3 ✨ ⬇ (61.83 kB)\n│ │ ├─lifecycle\n│ │ ├─R6\n│ │ ├─RColorBrewer 1.1-3 ✨ ⬇ (51.79 kB)\n│ │ ├─rlang\n│ │ └─viridisLite 0.4.2 ✨ ⬇ (1.30 MB)\n│ ├─vctrs\n│ └─withr\n├─plyr 1.8.9 ✨🔧 ⬇ (984.75 kB)\n│ └─Rcpp 1.1.0 ✨🔧 ⬇ (3.37 MB)\n├─BiocParallel 1.42.2 ✨ ⬇ (unknown size)\n│ ├─codetools 0.2-20 \n│ ├─futile.logger 1.4.3 ✨ ⬇ (99.22 kB)\n│ │ ├─futile.options 1.0.1 ✨ ⬇ (18.77 kB)\n│ │ └─lambda.r 1.2.4 ✨ ⬇ (111.15 kB)\n│ │   └─formatR 1.14 ✨ ⬇ (151.33 kB)\n│ └─snow 0.4-4 ✨ ⬇ (97.59 kB)\n├─ggrepel 0.9.6 ✨🔧 ⬇ (622.60 kB)\n│ ├─ggplot2\n│ ├─Rcpp\n│ ├─rlang\n│ ├─scales\n│ └─withr\n├─ggsci 3.2.0 ✨ ⬇ (2.40 MB)\n│ ├─ggplot2\n│ └─scales\n├─lubridate 1.9.4 ✨🔧 ⬇ (1.01 MB)\n│ ├─generics\n│ └─timechange 0.3.0 ✨🔧 ⬇ (888.95 kB)\n├─scales\n├─tidymass/massdataset 0.99.0 ✨👷🏽🔧 ⬇ (unknown size)\n│ ├─dplyr\n│ ├─magrittr\n│ ├─tibble\n│ ├─stringr\n│ ├─rstudioapi\n│ ├─ggplot2\n│ ├─openxlsx 4.2.8 ✨🔧 ⬇ (3.41 MB)\n│ │ ├─Rcpp\n│ │ ├─stringi\n│ │ └─zip 2.3.3 ✨🔧 ⬇ (225.84 kB)\n│ ├─crayon\n│ ├─cli\n│ ├─purrr\n│ ├─readr 2.1.5 ✨🔧 ⬇ (1.99 MB)\n│ │ ├─cli\n│ │ ├─clipr 0.8.0 ✨ ⬇ (51.91 kB)\n│ │ ├─crayon\n│ │ ├─hms 1.1.3 ✨ ⬇ (100.51 kB)\n│ │ │ ├─lifecycle\n│ │ │ ├─pkgconfig\n│ │ │ ├─rlang\n│ │ │ └─vctrs\n│ │ ├─lifecycle\n│ │ ├─R6\n│ │ ├─rlang\n│ │ ├─tibble\n│ │ ├─tzdb 0.5.0 ✨🔧 ⬇ (1.28 MB)\n│ │ └─vroom 1.6.6 ✨🔧 ⬇ (3.12 MB)\n│ │   ├─bit64 4.6.0-1 ✨🔧 ⬇ (581.86 kB)\n│ │   │ └─bit 4.6.0 ✨🔧 ⬇ (730.79 kB)\n│ │   ├─cli\n│ │   ├─crayon\n│ │   ├─glue\n│ │   ├─hms\n│ │   ├─lifecycle\n│ │   ├─rlang\n│ │   ├─tibble\n│ │   ├─tidyselect\n│ │   ├─tzdb\n│ │   ├─vctrs\n│ │   └─withr\n│ ├─rlang\n│ ├─github::tidymass/masstools 0.99.1 ✨👷🏽🔧 ⬇ (unknown size)\n│ │ ├─dplyr\n│ │ ├─jsonlite 2.0.0 ✨🔧 ⬇ (1.11 MB)\n│ │ ├─remotes 2.5.0 ✨ ⬇ (431.78 kB)\n│ │ ├─magrittr\n│ │ ├─tibble\n│ │ ├─tidyr 1.3.1 ✨🔧 ⬇ (1.32 MB)\n│ │ │ ├─cli\n│ │ │ ├─dplyr\n│ │ │ ├─glue\n│ │ │ ├─lifecycle\n│ │ │ ├─magrittr\n│ │ │ ├─purrr\n│ │ │ ├─rlang\n│ │ │ ├─stringr\n│ │ │ ├─tibble\n│ │ │ ├─tidyselect\n│ │ │ └─vctrs\n│ │ ├─stringr\n│ │ ├─crayon\n│ │ ├─cli\n│ │ ├─purrr\n│ │ ├─pbapply 1.7-4 ✨ ⬇ (100.77 kB)\n│ │ ├─httr 1.4.7 ✨ ⬇ (491.11 kB)\n│ │ │ ├─curl 7.0.0 ✨🔧 ⬇ (1.21 MB)\n│ │ │ ├─jsonlite\n│ │ │ ├─mime 0.13 ✨🔧 ⬇ (48.28 kB)\n│ │ │ ├─openssl 2.3.3 ✨🔧 ⬇ (3.89 MB)\n│ │ │ │ └─askpass 1.2.1 ✨🔧 ⬇ (25.12 kB)\n│ │ │ │   └─sys 3.4.3 ✨🔧 ⬇ (51.87 kB)\n│ │ │ └─R6\n│ │ ├─rvest 1.0.5 ✨ ⬇ (305.38 kB)\n│ │ │ ├─cli\n│ │ │ ├─glue\n│ │ │ ├─httr\n│ │ │ ├─lifecycle\n│ │ │ ├─magrittr\n│ │ │ ├─rlang\n│ │ │ ├─selectr 0.4-2 ✨ ⬇ (502.90 kB)\n│ │ │ │ ├─R6\n│ │ │ │ └─stringr\n│ │ │ ├─tibble\n│ │ │ └─xml2 1.4.0 ✨🔧 ⬇ (519.20 kB)\n│ │ │   ├─cli\n│ │ │   └─rlang\n│ │ ├─xml2\n│ │ ├─MSnbase 2.34.1 ✨ ⬇ (unknown size)\n│ │ │ ├─affy 1.86.0 ✨ ⬇ (unknown size)\n│ │ │ │ ├─affyio 1.78.0 ✨ ⬇ (unknown size)\n│ │ │ │ ├─Biobase 2.68.0 ✨ ⬇ (unknown size)\n│ │ │ │ │ └─BiocGenerics 0.54.0 ✨ ⬇ (unknown size)\n│ │ │ │ │   └─generics\n│ │ │ │ ├─BiocGenerics\n│ │ │ │ ├─BiocManager 1.30.26 ✨ ⬇ (504.67 kB)\n│ │ │ │ └─preprocessCore 1.70.0 ✨ ⬇ (unknown size)\n│ │ │ ├─Biobase\n│ │ │ ├─BiocGenerics\n│ │ │ ├─BiocParallel\n│ │ │ ├─digest 0.6.37 ✨🔧 ⬇ (356.98 kB)\n│ │ │ ├─ggplot2\n│ │ │ ├─impute 1.82.0 ✨ ⬇ (unknown size)\n│ │ │ ├─IRanges 2.42.0 ✨ ⬇ (unknown size)\n│ │ │ │ ├─BiocGenerics\n│ │ │ │ └─S4Vectors 0.46.0 ✨ ⬇ (unknown size)\n│ │ │ │   └─BiocGenerics\n│ │ │ ├─lattice 0.22-7 \n│ │ │ ├─MALDIquant 1.22.3 ✨🔧 ⬇ (2.88 MB)\n│ │ │ ├─MASS 7.3-65 \n│ │ │ ├─MsCoreUtils 1.20.0 ✨ ⬇ (unknown size)\n│ │ │ │ ├─clue 0.3-66 ✨🔧 ⬇ (1.02 MB)\n│ │ │ │ │ └─cluster 2.1.8.1 \n│ │ │ │ ├─MASS\n│ │ │ │ ├─Rcpp\n│ │ │ │ └─S4Vectors\n│ │ │ ├─mzID 1.46.0 ✨ ⬇ (unknown size)\n│ │ │ │ ├─doParallel 1.0.17 ✨ ⬇ (188.10 kB)\n│ │ │ │ │ ├─foreach 1.5.2 ✨ ⬇ (141.00 kB)\n│ │ │ │ │ │ ├─codetools\n│ │ │ │ │ │ └─iterators 1.0.14 ✨ ⬇ (346.35 kB)\n│ │ │ │ │ └─iterators\n│ │ │ │ ├─foreach\n│ │ │ │ ├─iterators\n│ │ │ │ ├─plyr\n│ │ │ │ ├─ProtGenerics 1.40.0 ✨ ⬇ (unknown size)\n│ │ │ │ └─XML 3.99-0.19 ✨🔧 ⬇ (1.95 MB)\n│ │ │ ├─mzR 2.42.0 ✨ ⬇ (unknown size)\n│ │ │ │ ├─Biobase\n│ │ │ │ ├─BiocGenerics\n│ │ │ │ ├─ncdf4 1.24 ✨🔧 ⬇ (2.14 MB)\n│ │ │ │ ├─ProtGenerics\n│ │ │ │ └─Rcpp\n│ │ │ ├─pcaMethods 2.0.0 ✨ ⬇ (unknown size)\n│ │ │ │ ├─Biobase\n│ │ │ │ ├─BiocGenerics\n│ │ │ │ ├─MASS\n│ │ │ │ └─Rcpp\n│ │ │ ├─plyr\n│ │ │ ├─ProtGenerics\n│ │ │ ├─PSMatch 1.12.0 ✨ ⬇ (unknown size)\n│ │ │ │ ├─BiocGenerics\n│ │ │ │ ├─BiocParallel\n│ │ │ │ ├─igraph 2.1.4 ✨🔧 ⬇ (9.75 MB)\n│ │ │ │ │ ├─cli\n│ │ │ │ │ ├─lifecycle\n│ │ │ │ │ ├─magrittr\n│ │ │ │ │ ├─Matrix 1.7-3 -&gt; 1.7-4 🚀🔧 ⬇ (6.22 MB)\n│ │ │ │ │ │ └─lattice\n│ │ │ │ │ ├─pkgconfig\n│ │ │ │ │ ├─rlang\n│ │ │ │ │ └─vctrs\n│ │ │ │ ├─IRanges\n│ │ │ │ ├─Matrix\n│ │ │ │ ├─MsCoreUtils\n│ │ │ │ ├─ProtGenerics\n│ │ │ │ ├─QFeatures 1.18.0 ✨ ⬇ (unknown size)\n│ │ │ │ │ ├─AnnotationFilter 1.32.0 ✨ ⬇ (unknown size)\n│ │ │ │ │ │ ├─GenomicRanges 1.60.0 ✨ ⬇ (unknown size)\n│ │ │ │ │ │ │ ├─BiocGenerics\n│ │ │ │ │ │ │ ├─GenomeInfoDb 1.44.2 ✨ ⬇ (unknown size)\n│ │ │ │ │ │ │ │ ├─BiocGenerics\n│ │ │ │ │ │ │ │ ├─GenomeInfoDbData 1.2.14 ✨👷🏽 ⬇ (unknown size)\n│ │ │ │ │ │ │ │ ├─IRanges\n│ │ │ │ │ │ │ │ ├─S4Vectors\n│ │ │ │ │ │ │ │ └─UCSC.utils 1.4.0 ✨ ⬇ (unknown size)\n│ │ │ │ │ │ │ │   ├─httr\n│ │ │ │ │ │ │ │   ├─jsonlite\n│ │ │ │ │ │ │ │   └─S4Vectors\n│ │ │ │ │ │ │ ├─IRanges\n│ │ │ │ │ │ │ ├─S4Vectors\n│ │ │ │ │ │ │ └─XVector 0.48.0 ✨ ⬇ (unknown size)\n│ │ │ │ │ │ │   ├─BiocGenerics\n│ │ │ │ │ │ │   ├─IRanges\n│ │ │ │ │ │ │   └─S4Vectors\n│ │ │ │ │ │ └─lazyeval 0.2.2 ✨🔧 ⬇ (162.31 kB)\n│ │ │ │ │ ├─Biobase\n│ │ │ │ │ ├─BiocGenerics\n│ │ │ │ │ ├─igraph\n│ │ │ │ │ ├─IRanges\n│ │ │ │ │ ├─lazyeval\n│ │ │ │ │ ├─MsCoreUtils\n│ │ │ │ │ ├─MultiAssayExperiment 1.34.0 ✨ ⬇ (unknown size)\n│ │ │ │ │ │ ├─Biobase\n│ │ │ │ │ │ ├─BiocBaseUtils 1.10.0 ✨ ⬇ (unknown size)\n│ │ │ │ │ │ ├─BiocGenerics\n│ │ │ │ │ │ ├─DelayedArray 0.34.1 ✨ ⬇ (unknown size)\n│ │ │ │ │ │ │ ├─BiocGenerics\n│ │ │ │ │ │ │ ├─IRanges\n│ │ │ │ │ │ │ ├─Matrix\n│ │ │ │ │ │ │ ├─MatrixGenerics 1.20.0 ✨ ⬇ (unknown size)\n│ │ │ │ │ │ │ │ └─matrixStats 1.5.0 ✨🔧 ⬇ (622.99 kB)\n│ │ │ │ │ │ │ ├─S4Arrays 1.8.1 ✨ ⬇ (unknown size)\n│ │ │ │ │ │ │ │ ├─abind 1.4-8 ✨ ⬇ (65.79 kB)\n│ │ │ │ │ │ │ │ ├─BiocGenerics\n│ │ │ │ │ │ │ │ ├─crayon\n│ │ │ │ │ │ │ │ ├─IRanges\n│ │ │ │ │ │ │ │ ├─Matrix\n│ │ │ │ │ │ │ │ └─S4Vectors\n│ │ │ │ │ │ │ ├─S4Vectors\n│ │ │ │ │ │ │ └─SparseArray 1.8.1 ✨ ⬇ (unknown size)\n│ │ │ │ │ │ │   ├─BiocGenerics\n│ │ │ │ │ │ │   ├─IRanges\n│ │ │ │ │ │ │   ├─Matrix\n│ │ │ │ │ │ │   ├─MatrixGenerics\n│ │ │ │ │ │ │   ├─matrixStats\n│ │ │ │ │ │ │   ├─S4Arrays\n│ │ │ │ │ │ │   ├─S4Vectors\n│ │ │ │ │ │ │   └─XVector\n│ │ │ │ │ │ ├─GenomicRanges\n│ │ │ │ │ │ ├─IRanges\n│ │ │ │ │ │ ├─S4Vectors\n│ │ │ │ │ │ ├─SummarizedExperiment 1.38.1 ✨ ⬇ (unknown size)\n│ │ │ │ │ │ │ ├─Biobase\n│ │ │ │ │ │ │ ├─BiocGenerics\n│ │ │ │ │ │ │ ├─DelayedArray\n│ │ │ │ │ │ │ ├─GenomeInfoDb\n│ │ │ │ │ │ │ ├─GenomicRanges\n│ │ │ │ │ │ │ ├─IRanges\n│ │ │ │ │ │ │ ├─Matrix\n│ │ │ │ │ │ │ ├─MatrixGenerics\n│ │ │ │ │ │ │ ├─S4Arrays\n│ │ │ │ │ │ │ └─S4Vectors\n│ │ │ │ │ │ └─tidyr\n│ │ │ │ │ ├─plotly 4.11.0 ✨ ⬇ (3.86 MB)\n│ │ │ │ │ │ ├─base64enc 0.1-3 ✨🔧 ⬇ (35.07 kB)\n│ │ │ │ │ │ ├─crosstalk 1.2.2 ✨ ⬇ (412.40 kB)\n│ │ │ │ │ │ │ ├─htmltools 0.5.8.1 ✨🔧 ⬇ (361.75 kB)\n│ │ │ │ │ │ │ │ ├─base64enc\n│ │ │ │ │ │ │ │ ├─digest\n│ │ │ │ │ │ │ │ ├─fastmap 1.2.0 ✨🔧 ⬇ (192.97 kB)\n│ │ │ │ │ │ │ │ └─rlang\n│ │ │ │ │ │ │ ├─jsonlite\n│ │ │ │ │ │ │ ├─lazyeval\n│ │ │ │ │ │ │ └─R6\n│ │ │ │ │ │ ├─data.table 1.17.8 ✨🔧 ⬇ (3.07 MB)\n│ │ │ │ │ │ ├─digest\n│ │ │ │ │ │ ├─dplyr\n│ │ │ │ │ │ ├─ggplot2\n│ │ │ │ │ │ ├─htmltools\n│ │ │ │ │ │ ├─htmlwidgets 1.6.4 ✨ ⬇ (805.97 kB)\n│ │ │ │ │ │ │ ├─htmltools\n│ │ │ │ │ │ │ ├─jsonlite\n│ │ │ │ │ │ │ ├─knitr 1.50 ✨ ⬇ (1.11 MB)\n│ │ │ │ │ │ │ │ ├─evaluate 1.0.5 ✨ ⬇ (102.94 kB)\n│ │ │ │ │ │ │ │ ├─highr 0.11 ✨ ⬇ (37.70 kB)\n│ │ │ │ │ │ │ │ │ └─xfun 0.53 ✨🔧 ⬇ (592.19 kB)\n│ │ │ │ │ │ │ │ ├─xfun\n│ │ │ │ │ │ │ │ └─yaml 2.3.10 ✨🔧 ⬇ (217.99 kB)\n│ │ │ │ │ │ │ ├─rmarkdown 2.29 ✨ ⬇ (2.63 MB)\n│ │ │ │ │ │ │ │ ├─bslib 0.9.0 ✨ ⬇ (5.68 MB)\n│ │ │ │ │ │ │ │ │ ├─base64enc\n│ │ │ │ │ │ │ │ │ ├─cachem 1.1.0 ✨🔧 ⬇ (71.08 kB)\n│ │ │ │ │ │ │ │ │ │ ├─fastmap\n│ │ │ │ │ │ │ │ │ │ └─rlang\n│ │ │ │ │ │ │ │ │ ├─fastmap\n│ │ │ │ │ │ │ │ │ ├─htmltools\n│ │ │ │ │ │ │ │ │ ├─jquerylib 0.1.4 ✨ ⬇ (526.50 kB)\n│ │ │ │ │ │ │ │ │ │ └─htmltools\n│ │ │ │ │ │ │ │ │ ├─jsonlite\n│ │ │ │ │ │ │ │ │ ├─lifecycle\n│ │ │ │ │ │ │ │ │ ├─memoise 2.0.1 ✨ ⬇ (49.48 kB)\n│ │ │ │ │ │ │ │ │ │ ├─cachem\n│ │ │ │ │ │ │ │ │ │ └─rlang\n│ │ │ │ │ │ │ │ │ ├─mime\n│ │ │ │ │ │ │ │ │ ├─rlang\n│ │ │ │ │ │ │ │ │ └─sass 0.4.10 ✨🔧 ⬇ (2.41 MB)\n│ │ │ │ │ │ │ │ │   ├─fs 1.6.6 ✨🔧 ⬇ (641.28 kB)\n│ │ │ │ │ │ │ │ │   ├─htmltools\n│ │ │ │ │ │ │ │ │   ├─R6\n│ │ │ │ │ │ │ │ │   ├─rappdirs 0.3.3 ✨🔧 ⬇ (48.63 kB)\n│ │ │ │ │ │ │ │ │   └─rlang\n│ │ │ │ │ │ │ │ ├─evaluate\n│ │ │ │ │ │ │ │ ├─fontawesome 0.5.3 ✨ ⬇ (1.39 MB)\n│ │ │ │ │ │ │ │ │ ├─htmltools\n│ │ │ │ │ │ │ │ │ └─rlang\n│ │ │ │ │ │ │ │ ├─htmltools\n│ │ │ │ │ │ │ │ ├─jquerylib\n│ │ │ │ │ │ │ │ ├─jsonlite\n│ │ │ │ │ │ │ │ ├─knitr\n│ │ │ │ │ │ │ │ ├─tinytex 0.57 ✨ ⬇ (144.98 kB)\n│ │ │ │ │ │ │ │ │ └─xfun\n│ │ │ │ │ │ │ │ ├─xfun\n│ │ │ │ │ │ │ │ └─yaml\n│ │ │ │ │ │ │ └─yaml\n│ │ │ │ │ │ ├─httr\n│ │ │ │ │ │ ├─jsonlite\n│ │ │ │ │ │ ├─lazyeval\n│ │ │ │ │ │ ├─magrittr\n│ │ │ │ │ │ ├─promises 1.3.3 ✨🔧 ⬇ (1.86 MB)\n│ │ │ │ │ │ │ ├─fastmap\n│ │ │ │ │ │ │ ├─later 1.4.4 ✨🔧 ⬇ (755.51 kB)\n│ │ │ │ │ │ │ │ ├─Rcpp\n│ │ │ │ │ │ │ │ └─rlang\n│ │ │ │ │ │ │ ├─magrittr\n│ │ │ │ │ │ │ ├─R6\n│ │ │ │ │ │ │ ├─Rcpp\n│ │ │ │ │ │ │ └─rlang\n│ │ │ │ │ │ ├─purrr\n│ │ │ │ │ │ ├─RColorBrewer\n│ │ │ │ │ │ ├─rlang\n│ │ │ │ │ │ ├─scales\n│ │ │ │ │ │ ├─tibble\n│ │ │ │ │ │ ├─tidyr\n│ │ │ │ │ │ ├─vctrs\n│ │ │ │ │ │ └─viridisLite\n│ │ │ │ │ ├─ProtGenerics\n│ │ │ │ │ ├─reshape2 1.4.4 ✨🔧 ⬇ (345.68 kB)\n│ │ │ │ │ │ ├─plyr\n│ │ │ │ │ │ ├─Rcpp\n│ │ │ │ │ │ └─stringr\n│ │ │ │ │ ├─S4Vectors\n│ │ │ │ │ ├─SummarizedExperiment\n│ │ │ │ │ ├─tidyr\n│ │ │ │ │ └─tidyselect\n│ │ │ │ ├─S4Vectors\n│ │ │ │ └─Spectra 1.18.2 ✨ ⬇ (unknown size)\n│ │ │ │   ├─BiocGenerics\n│ │ │ │   ├─BiocParallel\n│ │ │ │   ├─fs\n│ │ │ │   ├─IRanges\n│ │ │ │   ├─MetaboCoreUtils 1.16.1 ✨ ⬇ (unknown size)\n│ │ │ │   │ ├─BiocParallel\n│ │ │ │   │ └─MsCoreUtils\n│ │ │ │   ├─MsCoreUtils\n│ │ │ │   ├─ProtGenerics\n│ │ │ │   └─S4Vectors\n│ │ │ ├─Rcpp\n│ │ │ ├─S4Vectors\n│ │ │ ├─scales\n│ │ │ └─vsn 3.76.0 ✨ ⬇ (unknown size)\n│ │ │   ├─affy\n│ │ │   ├─Biobase\n│ │ │   ├─ggplot2\n│ │ │   ├─lattice\n│ │ │   └─limma 3.64.3 ✨ ⬇ (unknown size)\n│ │ │     └─statmod 1.5.0 ✨🔧 ⬇ (329.09 kB)\n│ │ ├─ProtGenerics\n│ │ ├─lifecycle\n│ │ └─ggplot2\n│ ├─ComplexHeatmap 2.24.1 ✨ ⬇ (unknown size)\n│ │ ├─circlize 0.4.16 ✨ ⬇ (3.33 MB)\n│ │ │ ├─colorspace 2.1-1 ✨🔧 ⬇ (2.66 MB)\n│ │ │ ├─GlobalOptions 0.1.2 ✨ ⬇ (464.90 kB)\n│ │ │ └─shape 1.4.6.1 ✨ ⬇ (755.28 kB)\n│ │ ├─clue\n│ │ ├─codetools\n│ │ ├─colorspace\n│ │ ├─digest\n│ │ ├─doParallel\n│ │ ├─foreach\n│ │ ├─GetoptLong 1.0.5 ✨ ⬇ (1.07 MB)\n│ │ │ ├─crayon\n│ │ │ ├─GlobalOptions\n│ │ │ └─rjson 0.2.23 ✨🔧 ⬇ (174.55 kB)\n│ │ ├─GlobalOptions\n│ │ ├─IRanges\n│ │ ├─matrixStats\n│ │ ├─png 0.1-8 ✨🔧 ⬇ (378.13 kB)\n│ │ └─RColorBrewer\n│ ├─tidyselect\n│ ├─vctrs\n│ ├─tidyr\n│ ├─SummarizedExperiment\n│ └─S4Vectors\n└─hms\n\nKey:  ✨ new | 🚀 update |  ⬇ download | 👷🏽 build | 🔧 compile",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
+    ]
+  },
+  {
+    "objectID": "1-1-Installation and Update.html#update-the-lagci-package",
+    "href": "1-1-Installation and Update.html#update-the-lagci-package",
+    "title": "1  Installation and Update",
+    "section": "1.6 Update the lagci package",
+    "text": "1.6 Update the lagci package\n\n# 0) See if you have libraried the lagci package\nprint(\"package:lagci\" %in% search()) # if you libraried the lagci, it will echo `TRUE`\n\n# 1) Detach the libraried lagci package\ndetach(name = \"package:lagci\", unload = TRUE)\n\n# 2) Uninstall the lagci package that already existed\nremove.packages(pkgs = \"lagci\")\n\n# 3) Install the lagci once again\npak::pak(\"jaspershen-lab/lagci\")\n\nIf you can’t install or update lagci successfully, please contact us by\n{{&lt; cta cta_text=\"📥 Contact us\" cta_link=\"https://www.shen-lab.org/#contact\" &gt;}}\nor leave me a comment below.",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
+    ]
+  },
+  {
+    "objectID": "1-1-Installation and Update.html#session-information",
+    "href": "1-1-Installation and Update.html#session-information",
+    "title": "1  Installation and Update",
+    "section": "1.7 Session information",
+    "text": "1.7 Session information\n\nsessionInfo()\n\nR version 4.5.1 (2025-06-13)\nPlatform: aarch64-apple-darwin20\nRunning under: macOS Tahoe 26.0\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Asia/Singapore\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] digest_0.6.37     R6_2.6.1          fastmap_1.2.0     xfun_0.53        \n [5] knitr_1.50        htmltools_0.5.8.1 rmarkdown_2.29    ps_1.9.1         \n [9] cli_3.6.5         processx_3.8.6    callr_3.7.6       pak_0.9.0        \n[13] compiler_4.5.1    rstudioapi_0.17.1 tools_4.5.1       evaluate_1.0.4   \n[17] rlang_1.1.6       jsonlite_2.0.0    htmlwidgets_1.6.4",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation and Update</span>"
+    ]
+  },
+  {
+    "objectID": "2-2-Time Plot.html",
+    "href": "2-2-Time Plot.html",
+    "title": "6  Time Plot",
+    "section": "",
+    "text": "6.1 Session information\nBefore start with this tutorial, please load lagci package first.\nBy using the time_plot function, you can obtain the visualization results of the time series.\nThis chunk creates a small, clean time series suitable for lagged-correlation demos.\nIt builds a datetime column as a POSIXct sequence from 2003-01-09 00:00:00 to 2003-01-10 00:00:00 at 10-minute intervals, then computes a smooth sine wave over the full range 0→2π0 →2π with exactly nrow(example_data_1) points, storing it in value.\nBecause seq(..., by = \"10 min\") controls the sampling, you get evenly spaced timestamps; the data are deterministic (no randomness), so results are reproducible. head(example_data_1) just previews the first few rows.\nFor downstream analysis, most lag tools expect columns named time (POSIXct) and value. You can simply rename with dplyr::rename(example_data_1, time = datetime), and—if you need cross-machine consistency—set an explicit timezone when creating the sequence (e.g., as.POSIXct(..., tz = \"UTC\")).\nsessionInfo()\n\nR version 4.5.1 (2025-06-13)\nPlatform: aarch64-apple-darwin20\nRunning under: macOS Tahoe 26.0\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Asia/Singapore\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n[1] ggplot2_3.5.2 dplyr_1.1.4   lagci_0.99.5 \n\nloaded via a namespace (and not attached):\n  [1] pbapply_1.7-4               remotes_2.5.0              \n  [3] rlang_1.1.6                 magrittr_2.0.3             \n  [5] clue_0.3-66                 GetoptLong_1.0.5           \n  [7] matrixStats_1.5.0           compiler_4.5.1             \n  [9] png_0.1-8                   vctrs_0.6.5                \n [11] reshape2_1.4.4              rvest_1.0.4                \n [13] stringr_1.5.1               ProtGenerics_1.40.0        \n [15] pkgconfig_2.0.3             MetaboCoreUtils_1.16.1     \n [17] shape_1.4.6.1               crayon_1.5.3               \n [19] fastmap_1.2.0               XVector_0.48.0             \n [21] labeling_0.4.3              rmarkdown_2.29             \n [23] tzdb_0.5.0                  UCSC.utils_1.4.0           \n [25] preprocessCore_1.70.0       purrr_1.1.0                \n [27] xfun_0.53                   MultiAssayExperiment_1.34.0\n [29] masstools_1.0.15            GenomeInfoDb_1.44.2        \n [31] jsonlite_2.0.0              DelayedArray_0.34.1        \n [33] BiocParallel_1.42.1         parallel_4.5.1             \n [35] cluster_2.1.8.1             R6_2.6.1                   \n [37] stringi_1.8.7               RColorBrewer_1.1-3         \n [39] limma_3.64.3                GenomicRanges_1.60.0       \n [41] lubridate_1.9.4             Rcpp_1.1.0                 \n [43] SummarizedExperiment_1.38.1 iterators_1.0.14           \n [45] knitr_1.50                  readr_2.1.5                \n [47] IRanges_2.42.0              BiocBaseUtils_1.10.0       \n [49] Matrix_1.7-3                igraph_2.1.4               \n [51] timechange_0.3.0            tidyselect_1.2.1           \n [53] rstudioapi_0.17.1           dichromat_2.0-0.1          \n [55] abind_1.4-8                 doParallel_1.0.17          \n [57] codetools_0.2-20            affy_1.86.0                \n [59] lattice_0.22-7              tibble_3.3.0               \n [61] plyr_1.8.9                  withr_3.0.2                \n [63] Biobase_2.68.0              evaluate_1.0.4             \n [65] Spectra_1.18.2              zip_2.3.3                  \n [67] xml2_1.4.0                  circlize_0.4.16            \n [69] pillar_1.11.0               affyio_1.78.0              \n [71] BiocManager_1.30.26         MatrixGenerics_1.20.0      \n [73] foreach_1.5.2               stats4_4.5.1               \n [75] MSnbase_2.34.1              MALDIquant_1.22.3          \n [77] ncdf4_1.24                  generics_0.1.4             \n [79] S4Vectors_0.46.0            hms_1.1.3                  \n [81] scales_1.4.0                glue_1.8.0                 \n [83] lazyeval_0.2.2              tools_4.5.1                \n [85] mzID_1.46.0                 QFeatures_1.18.0           \n [87] vsn_3.76.0                  mzR_2.42.0                 \n [89] openxlsx_4.2.8              XML_3.99-0.19              \n [91] fs_1.6.6                    grid_4.5.1                 \n [93] impute_1.82.0               tidyr_1.3.1                \n [95] massdataset_1.0.34          MsCoreUtils_1.20.0         \n [97] colorspace_2.1-1            GenomeInfoDbData_1.2.14    \n [99] PSMatch_1.12.0              cli_3.6.5                  \n[101] S4Arrays_1.8.1              ComplexHeatmap_2.24.1      \n[103] AnnotationFilter_1.32.0     pcaMethods_2.0.0           \n[105] gtable_0.3.6                ggsci_3.2.0                \n[107] digest_0.6.37               BiocGenerics_0.54.0        \n[109] SparseArray_1.8.1           ggrepel_0.9.6              \n[111] rjson_0.2.23                htmlwidgets_1.6.4          \n[113] farver_2.1.2                htmltools_0.5.8.1          \n[115] lifecycle_1.0.4             httr_1.4.7                 \n[117] statmod_1.5.0               GlobalOptions_0.1.2        \n[119] MASS_7.3-65",
+    "crumbs": [
+      "Raw Data Processing and Preview",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Time Plot</span>"
+    ]
+  },
+  {
+    "objectID": "3-1-Calculation.html",
+    "href": "3-1-Calculation.html",
+    "title": "7  Calculation",
+    "section": "",
+    "text": "7.1 Prepare your data\nThis tutorial will help you to calculate the lagged correlation between two time series. It will use calculate_lagged_correlation function of lagci package.\nYou can get started with the example data in lagci package. And the format of time column is POSIXct\nlibrary(lagci)\n\nWarning in fun(libname, pkgname): mzR has been built against a different Rcpp version (1.0.14)\nthan is installed on your system (1.1.0). This might lead to errors\nwhen loading mzR. If you encounter such issues, please send a report,\nincluding the output of sessionInfo() to the Bioc support forum at \nhttps://support.bioconductor.org/. For details see also\nhttps://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.\n\n\n── Attaching packages ────────────────────────────────────────── lagci 0.99.5 ──\n\n\n✔ dplyr   1.1.4     ✔ ggplot2 3.5.2\n\n\n── Conflicts ────────────────────────────────────────────── lagci_conflicts() ──\n✖ methods::body&lt;-()    masks base::body&lt;-()\n✖ dplyr::filter()      masks stats::filter()\n✖ methods::kronecker() masks base::kronecker()\n✖ dplyr::lag()         masks stats::lag()\n\ndata(\"heart_data\")\ndata(\"step_data\")\n\nhead(heart_data)\n\n                 time heart\n1 2019-04-29 00:00:08    64\n2 2019-04-29 00:00:13    65\n3 2019-04-29 00:00:18    66\n4 2019-04-29 00:00:23    65\n5 2019-04-29 00:00:33    64\n6 2019-04-29 00:00:38    61\n\nhead(step_data)\n\n                 time step\n1 2019-04-29 00:00:00    0\n2 2019-04-29 00:01:00    0\n3 2019-04-29 00:02:00    0\n4 2019-04-29 00:03:00    0\n5 2019-04-29 00:04:00    0\n6 2019-04-29 00:05:00    0\n\nclass(heart_data$time)\n\n[1] \"POSIXct\" \"POSIXt\" \n\nclass(step_data$time)\n\n[1] \"POSIXct\" \"POSIXt\"",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Calculation</span>"
+    ]
+  },
+  {
+    "objectID": "3-1-Calculation.html#calculation",
+    "href": "3-1-Calculation.html#calculation",
+    "title": "7  Calculation",
+    "section": "7.2 Calculation",
+    "text": "7.2 Calculation\nCalculate with calculate_lagged_correlation function of lagci package. ### x, y\nType: Numeric vectors\nPurpose: The two time-series to be compared.\nDetails: Each vector represents the observed values of one variable. Internally, both vectors are standardized (centered and scaled to unit variance) to make the correlation unbiased by different magnitudes or units.\n\n7.2.1 time1, time2\nType: POSIXct vectors (or convertible to POSIXct)\nPurpose: Timestamps corresponding to x and y.\nRole: Used to align the two time-series onto a shared, regularly spaced timeline before computing correlations.\n\n\n7.2.2 time_tol\nType: Numeric (hours)\nDefault: 1\nMeaning: The maximum time lag to evaluate in both positive and negative directions.\nUnit: Hours. For example:\ntime_tol = 1 → ±1 hour\ntime_tol = 0.5 → ±30 minutes\ntime_tol = 1/60 → ±1 minute\n\n\n7.2.3 step\nType: Numeric (hours)\nDefault: 1/60 (i.e., 1 minute)\nMeaning: The resolution of the regular time grid used for alignment.\nUnit: Hours. For example:\nstep = 1 → 1-hour sampling\nstep = 1/60 → 1-minute sampling\nstep = 1/3600 → 1-second sampling\n\n\n7.2.4 min_matched_sample\nType: Integer\nDefault: 10\nPurpose: Minimum number of overlapping (non-missing) samples required after alignment. If fewer matched samples remain, the function returns NULL to avoid unstable correlations.\n\n\n7.2.5 progressbar\nType: Logical\nDefault: TRUE\nPurpose: Whether to display progress information. Particularly useful when applying the function to many pairs of series in batch analyses.\n\n\n7.2.6 align_method\nType: Character string\nOptions: “linear” or “constant”\nDefault: “linear”\nPurpose: Method used for interpolation when mapping the irregular time-series onto the regular grid.\n“linear”: Interpolates linearly between neighboring observations.\n“constant”: Uses the nearest neighbor (step-wise constant).\n\n\n7.2.7 cor_method\nType: Character string\nOptions: “spearman” or “pearson”\nDefault: “spearman”\nPurpose: The statistical correlation measure.\n“pearson”: Measures linear correlation between the raw values.\n“spearman”: Measures rank correlation, robust to monotonic but non-linear relationships and less sensitive to outliers.\n\n\n7.2.8 Calculation\n\nresult_1 &lt;- lagci::calculate_lagged_correlation(\n  x = heart_data$heart,\n  y = step_data$step,\n  time1 = heart_data$time,\n  time2 = step_data$time,\n  time_tol = 0.5,\n  step = 1/60,\n  align_method = \"linear\",\n  cor_method = \"spearman\"\n)\n\nprint(result_1)\n\n-------------------- \nBrief information \nShift time is x - y \nIf shift time &gt; 0: \nmeans that x is changing after y \nIf shift time &lt; 0: \nmeans that x is changing before y \n-------------------- \nlength of x: 91948 \nlength of y: 12960 \nlength of correlations: 0 \nlength of correlations: 0 \nMax correlation index: 32 \nGlobal correlation index: 30 \n-------------------- \nParameters \n-------------------- \npacakge_name: lagci \nfunction_name: calculate_lagged_correlation \ntime: 2025-09-20 19:31:23.986201 \nparameters:\ntime_tol : 0.5 \nstep : 0.0166666666666667 \nmin_matched_sample : 10 \nprogressbar : TRUE \nthreads : 10 \ncor_method : spearman \n\n\n\nresult_2 &lt;- lagci::calculate_lagged_correlation(\n  y = heart_data$heart,\n  x = step_data$step,\n  time2 = heart_data$time,\n  time1 = step_data$time,\n  time_tol = 0.5, # \n  step = 1/60,\n  align_method = \"linear\",\n  cor_method = \"spearman\"\n)\n\nprint(result_2)\n\n-------------------- \nBrief information \nShift time is x - y \nIf shift time &gt; 0: \nmeans that x is changing after y \nIf shift time &lt; 0: \nmeans that x is changing before y \n-------------------- \nlength of x: 12960 \nlength of y: 91948 \nlength of correlations: 0 \nlength of correlations: 0 \nMax correlation index: 28 \nGlobal correlation index: 30 \n-------------------- \nParameters \n-------------------- \npacakge_name: lagci \nfunction_name: calculate_lagged_correlation \ntime: 2025-09-20 19:31:24.042094 \nparameters:\ntime_tol : 0.5 \nstep : 0.0166666666666667 \nmin_matched_sample : 10 \nprogressbar : TRUE \nthreads : 10 \ncor_method : spearman",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Calculation</span>"
+    ]
+  },
+  {
+    "objectID": "3-2-Extract Data form Calculation Result.html",
+    "href": "3-2-Extract Data form Calculation Result.html",
+    "title": "8  Extract Data form Calculation Result",
+    "section": "",
+    "text": "8.1 extract_shift_time\nThis tutorial we get started with extracting infomations from calculation results.\nshift_time_numeric &lt;- extract_shift_time(object = result,numeric = TRUE)\nshift_time_numeric\n\n [1] -29 -28 -27 -26 -25 -24 -23 -22 -21 -20 -19 -18 -17 -16 -15 -14 -13 -12 -11\n[20] -10  -9  -8  -7  -6  -5  -4  -3  -2  -1   0   1   2   3   4   5   6   7   8\n[39]   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27\n[58]  28  29\nshift_time &lt;- extract_shift_time(object = result,numeric = FALSE)\nshift_time\n\n [1] \"(-29.5,-28.5]\" \"(-28.5,-27.5]\" \"(-27.5,-26.5]\" \"(-26.5,-25.5]\"\n [5] \"(-25.5,-24.5]\" \"(-24.5,-23.5]\" \"(-23.5,-22.5]\" \"(-22.5,-21.5]\"\n [9] \"(-21.5,-20.5]\" \"(-20.5,-19.5]\" \"(-19.5,-18.5]\" \"(-18.5,-17.5]\"\n[13] \"(-17.5,-16.5]\" \"(-16.5,-15.5]\" \"(-15.5,-14.5]\" \"(-14.5,-13.5]\"\n[17] \"(-13.5,-12.5]\" \"(-12.5,-11.5]\" \"(-11.5,-10.5]\" \"(-10.5,-9.5]\" \n[21] \"(-9.5,-8.5]\"   \"(-8.5,-7.5]\"   \"(-7.5,-6.5]\"   \"(-6.5,-5.5]\"  \n[25] \"(-5.5,-4.5]\"   \"(-4.5,-3.5]\"   \"(-3.5,-2.5]\"   \"(-2.5,-1.5]\"  \n[29] \"(-1.5,-0.5]\"   \"(-0.5,0.5]\"    \"(0.5,1.5]\"     \"(1.5,2.5]\"    \n[33] \"(2.5,3.5]\"     \"(3.5,4.5]\"     \"(4.5,5.5]\"     \"(5.5,6.5]\"    \n[37] \"(6.5,7.5]\"     \"(7.5,8.5]\"     \"(8.5,9.5]\"     \"(9.5,10.5]\"   \n[41] \"(10.5,11.5]\"   \"(11.5,12.5]\"   \"(12.5,13.5]\"   \"(13.5,14.5]\"  \n[45] \"(14.5,15.5]\"   \"(15.5,16.5]\"   \"(16.5,17.5]\"   \"(17.5,18.5]\"  \n[49] \"(18.5,19.5]\"   \"(19.5,20.5]\"   \"(20.5,21.5]\"   \"(21.5,22.5]\"  \n[53] \"(22.5,23.5]\"   \"(23.5,24.5]\"   \"(24.5,25.5]\"   \"(25.5,26.5]\"  \n[57] \"(26.5,27.5]\"   \"(27.5,28.5]\"   \"(28.5,29.5]\"",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Extract Data form Calculation Result</span>"
+    ]
+  },
+  {
+    "objectID": "3-2-Extract Data form Calculation Result.html#extract_all_cor",
+    "href": "3-2-Extract Data form Calculation Result.html#extract_all_cor",
+    "title": "8  Extract Data form Calculation Result",
+    "section": "8.2 extract_all_cor",
+    "text": "8.2 extract_all_cor\n\nall_cor &lt;- extract_all_cor(object = result)\nall_cor\n\n(-29.5,-28.5] (-28.5,-27.5] (-27.5,-26.5] (-26.5,-25.5] (-25.5,-24.5] \n    0.1859900     0.1879001     0.1918063     0.1955183     0.2012986 \n(-24.5,-23.5] (-23.5,-22.5] (-22.5,-21.5] (-21.5,-20.5] (-20.5,-19.5] \n    0.2098186     0.2166331     0.2253865     0.2311008     0.2335685 \n(-19.5,-18.5] (-18.5,-17.5] (-17.5,-16.5] (-16.5,-15.5] (-15.5,-14.5] \n    0.2366713     0.2398249     0.2455481     0.2523574     0.2597611 \n(-14.5,-13.5] (-13.5,-12.5] (-12.5,-11.5] (-11.5,-10.5]  (-10.5,-9.5] \n    0.2661878     0.2737553     0.2844844     0.2987540     0.3095692 \n  (-9.5,-8.5]   (-8.5,-7.5]   (-7.5,-6.5]   (-6.5,-5.5]   (-5.5,-4.5] \n    0.3197012     0.3341143     0.3523894     0.3715656     0.3926565 \n  (-4.5,-3.5]   (-3.5,-2.5]   (-2.5,-1.5]   (-1.5,-0.5]    (-0.5,0.5] \n    0.4143358     0.4357658     0.4614099     0.4919202     0.5338049 \n    (0.5,1.5]     (1.5,2.5]     (2.5,3.5]     (3.5,4.5]     (4.5,5.5] \n    0.5795711     0.5887494     0.5670783     0.5394754     0.5104598 \n    (5.5,6.5]     (6.5,7.5]     (7.5,8.5]     (8.5,9.5]    (9.5,10.5] \n    0.4807723     0.4595860     0.4410825     0.4227621     0.4026052 \n  (10.5,11.5]   (11.5,12.5]   (12.5,13.5]   (13.5,14.5]   (14.5,15.5] \n    0.3860908     0.3756305     0.3663601     0.3556953     0.3461169 \n  (15.5,16.5]   (16.5,17.5]   (17.5,18.5]   (18.5,19.5]   (19.5,20.5] \n    0.3354512     0.3258274     0.3161798     0.3061992     0.2994837 \n  (20.5,21.5]   (21.5,22.5]   (22.5,23.5]   (23.5,24.5]   (24.5,25.5] \n    0.2943537     0.2886603     0.2862754     0.2803777     0.2725397 \n  (25.5,26.5]   (26.5,27.5]   (27.5,28.5]   (28.5,29.5] \n    0.2665251     0.2629308     0.2625087     0.2615348",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Extract Data form Calculation Result</span>"
+    ]
+  },
+  {
+    "objectID": "3-2-Extract Data form Calculation Result.html#extract_all_cor_p",
+    "href": "3-2-Extract Data form Calculation Result.html#extract_all_cor_p",
+    "title": "8  Extract Data form Calculation Result",
+    "section": "8.3 extract_all_cor_p",
+    "text": "8.3 extract_all_cor_p\n\nall_cor_p &lt;- extract_all_cor_p(object = result)\nall_cor_p\n\n(-29.5,-28.5] (-28.5,-27.5] (-27.5,-26.5] (-26.5,-25.5] (-25.5,-24.5] \n            0             0             0             0             0 \n(-24.5,-23.5] (-23.5,-22.5] (-22.5,-21.5] (-21.5,-20.5] (-20.5,-19.5] \n            0             0             0             0             0 \n(-19.5,-18.5] (-18.5,-17.5] (-17.5,-16.5] (-16.5,-15.5] (-15.5,-14.5] \n            0             0             0             0             0 \n(-14.5,-13.5] (-13.5,-12.5] (-12.5,-11.5] (-11.5,-10.5]  (-10.5,-9.5] \n            0             0             0             0             0 \n  (-9.5,-8.5]   (-8.5,-7.5]   (-7.5,-6.5]   (-6.5,-5.5]   (-5.5,-4.5] \n            0             0             0             0             0 \n  (-4.5,-3.5]   (-3.5,-2.5]   (-2.5,-1.5]   (-1.5,-0.5]    (-0.5,0.5] \n            0             0             0             0             0 \n    (0.5,1.5]     (1.5,2.5]     (2.5,3.5]     (3.5,4.5]     (4.5,5.5] \n            0             0             0             0             0 \n    (5.5,6.5]     (6.5,7.5]     (7.5,8.5]     (8.5,9.5]    (9.5,10.5] \n            0             0             0             0             0 \n  (10.5,11.5]   (11.5,12.5]   (12.5,13.5]   (13.5,14.5]   (14.5,15.5] \n            0             0             0             0             0 \n  (15.5,16.5]   (16.5,17.5]   (17.5,18.5]   (18.5,19.5]   (19.5,20.5] \n            0             0             0             0             0 \n  (20.5,21.5]   (21.5,22.5]   (22.5,23.5]   (23.5,24.5]   (24.5,25.5] \n            0             0             0             0             0 \n  (25.5,26.5]   (26.5,27.5]   (27.5,28.5]   (28.5,29.5] \n            0             0             0             0",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Extract Data form Calculation Result</span>"
+    ]
+  },
+  {
+    "objectID": "3-2-Extract Data form Calculation Result.html#extract_max_cor",
+    "href": "3-2-Extract Data form Calculation Result.html#extract_max_cor",
+    "title": "8  Extract Data form Calculation Result",
+    "section": "8.4 extract_max_cor",
+    "text": "8.4 extract_max_cor\n\nmax_cor &lt;- extract_max_cor(object = result)\nmax_cor\n\n(1.5,2.5] \n0.5887494",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Extract Data form Calculation Result</span>"
+    ]
+  },
+  {
+    "objectID": "3-2-Extract Data form Calculation Result.html#extract_global_cor",
+    "href": "3-2-Extract Data form Calculation Result.html#extract_global_cor",
+    "title": "8  Extract Data form Calculation Result",
+    "section": "8.5 extract_global_cor",
+    "text": "8.5 extract_global_cor\n\nglobal_cor &lt;- extract_global_cor(object = result)\nglobal_cor\n\n(-0.5,0.5] \n 0.5338049",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Extract Data form Calculation Result</span>"
+    ]
+  },
+  {
+    "objectID": "3-3-Alignment Plot.html",
+    "href": "3-3-Alignment Plot.html",
+    "title": "9  Alignment Plot",
+    "section": "",
+    "text": "9.1 Calculation\nlibrary(lagci)\n\nWarning in fun(libname, pkgname): mzR has been built against a different Rcpp version (1.0.14)\nthan is installed on your system (1.1.0). This might lead to errors\nwhen loading mzR. If you encounter such issues, please send a report,\nincluding the output of sessionInfo() to the Bioc support forum at \nhttps://support.bioconductor.org/. For details see also\nhttps://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.\n\n\n── Attaching packages ────────────────────────────────────────── lagci 0.99.5 ──\n\n\n✔ dplyr   1.1.4     ✔ ggplot2 3.5.2\n\n\n── Conflicts ────────────────────────────────────────────── lagci_conflicts() ──\n✖ methods::body&lt;-()    masks base::body&lt;-()\n✖ dplyr::filter()      masks stats::filter()\n✖ methods::kronecker() masks base::kronecker()\n✖ dplyr::lag()         masks stats::lag()\n\ndata(\"heart_data\")\ndata(\"step_data\")\nresult &lt;- lagci::calculate_lagged_correlation(\n  x = heart_data$heart,\n  y = step_data$step,\n  time1 = heart_data$time,\n  time2 = step_data$time,\n  time_tol = 0.5,\n  step = 1/60,\n  align_method = \"linear\",\n  cor_method = \"spearman\"\n)",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Alignment Plot</span>"
+    ]
+  },
+  {
+    "objectID": "3-3-Alignment Plot.html#alignment-plot",
+    "href": "3-3-Alignment Plot.html#alignment-plot",
+    "title": "9  Alignment Plot",
+    "section": "9.2 Alignment Plot",
+    "text": "9.2 Alignment Plot\nHere is an example plot:\nThis call draws an alignment view of the two series in result at the peak lag (which = \"max\"), coloring the x-series blue and the y-series red (x_color, y_color) with axis labels set by x_name = \"x\" and y_name = \"y\".\nIt limits the plotted x-values to the numeric range c(1, 100000) (x_limit), plots points for matched samples (add_point = TRUE) with sizes controlled by x_point_size and y_point_size, and renders any unmatched observations with a tiny marker (non_matched_point_size = 0.1) so they’re visible but unobtrusive.\nWith integrated = FALSE the two time series are shown on separate tracks rather than overlaid; add_connect_line = FALSE suppresses segment lines between matched pairs (turn this on to emphasize pairings).\nFinally, time_gap = 12 spaces major time ticks about every 12 hours, which helps readability over long windows; if the figure looks cramped, either increase time_gap, reduce the point sizes, and if you want a direct overlay switch to integrated = TRUE.\n\nlagged_alignment_plot(object = result,\n                      x_color = \"blue\",\n                      y_color = \"red\",\n                      x_name = \"x\",\n                      y_name = \"y\",\n                      which = \"max\",\n                      x_limit = c(1,100000),\n                      non_matched_point_size = 0.1,\n                      y_point_size = 1,\n                      x_point_size = 1,\n                      integrated = FALSE,\n                      add_connect_line = FALSE,\n                      add_point = TRUE,\n                      time_gap = 12)\n\n\n\n\n\n\n\n\n\n9.2.1 which\n\np_global &lt;- lagged_alignment_plot(result, which = \"global\", add_point = TRUE,x_limit = c(2000,50000),)\np_max    &lt;- lagged_alignment_plot(result, which = \"max\",    add_point = TRUE,x_limit = c(2000,50000),)\np_global; p_max\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9.2.2 x_limit\n\np_limit_1 &lt;- lagged_alignment_plot(result, x_limit = c(1, 5000),time_gap = 1)\np_limit_2  &lt;- lagged_alignment_plot(result, x_limit = c(1, 10000),time_gap = 1)\np_limit_3  &lt;- lagged_alignment_plot(result, x_limit = c(5000, 50000),time_gap = 12)\np_limit_1; p_limit_2; p_limit_3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n9.2.3 point\nThese two calls produce the same alignment view except for whether matched pairs are drawn as points.\np_points enables add_point = TRUE, so matched x–y samples appear as dots (sizes set by x_point_size and y_point_size), while unmatched observations are shown very small via non_matched_point_size = 0.1;\nthis is useful to judge how dense and well-aligned the pairings are. p_points_no switches add_point = FALSE, hiding those pairing dots so you can focus on the aligned trajectories without point clutter.\nIn both, x_limit = c(1, 10000) restricts the plotted range of the x-series (handy for clipping extreme values). Print both objects (p_points; p_points_no) to compare clarity; if overplotting remains heavy, shrink point sizes or widen the limits, and if you want an overlay instead of separate tracks, set integrated = TRUE.\n\np_points &lt;- lagged_alignment_plot(result, \n                                        add_point = TRUE,\n                                        x_limit = c(1, 10000),\n                                        x_point_size = 1,\n                                        y_point_size = 1, \n                                        non_matched_point_size = 0.1)\n\np_points_no   &lt;- lagged_alignment_plot(result, \n                                        add_point = FALSE,\n                                        x_limit = c(1, 10000),\n                                        x_point_size = 1,\n                                        y_point_size = 1, \n                                        non_matched_point_size = 0.1)\n\np_points; p_points_no",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Alignment Plot</span>"
+    ]
+  },
+  {
+    "objectID": "3-4-Scatter Plot.html",
+    "href": "3-4-Scatter Plot.html",
+    "title": "10  Scatter Plot",
+    "section": "",
+    "text": "10.1 Calculation\nlibrary(lagci)\n\nWarning in fun(libname, pkgname): mzR has been built against a different Rcpp version (1.0.14)\nthan is installed on your system (1.1.0). This might lead to errors\nwhen loading mzR. If you encounter such issues, please send a report,\nincluding the output of sessionInfo() to the Bioc support forum at \nhttps://support.bioconductor.org/. For details see also\nhttps://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.\n\n\n── Attaching packages ────────────────────────────────────────── lagci 0.99.5 ──\n\n\n✔ dplyr   1.1.4     ✔ ggplot2 3.5.2\n\n\n── Conflicts ────────────────────────────────────────────── lagci_conflicts() ──\n✖ methods::body&lt;-()    masks base::body&lt;-()\n✖ dplyr::filter()      masks stats::filter()\n✖ methods::kronecker() masks base::kronecker()\n✖ dplyr::lag()         masks stats::lag()\n\ndata(\"heart_data\")\ndata(\"step_data\")\nresult &lt;- lagci::calculate_lagged_correlation(\n  y = heart_data$heart,\n  x = step_data$step,\n  time2 = heart_data$time,\n  time1 = step_data$time,\n  time_tol = 0.5,\n  step = 1/60,\n  align_method = \"linear\",\n  cor_method = \"spearman\"\n)",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Scatter Plot</span>"
+    ]
+  },
+  {
+    "objectID": "3-4-Scatter Plot.html#scatter-plot",
+    "href": "3-4-Scatter Plot.html#scatter-plot",
+    "title": "10  Scatter Plot",
+    "section": "10.2 Scatter Plot",
+    "text": "10.2 Scatter Plot\nTo interpret, compare how tight the cloud is at the peak lag versus the global view: a noticeably tighter, monotonic pattern at the peak lag supports a genuine lagged relationship; similar patterns across both views suggest mainly contemporaneous variation or a weak/unstable lag. If desired, you can overlay a smooth trend with + ggplot2::geom_smooth(method = \"loess\", se = FALSE) and export with ggplot2::ggsave(...).\n\nmax_scatter &lt;- lagged_scatter_plot(object = result,\n                    x_name = \"x_name\",\n                    y_name = \"y_name\",\n                    which = \"max\",\n                    hex = TRUE)\n\nglobal_scatter &lt;- lagged_scatter_plot(object = result,\n                    x_name = \"x_name\",\n                    y_name = \"y_name\",\n                    which = \"global\",\n                    hex = TRUE)\n\nhex_no &lt;- lagged_scatter_plot(object = result,\n                    x_name = \"x_name\",\n                    y_name = \"y_name\",\n                    which = \"max\",\n                    hex = FALSE)\n\nmax_scatter;global_scatter;hex_no\n\nWarning: The dot-dot notation (`..count..`) was deprecated in ggplot2 3.4.0.\nℹ Please use `after_stat(count)` instead.\nℹ The deprecated feature was likely used in the lagci package.\n  Please report the issue to the authors.\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n`geom_smooth()` using formula = 'y ~ x'",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Scatter Plot</span>"
+    ]
+  },
+  {
+    "objectID": "3-5-Evaluated Plot.html",
+    "href": "3-5-Evaluated Plot.html",
+    "title": "11  Evaluated Plot",
+    "section": "",
+    "text": "11.1 Calculation\nlibrary(lagci)\n\nWarning in fun(libname, pkgname): mzR has been built against a different Rcpp version (1.0.14)\nthan is installed on your system (1.1.0). This might lead to errors\nwhen loading mzR. If you encounter such issues, please send a report,\nincluding the output of sessionInfo() to the Bioc support forum at \nhttps://support.bioconductor.org/. For details see also\nhttps://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.\n\n\n── Attaching packages ────────────────────────────────────────── lagci 0.99.5 ──\n\n\n✔ dplyr   1.1.4     ✔ ggplot2 3.5.2\n\n\n── Conflicts ────────────────────────────────────────────── lagci_conflicts() ──\n✖ methods::body&lt;-()    masks base::body&lt;-()\n✖ dplyr::filter()      masks stats::filter()\n✖ methods::kronecker() masks base::kronecker()\n✖ dplyr::lag()         masks stats::lag()\n\ndata(\"heart_data\")\ndata(\"step_data\")\nresult &lt;- lagci::calculate_lagged_correlation(\n  y = heart_data$heart,\n  x = step_data$step,\n  time2 = heart_data$time,\n  time1 = step_data$time,\n  time_tol = 0.5,\n  step = 1/60,\n  align_method = \"linear\",\n  cor_method = \"spearman\"\n)",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Evaluated Plot</span>"
+    ]
+  },
+  {
+    "objectID": "3-5-Evaluated Plot.html#evaluate_lagged_cor",
+    "href": "3-5-Evaluated Plot.html#evaluate_lagged_cor",
+    "title": "11  Evaluated Plot",
+    "section": "11.2 evaluate_lagged_cor",
+    "text": "11.2 evaluate_lagged_cor\nIf evaluation fails or looks poor, ensure both series overlap sufficiently, reduce sparsity by increasing time_tol or coarsening step, and require enough matched points (e.g., raise min_matched_sample) before re-evaluating.\n\nevaluate_lagged_cor(object = result,plot = TRUE)\n\n$score\n[1] 0.9572743\n\n$plot",
+    "crumbs": [
+      "Calculation and Plotting",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Evaluated Plot</span>"
+    ]
+  },
+  {
+    "objectID": "4-1-Installation of lagcishiny.html",
+    "href": "4-1-Installation of lagcishiny.html",
+    "title": "12  Installation of lagcishiny",
+    "section": "",
+    "text": "12.1 Installation\nYou can install lagcishiny successfully follow the following steps:\nif (!require(\"pak\", quietly = TRUE)) \n  install.packages(\"pak\")\npak::pak(\"jaspershen-lab/lagci\")\npak::pak(\"jaspershen-lab/lagcishiny\")",
+    "crumbs": [
+      "lagcishiny Web Application",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Installation of lagcishiny</span>"
+    ]
+  },
+  {
+    "objectID": "4-1-Installation of lagcishiny.html#installation",
+    "href": "4-1-Installation of lagcishiny.html#installation",
+    "title": "12  Installation of lagcishiny",
+    "section": "",
+    "text": "12.1.1 Install TinyTex\nIf you want to export reports in PDF format, you should install TinyTex. TinyTex is a simple Tex suite to compile PDF files, it is convenient to use in PC.\nThere are two ways to install TinyTex for different users respectively.\n\n12.1.1.1 Directly install TinyTex\nAfter installing lagcishiny, you can install TinyTex via this command:\n\ntinytex::install_tinytex()\n\nCheck if the TinyTex is installed successfully:\n\ntinytex::is_tinytex()\ntinytex::tlmgr_version()\n\n\n\n12.1.1.2 Locally install TinyTex\nYou can download the correct TinyTex release at Github release, then install it via:\n\ntinytex:::install_prebuilt(pkg = \"PATH/TO/YOUR/FILE\")\n\nCheck if the TinyTex is installed successfully:\n\ntinytex::is_tinytex()\ntinytex::tlmgr_version()",
+    "crumbs": [
+      "lagcishiny Web Application",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Installation of lagcishiny</span>"
+    ]
+  },
+  {
+    "objectID": "4-1-Installation of lagcishiny.html#session-information",
+    "href": "4-1-Installation of lagcishiny.html#session-information",
+    "title": "12  Installation of lagcishiny",
+    "section": "12.2 Session information",
+    "text": "12.2 Session information\n\nsessionInfo()\n\nR version 4.5.1 (2025-06-13)\nPlatform: aarch64-apple-darwin20\nRunning under: macOS Tahoe 26.0\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Asia/Singapore\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.5.1    fastmap_1.2.0     cli_3.6.5        \n [5] tools_4.5.1       htmltools_0.5.8.1 rstudioapi_0.17.1 rmarkdown_2.29   \n [9] knitr_1.50        jsonlite_2.0.0    xfun_0.53         digest_0.6.37    \n[13] rlang_1.1.6       evaluate_1.0.4",
+    "crumbs": [
+      "lagcishiny Web Application",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Installation of lagcishiny</span>"
+    ]
+  },
+  {
+    "objectID": "1-3-Docker Version of lagcishiny.html",
+    "href": "1-3-Docker Version of lagcishiny.html",
+    "title": "13  Docker Version of lagcishiny",
+    "section": "",
+    "text": "13.1 Install docker\nDocker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. So it is useful for people who want to share the code, data, and even analysis environment with other people to repeat their analysis and results.\nWe provide a docker version of lagcishiny, all the packages in lagcishiny and the dependent packages have been installed.\nPlease refer to the offical website to download and install docker. And then run docker.",
+    "crumbs": [
+      "lagcishiny Web Application",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Docker Version of lagcishiny</span>"
+    ]
+  },
+  {
+    "objectID": "1-3-Docker Version of lagcishiny.html#pull-the-lagcishiny-image",
+    "href": "1-3-Docker Version of lagcishiny.html#pull-the-lagcishiny-image",
+    "title": "13  Docker Version of lagcishiny",
+    "section": "13.2 Pull the lagcishiny image",
+    "text": "13.2 Pull the lagcishiny image\nOpen you terminal and then type code below:\ndocker pull jaspershenlab/lagcishiny",
+    "crumbs": [
+      "lagcishiny Web Application",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Docker Version of lagcishiny</span>"
+    ]
+  },
+  {
+    "objectID": "1-3-Docker Version of lagcishiny.html#run-lagcishiny-docker-image",
+    "href": "1-3-Docker Version of lagcishiny.html#run-lagcishiny-docker-image",
+    "title": "13  Docker Version of lagcishiny",
+    "section": "13.3 Run lagcishiny docker image",
+    "text": "13.3 Run lagcishiny docker image\nIn you terminal, run the code below:\ndocker run -e PASSWORD=lagcishiny -p 3838:3838 jaspershen/lagcishiny:latest\nThe below command will link the RStudio home folder with the desktop of the local machine running the container. Anything saved or edited in the home folder when using the container will be stored on the local desktop.\ndocker run -e PASSWORD=lagcishiny -v ~/Desktop:/home -p 3838:3838 jaspershen/lagcishiny:latest",
+    "crumbs": [
+      "lagcishiny Web Application",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Docker Version of lagcishiny</span>"
+    ]
+  },
+  {
+    "objectID": "1-3-Docker Version of lagcishiny.html#open-the-lagcishiny-app",
+    "href": "1-3-Docker Version of lagcishiny.html#open-the-lagcishiny-app",
+    "title": "13  Docker Version of lagcishiny",
+    "section": "13.4 Open the lagcishiny app",
+    "text": "13.4 Open the lagcishiny app\nThen open the browser and visit http://localhost:3838 to power on lagcishiny app. The user name is rstudio and the password is lagcishiny.",
+    "crumbs": [
+      "lagcishiny Web Application",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Docker Version of lagcishiny</span>"
+    ]
+  },
+  {
+    "objectID": "1-3-Docker Version of lagcishiny.html#session-information",
+    "href": "1-3-Docker Version of lagcishiny.html#session-information",
+    "title": "13  Docker Version of lagcishiny",
+    "section": "13.5 Session information",
+    "text": "13.5 Session information\n\nsessionInfo()\n\nR version 4.5.1 (2025-06-13)\nPlatform: aarch64-apple-darwin20\nRunning under: macOS Tahoe 26.0\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Asia/Singapore\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.5.1    fastmap_1.2.0     cli_3.6.5        \n [5] tools_4.5.1       htmltools_0.5.8.1 rstudioapi_0.17.1 rmarkdown_2.29   \n [9] knitr_1.50        jsonlite_2.0.0    xfun_0.53         digest_0.6.37    \n[13] rlang_1.1.6       evaluate_1.0.4",
+    "crumbs": [
+      "lagcishiny Web Application",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Docker Version of lagcishiny</span>"
+    ]
+  },
+  {
+    "objectID": "4-2-Run lagcishiny on your PC.html",
+    "href": "4-2-Run lagcishiny on your PC.html",
+    "title": "14  Run lagcishiny on your PC",
+    "section": "",
+    "text": "You can run the following commands to start the lagcishiny APP in your default browser\n\nlibrary(lagcishiny)\n\nlagcishiny::lagci_shiny()\n\nIn lagcishiny web APP, you can operate lagci in a visual way, and we support exporting images in eight formats, as well as reports in PDF (TinyTex is needed), PPTX and HTML formats.",
+    "crumbs": [
+      "lagcishiny Web Application",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Run lagcishiny on your PC</span>"
+    ]
+  },
+  {
+    "objectID": "4-3-Deploy lagcishiny on your server.html",
+    "href": "4-3-Deploy lagcishiny on your server.html",
+    "title": "15  Deploy lagcishiny on your server",
+    "section": "",
+    "text": "15.1 Before starting\nYou need to prepare the following things: - A server with a public IP address - Domain name with DNS record - non-root account, such as ubuntu - Opening ufw\nIn this tutorial, We use Ubuntu 22.04.",
+    "crumbs": [
+      "lagcishiny Web Application",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Deploy lagcishiny on your server</span>"
+    ]
+  },
+  {
+    "objectID": "4-3-Deploy lagcishiny on your server.html#before-starting",
+    "href": "4-3-Deploy lagcishiny on your server.html#before-starting",
+    "title": "15  Deploy lagcishiny on your server",
+    "section": "",
+    "text": "sudo ufw allow OpenSSH\nsudo ufw allow \"Nginx Full\"\nsudo ufw enable\nsudo ufw status\nsudo apt install -y nginx\n\nsudo apt install -y certbot python3-certbot-nginx\n\n15.1.1 Install R\nsudo apt update -qq\nsudo apt install --no-install-recommends -y software-properties-common dirmngr\nwget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc \\\n| sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc\n\ngpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc\n# Fingerprint should be: E298A3A825C0D65DFD57CBB651716619E084DAB9\nsudo add-apt-repository \"deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/\"\nsudo apt update\nsudo apt install --no-install-recommends -y r-base\n# (optional, needed for compiling packages from source)\nsudo apt install -y r-base-dev\nCheck it.\nR --version",
+    "crumbs": [
+      "lagcishiny Web Application",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Deploy lagcishiny on your server</span>"
+    ]
+  },
+  {
+    "objectID": "4-3-Deploy lagcishiny on your server.html#shiny-server-nginx",
+    "href": "4-3-Deploy lagcishiny on your server.html#shiny-server-nginx",
+    "title": "15  Deploy lagcishiny on your server",
+    "section": "15.2 Shiny Server + Nginx",
+    "text": "15.2 Shiny Server + Nginx\n\n15.2.1 Install Shiny Server\nsudo apt update && sudo apt upgrade -y\n# Install R from Ubuntu repo (basic)\nsudo apt install -y r-base gdebi-core\n\n# Or (recommended) add CRAN repo for latest R\nsudo apt install -y software-properties-common dirmngr apt-transport-https\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9\nsudo add-apt-repository \"deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/\"\nsudo apt update\nsudo apt install -y r-base\nsudo su - \\\n-c \"R -e \\\"install.packages('shiny', repos='https://cloud.r-project.org/')\\\"\"\n# Download the latest .deb (for Ubuntu 22.04, use bionic build)\nwget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.20.1002-amd64.deb\n\n# Install with gdebi\nsudo gdebi shiny-server-1.5.20.1002-amd64.deb\nsudo systemctl enable shiny-server\nsudo systemctl start shiny-server\nsudo systemctl status shiny-server\nCheck it:\ncurl -I http://localhost:3838\n\n\n15.2.2 Deploy Shiny APP\nsudo mkdir -p /srv/shiny-server/app1\nsudo chown -R shiny:shiny /srv/shiny-server/app1\nsudo -u shiny bash -lc 'R -q -e \"sessionInfo()\"'\n# copy your code of shiny app\nsudo cp -r ~/your_local_app/* /srv/shiny-server/app1/\nsudo chown -R shiny:shiny /srv/shiny-server/app1\nThen you can access the app via curl -I http://your_server_ip:3838/app1\n\n\n15.2.3 Configure Nginx\nCreate a new Nginx site configuration (taking the root path mapping to Shiny Server as an example, /app1 is the application path) :\nsudo vim /etc/nginx/sites-available/shiny.conf\nInsert these content:\n# /etc/nginx/sites-available/shiny.conf\nmap $http_upgrade $connection_upgrade {\n  default upgrade;\n  ''      close;\n}\n\nserver {\n  listen 80;\n  server_name yourdomain.com;  # modify to your domain name\n\n  # limit size of uploaded files (Shiny upload)\n  client_max_body_size 200m;\n\n  # 静态资源缓存（可选，小心不要缓存动态内容）\n  location ~* \\.(css|js|png|jpg|jpeg|gif|svg|ico)$ {\n    expires 30d;\n    add_header Cache-Control \"public\";\n    root /var/www/html; # 若无独立静态资源，可删掉本段\n  }\n\n  # Reverse proxy to Shiny Server (3838)\n  location / {\n    proxy_pass http://127.0.0.1:3838;\n    proxy_redirect off;\n\n    # WebSocket need\n    proxy_http_version 1.1;\n    proxy_set_header Upgrade $http_upgrade;\n    proxy_set_header Connection $connection_upgrade;\n\n    # Convey genuine source information\n    proxy_set_header Host $host;\n    proxy_set_header X-Real-IP $remote_addr;\n    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n    proxy_set_header X-Forwarded-Proto $scheme;\n\n    # Shiny requests can be very \"long\"\n    proxy_read_timeout 3600s;\n    proxy_send_timeout 3600s;\n    send_timeout 3600s;\n  }\n}\nEnable and check the configuration:\nsudo ln -s /etc/nginx/sites-available/shiny.conf /etc/nginx/sites-enabled/\nsudo nginx -t\nsudo systemctl reload nginx\nNow, you can access your shiny app via:http://yourdomain.com/app1\n\n\n15.2.4 Get HTTPS certification\nsudo certbot --nginx -d yourdomain.com\nSelect 1 Automatically redirect to HTTPS",
+    "crumbs": [
+      "lagcishiny Web Application",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Deploy lagcishiny on your server</span>"
+    ]
+  },
+  {
+    "objectID": "4-3-Deploy lagcishiny on your server.html#docker-nginx",
+    "href": "4-3-Deploy lagcishiny on your server.html#docker-nginx",
+    "title": "15  Deploy lagcishiny on your server",
+    "section": "15.3 Docker + Nginx",
+    "text": "15.3 Docker + Nginx\n\n15.3.1 Download docker image\ndocker pull jaspershenlab/laggedcorshiny:latest\ndocker run -p 3838:3838 -v /Path/In/Your/Server:/home jaspershenlab/laggedcorshiny:latest\n\n\n15.3.2 Nginx\nThe following configuration is the same as that of Shiny Server + Nginx part.",
+    "crumbs": [
+      "lagcishiny Web Application",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Deploy lagcishiny on your server</span>"
+    ]
+  },
+  {
+    "objectID": "FAQ and Citation.html",
+    "href": "FAQ and Citation.html",
+    "title": "FAQ and Citation",
+    "section": "",
+    "text": "Citation (BibTex)",
+    "crumbs": [
+      "FAQ and Citation"
+    ]
+  },
+  {
+    "objectID": "FAQ and Citation.html#citation-bibtex",
+    "href": "FAQ and Citation.html#citation-bibtex",
+    "title": "FAQ and Citation",
+    "section": "",
+    "text": "@ARTICLE{Shen2019-xv,\n  title     = \"Metabolic reaction network-based recursive metabolite annotation\n               for untargeted metabolomics\",\n  author    = \"Shen, Xiaotao and Wang, Ruohong and Xiong, Xin and Yin, Yandong\n               and Cai, Yuping and Ma, Zaijun and Liu, Nan and Zhu, Zheng-Jiang\",\n  journal   = \"Nat. Commun.\",\n  publisher = \"Springer Science and Business Media LLC\",\n  volume    =  10,\n  number    =  1,\n  pages     = \"1516\",\n  month     =  apr,\n  year      =  2019,\n  copyright = \"https://creativecommons.org/licenses/by/4.0\",\n  language  = \"en\"\n}",
+    "crumbs": [
+      "FAQ and Citation"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "lagci Tutorial",
+    "section": "",
+    "text": "Preface\n\nlagci helps you answer questions such as:\n\nHow long after a glucose spike does my heart-rate change?\nWhich biomarker moves first—cortisol or cytokine?\n\nIt combines sliding windows, LOESS smoothing and bootstrap correction to estimate robust lagged correlations, and identify the causal relationships between molecules.\n\nLearning path\n\n\n\n\n\n\n\nChapter\nGoal\n\n\n\n\n1 Install lagci and Docker\nGet lagci and all dependencies running locally\n\n\n2 Raw Data Processing and Preview\nConvert wide tables to long, clean timestamps\n\n\n3 Calculation and Plotting\nTen lines of R to obtain a lagged correlation curve\n\n\n4 lagcishiny Web Application\nDrop-in UI for interactive dashboards\n\n\n5 FAQ & Citation\nTroubleshooting and academic citation\n\n\n\n\n\n📬 Contact us\n\n📧 Email xiaotao.shen@outlook.com\n\n🔗 Shen Lab website shen-lab.org\n\n💬 WeChat (jaspershen1990?)\n\n🐦 Twitter @xiaotaoshen1990\n\nWelcome to the lagci tutorial! Enjoy, and feel free to send pull requests!",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "1-2-Docker Version of lagci.html",
+    "href": "1-2-Docker Version of lagci.html",
+    "title": "2  Docker Version of lagci",
+    "section": "",
+    "text": "2.1 Install docker\nDocker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. So it is useful for people who want to share the code, data, and even analysis environment with other people to repeat their analysis and results.\nWe provide a docker version of lagci, all the packages in lagci and the dependent packages have been installed.\nPlease refer to the offical website to download and install docker. And then run docker.",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Docker Version of lagci</span>"
+    ]
+  },
+  {
+    "objectID": "1-2-Docker Version of lagci.html#pull-the-lagci-image",
+    "href": "1-2-Docker Version of lagci.html#pull-the-lagci-image",
+    "title": "2  Docker Version of lagci",
+    "section": "2.2 Pull the lagci image",
+    "text": "2.2 Pull the lagci image\nOpen you terminal and then type code below:\ndocker pull jaspershenlab/lagci",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Docker Version of lagci</span>"
+    ]
+  },
+  {
+    "objectID": "1-2-Docker Version of lagci.html#run-lagci-docker-image",
+    "href": "1-2-Docker Version of lagci.html#run-lagci-docker-image",
+    "title": "2  Docker Version of lagci",
+    "section": "2.3 Run lagci docker image",
+    "text": "2.3 Run lagci docker image\nIn you terminal, run the code below:\ndocker run -e PASSWORD=lagci -p 8787:8787 jaspershen/lagci:latest\nThe below command will link the RStudio home folder with the desktop of the local machine running the container. Anything saved or edited in the home folder when using the container will be stored on the local desktop.\ndocker run -e PASSWORD=lagci -v ~/Desktop:/home/rstudio/ -p 8787:8787 jaspershen/lagci:latest",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Docker Version of lagci</span>"
+    ]
+  },
+  {
+    "objectID": "1-2-Docker Version of lagci.html#open-the-rstudio-server",
+    "href": "1-2-Docker Version of lagci.html#open-the-rstudio-server",
+    "title": "2  Docker Version of lagci",
+    "section": "2.4 Open the RStudio server",
+    "text": "2.4 Open the RStudio server\nThen open the browser and visit http://localhost:8787 to power on RStudio server. The user name is rstudio and the password is lagci.",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Docker Version of lagci</span>"
+    ]
+  },
+  {
+    "objectID": "1-2-Docker Version of lagci.html#session-information",
+    "href": "1-2-Docker Version of lagci.html#session-information",
+    "title": "2  Docker Version of lagci",
+    "section": "2.5 Session information",
+    "text": "2.5 Session information\n\nsessionInfo()\n\nR version 4.5.1 (2025-06-13)\nPlatform: aarch64-apple-darwin20\nRunning under: macOS Tahoe 26.0\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Asia/Singapore\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.5.1    fastmap_1.2.0     cli_3.6.5        \n [5] tools_4.5.1       htmltools_0.5.8.1 rstudioapi_0.17.1 rmarkdown_2.29   \n [9] knitr_1.50        jsonlite_2.0.0    xfun_0.53         digest_0.6.37    \n[13] rlang_1.1.6       evaluate_1.0.4",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Docker Version of lagci</span>"
+    ]
+  },
+  {
+    "objectID": "1-4-Build your own Docker Image.html",
+    "href": "1-4-Build your own Docker Image.html",
+    "title": "3  Build your own Docker Image",
+    "section": "",
+    "text": "3.1 Session information\nYou can customize your own docker image based on lagci or lagcishiny docker.\nIf you do not familiar with build docker, you can check this LINK to realize the command in Dockerfile.\nsessionInfo()\n\nR version 4.4.1 (2024-06-14)\nPlatform: aarch64-apple-darwin20\nRunning under: macOS Monterey 12.3\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Asia/Shanghai\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.4.1    fastmap_1.2.0     cli_3.6.3        \n [5] tools_4.4.1       htmltools_0.5.8.1 rstudioapi_0.16.0 rmarkdown_2.28   \n [9] knitr_1.48        jsonlite_1.8.8    xfun_0.47         digest_0.6.37    \n[13] rlang_1.1.4       evaluate_0.24.0",
+    "crumbs": [
+      "Install lagci and Docker",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Build your own Docker Image</span>"
+    ]
+  },
+  {
+    "objectID": "2-1-Raw Data Processing.html",
+    "href": "2-1-Raw Data Processing.html",
+    "title": "5  Raw Data Processing",
+    "section": "",
+    "text": "5.1 Get started with example data\nBefore analysis the lagged correlation by lagci, you may get lots of data. This tutorial will get started with you on processing raw data, until get the data with correct format.\nRun this chunk, you will get the correct format of the data needed in lagci package. The data structure should have two columns at least, one of the columns is time column with POSIXct format, and another column is value.\nexample_data_1 &lt;- data.frame(\n  datetime = seq(from = as.POSIXct(\"2003-01-09\"),to = as.POSIXct(\"2004-01-09\"),by = \"day\")\n)\n\nexample_data_1$value &lt;- sin(seq(from = 0, to = 2*pi, length.out = nrow(example_data_1)))\n\nhead(example_data_1)\n\n    datetime      value\n1 2003-01-09 0.00000000\n2 2003-01-10 0.01721336\n3 2003-01-11 0.03442161\n4 2003-01-12 0.05161967\n5 2003-01-13 0.06880243\n6 2003-01-14 0.08596480\n\nclass(example_data_1$datetime)\n\n[1] \"POSIXct\" \"POSIXt\"",
+    "crumbs": [
+      "Raw Data Processing and Preview",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Raw Data Processing</span>"
+    ]
+  },
+  {
+    "objectID": "2-1-Raw Data Processing.html#get-started-with-example-data",
+    "href": "2-1-Raw Data Processing.html#get-started-with-example-data",
+    "title": "5  Raw Data Processing",
+    "section": "",
+    "text": "5.1.1 Type one: separated date\nIf the structure of your raw date is like below:\n\nexample_data_2 &lt;- data.frame(\n  year = rep(x = 2000:2025, each = 12),\n  month = rep(x = 1:12, times = 26),\n  value = sin(seq(from = 0, to = 2*pi, length.out = 12*26))\n)\n\nhead(example_data_2)\n\n  year month      value\n1 2000     1 0.00000000\n2 2000     2 0.02020179\n3 2000     3 0.04039534\n4 2000     4 0.06057240\n5 2000     5 0.08072474\n6 2000     6 0.10084413\n\n\nyou should use this script to correct your format:\nThis code builds a two-column data frame where time is first created as a character string by concatenating year, month, and the fixed day \"01\", and value is copied from the original data;\nit then shows that time is initially of class \"character\", converts it to a real timestamp with as.POSIXct() (you can add tz = \"UTC\" for reproducibility), prints the first few rows to verify the result, and finally confirms that time is now of class c(\"POSIXct\",\"POSIXt\").\nIn short, it turns separate year/month information into a proper POSIXct time column plus a numeric value column—i.e., the tidy format expected by downstream lagged-correlation tools;\nif you want stricter parsing, use zero-padded months via sprintf(\"%04d-%02d-01\", year, month) before the conversion.\n\nexample_data_2_correct &lt;- data.frame(\n  time = paste0(example_data_2$year,\"-\",example_data_2$month,\"-01\"),\n  value = example_data_2$value\n)\n\nclass(example_data_2_correct$time)\n\n[1] \"character\"\n\nexample_data_2_correct$time &lt;- as.POSIXct(example_data_2_correct$time)\n\nhead(example_data_2_correct)\n\n        time      value\n1 2000-01-01 0.00000000\n2 2000-02-01 0.02020179\n3 2000-03-01 0.04039534\n4 2000-04-01 0.06057240\n5 2000-05-01 0.08072474\n6 2000-06-01 0.10084413\n\nclass(example_data_2_correct$time)\n\n[1] \"POSIXct\" \"POSIXt\" \n\n\n\n\n5.1.2 Type two: omics data format\nYou may get several files, when you get the omics data:\nThis chunk creates a toy omics-style wide table: it generates 5 human-readable feature IDs via ids::adjective_animal(), builds a half-hourly POSIXct time vector from 2019-04-29 03:30 to 2019-05-06 21:30, and simulates 5 time series using a noisy sine curve.\nThe replicate() output is transposed with t() so rows = features, columns = time; column names are set to the timestamps, and head(omics_data[1]) previews the first time column.\nFor robustness and reproducibility: call set.seed(1) before replicate(), explicitly coerce column names with as.character(time_index), and ensure nrow(omics_data) == nrow(IDs) so IDs match features.\nIf the ids package isn’t installed, fall back to data.frame(ids = paste0(\"id_\", 1:5)). Later, convert this wide table to a tidy long format (id/time/value) before lagged-correlation analysis.\n\nIDs &lt;- data.frame(\n  ids = ids::adjective_animal(n = 5)\n    )\n\nhead(IDs)\n\n                         ids\n1 prepolitical_homalocephale\n2 preevolutional_belugawhale\n3       acculturative_cuscus\n4         zoographical_leech\n5    deistical_englishsetter\n\nlibrary(magrittr)\n\ntime_index &lt;- seq.POSIXt(as.POSIXct(\"2019-04-29 03:30\"),\n                         as.POSIXct(\"2019-05-06 21:30\"),\n                         by = \"30 min\")\n\nomics_data &lt;- replicate(5, \n                  sin(seq(0, 10, length.out = length(time_index))) + rnorm(length(time_index), 0, 0.2)) %&gt;%\n        t() %&gt;% as.data.frame()\ncolnames(omics_data) &lt;- time_index\n\nhead(omics_data[1])\n\n  2019-04-29 03:30:00\n1         0.004541227\n2        -0.113343339\n3        -0.182325960\n4         0.247461356\n5        -0.133177177\n\n\nyou should transform them into five files with correct format:\nThis code converts the omics wide table into per-feature tidy frames. First, omics_data is transposed so rows = time, columns = features (full_data &lt;- omics_data %&gt;% t() %&gt;% as.data.frame()), then column names are set from IDs$ids.\nThe loop builds df_list: for each feature, it creates a two-column data frame with time parsed from the row names (timestamps) and the corresponding value; head(df_list[[1]]) previews the first feature’s time–value series.\n\nfull_data &lt;- omics_data %&gt;% \n  t() %&gt;% \n  as.data.frame()\n\ncolnames(full_data) &lt;- IDs$ids\n\nhead(full_data)\n\n                    prepolitical_homalocephale preevolutional_belugawhale\n2019-04-29 03:30:00                0.004541227               -0.113343339\n2019-04-29 04:00:00                0.070978772                0.094855738\n2019-04-29 04:30:00                0.077887042                0.054871044\n2019-04-29 05:00:00                0.293393153               -0.087391267\n2019-04-29 05:30:00                0.185966587                0.007135642\n2019-04-29 06:00:00               -0.069981955                0.038041818\n                    acculturative_cuscus zoographical_leech\n2019-04-29 03:30:00           -0.1823260         0.24746136\n2019-04-29 04:00:00            0.1956677         0.08338463\n2019-04-29 04:30:00           -0.2860073         0.02519943\n2019-04-29 05:00:00            0.2339092        -0.16757358\n2019-04-29 05:30:00            0.1279799         0.11960344\n2019-04-29 06:00:00           -0.2741057        -0.13719129\n                    deistical_englishsetter\n2019-04-29 03:30:00            -0.133177177\n2019-04-29 04:00:00             0.258469889\n2019-04-29 04:30:00            -0.009899799\n2019-04-29 05:00:00            -0.148279988\n2019-04-29 05:30:00            -0.183354948\n2019-04-29 06:00:00             0.083825397\n\ndf_list &lt;- list()\n\nfor (i in 1:ncol(full_data)) {\n  varname &lt;- colnames(full_data)[i]\n  df_list[[varname]] &lt;- data.frame(\n    time = as.POSIXct(rownames(full_data), format = \"%Y-%m-%d %H:%M:%S\"),\n    value = full_data[[i]]\n  )\n}\n\n\nhead(df_list[[1]])\n\n                 time        value\n1 2019-04-29 03:30:00  0.004541227\n2 2019-04-29 04:00:00  0.070978772\n3 2019-04-29 04:30:00  0.077887042\n4 2019-04-29 05:00:00  0.293393153\n5 2019-04-29 05:30:00  0.185966587\n6 2019-04-29 06:00:00 -0.069981955",
+    "crumbs": [
+      "Raw Data Processing and Preview",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Raw Data Processing</span>"
+    ]
+  },
+  {
+    "objectID": "2-1-Raw Data Processing.html#session-information",
+    "href": "2-1-Raw Data Processing.html#session-information",
+    "title": "5  Raw Data Processing",
+    "section": "5.2 Session information",
+    "text": "5.2 Session information\n\nsessionInfo()\n\nR version 4.5.1 (2025-06-13)\nPlatform: aarch64-apple-darwin20\nRunning under: macOS Tahoe 26.0\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Asia/Singapore\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n[1] magrittr_2.0.3\n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 ids_1.0.1         compiler_4.5.1    fastmap_1.2.0    \n [5] cli_3.6.5         tools_4.5.1       htmltools_0.5.8.1 rstudioapi_0.17.1\n [9] uuid_1.2-1        rmarkdown_2.29    knitr_1.50        jsonlite_2.0.0   \n[13] xfun_0.53         digest_0.6.37     rlang_1.1.6       evaluate_1.0.4",
+    "crumbs": [
+      "Raw Data Processing and Preview",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Raw Data Processing</span>"
+    ]
+  }
+]
