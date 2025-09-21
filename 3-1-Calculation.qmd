@@ -21,7 +21,9 @@ class(step_data$time)
 
 ## Calculation
 
-Calculate with `calculate_lagged_correlation` function of `lagci` package. \### x, y
+Calculate with `calculate_lagged_correlation` function of `lagci` package. 
+
+### x, y
 
 Type: Numeric vectors
 

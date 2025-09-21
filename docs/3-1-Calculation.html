@@ -75,9 +75,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-2b762d6eed5d016e804f4003944f3325.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-9ac4c4d7723caba69398381a32a42326.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-364982630eef5352dd1537128a8ed5cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -453,14 +453,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li>
 <a href="#calculation" id="toc-calculation" class="nav-link" data-scroll-target="#calculation"><span class="header-section-number">6.2</span> Calculation</a>
   <ul class="collapse">
-<li><a href="#time1-time2" id="toc-time1-time2" class="nav-link" data-scroll-target="#time1-time2"><span class="header-section-number">6.2.1</span> time1, time2</a></li>
-  <li><a href="#time_tol" id="toc-time_tol" class="nav-link" data-scroll-target="#time_tol"><span class="header-section-number">6.2.2</span> time_tol</a></li>
-  <li><a href="#step" id="toc-step" class="nav-link" data-scroll-target="#step"><span class="header-section-number">6.2.3</span> step</a></li>
-  <li><a href="#min_matched_sample" id="toc-min_matched_sample" class="nav-link" data-scroll-target="#min_matched_sample"><span class="header-section-number">6.2.4</span> min_matched_sample</a></li>
-  <li><a href="#progressbar" id="toc-progressbar" class="nav-link" data-scroll-target="#progressbar"><span class="header-section-number">6.2.5</span> progressbar</a></li>
-  <li><a href="#align_method" id="toc-align_method" class="nav-link" data-scroll-target="#align_method"><span class="header-section-number">6.2.6</span> align_method</a></li>
-  <li><a href="#cor_method" id="toc-cor_method" class="nav-link" data-scroll-target="#cor_method"><span class="header-section-number">6.2.7</span> cor_method</a></li>
-  <li><a href="#calculation-1" id="toc-calculation-1" class="nav-link" data-scroll-target="#calculation-1"><span class="header-section-number">6.2.8</span> Calculation</a></li>
+<li><a href="#x-y" id="toc-x-y" class="nav-link" data-scroll-target="#x-y"><span class="header-section-number">6.2.1</span> x, y</a></li>
+  <li><a href="#time1-time2" id="toc-time1-time2" class="nav-link" data-scroll-target="#time1-time2"><span class="header-section-number">6.2.2</span> time1, time2</a></li>
+  <li><a href="#time_tol" id="toc-time_tol" class="nav-link" data-scroll-target="#time_tol"><span class="header-section-number">6.2.3</span> time_tol</a></li>
+  <li><a href="#step" id="toc-step" class="nav-link" data-scroll-target="#step"><span class="header-section-number">6.2.4</span> step</a></li>
+  <li><a href="#min_matched_sample" id="toc-min_matched_sample" class="nav-link" data-scroll-target="#min_matched_sample"><span class="header-section-number">6.2.5</span> min_matched_sample</a></li>
+  <li><a href="#progressbar" id="toc-progressbar" class="nav-link" data-scroll-target="#progressbar"><span class="header-section-number">6.2.6</span> progressbar</a></li>
+  <li><a href="#align_method" id="toc-align_method" class="nav-link" data-scroll-target="#align_method"><span class="header-section-number">6.2.7</span> align_method</a></li>
+  <li><a href="#cor_method" id="toc-cor_method" class="nav-link" data-scroll-target="#cor_method"><span class="header-section-number">6.2.8</span> cor_method</a></li>
+  <li><a href="#calculation-1" id="toc-calculation-1" class="nav-link" data-scroll-target="#calculation-1"><span class="header-section-number">6.2.9</span> Calculation</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/edit/main/3-1-Calculation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/blob/main/3-1-Calculation.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
@@ -490,7 +491,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">lagci</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning in fun(libname, pkgname): mzR has been built against a different Rcpp version (1.0.14)
+<pre><code>Warning in fun(libname, pkgname): mzR has been built against a different Rcpp version (1.0.13)
 than is installed on your system (1.1.0). This might lead to errors
 when loading mzR. If you encounter such issues, please send a report,
 including the output of sessionInfo() to the Bioc support forum at 
@@ -544,17 +545,19 @@ https://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.</code></pre
 </div>
 </section><section id="calculation" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="calculation">
 <span class="header-section-number">6.2</span> Calculation</h2>
-<p>Calculate with <code>calculate_lagged_correlation</code> function of <code>lagci</code> package. ### x, y</p>
+<p>Calculate with <code>calculate_lagged_correlation</code> function of <code>lagci</code> package.</p>
+<section id="x-y" class="level3" data-number="6.2.1"><h3 data-number="6.2.1" class="anchored" data-anchor-id="x-y">
+<span class="header-section-number">6.2.1</span> x, y</h3>
 <p>Type: Numeric vectors</p>
 <p>Purpose: The two time-series to be compared.</p>
 <p>Details: Each vector represents the observed values of one variable. Internally, both vectors are standardized (centered and scaled to unit variance) to make the correlation unbiased by different magnitudes or units.</p>
-<section id="time1-time2" class="level3" data-number="6.2.1"><h3 data-number="6.2.1" class="anchored" data-anchor-id="time1-time2">
-<span class="header-section-number">6.2.1</span> time1, time2</h3>
+</section><section id="time1-time2" class="level3" data-number="6.2.2"><h3 data-number="6.2.2" class="anchored" data-anchor-id="time1-time2">
+<span class="header-section-number">6.2.2</span> time1, time2</h3>
 <p>Type: POSIXct vectors (or convertible to POSIXct)</p>
 <p>Purpose: Timestamps corresponding to x and y.</p>
 <p>Role: Used to align the two time-series onto a shared, regularly spaced timeline before computing correlations.</p>
-</section><section id="time_tol" class="level3" data-number="6.2.2"><h3 data-number="6.2.2" class="anchored" data-anchor-id="time_tol">
-<span class="header-section-number">6.2.2</span> time_tol</h3>
+</section><section id="time_tol" class="level3" data-number="6.2.3"><h3 data-number="6.2.3" class="anchored" data-anchor-id="time_tol">
+<span class="header-section-number">6.2.3</span> time_tol</h3>
 <p>Type: Numeric (hours)</p>
 <p>Default: 1</p>
 <p>Meaning: The maximum time lag to evaluate in both positive and negative directions.</p>
@@ -562,8 +565,8 @@ https://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.</code></pre
 <p>time_tol = 1 → ±1 hour</p>
 <p>time_tol = 0.5 → ±30 minutes</p>
 <p>time_tol = 1/60 → ±1 minute</p>
-</section><section id="step" class="level3" data-number="6.2.3"><h3 data-number="6.2.3" class="anchored" data-anchor-id="step">
-<span class="header-section-number">6.2.3</span> step</h3>
+</section><section id="step" class="level3" data-number="6.2.4"><h3 data-number="6.2.4" class="anchored" data-anchor-id="step">
+<span class="header-section-number">6.2.4</span> step</h3>
 <p>Type: Numeric (hours)</p>
 <p>Default: 1/60 (i.e., 1 minute)</p>
 <p>Meaning: The resolution of the regular time grid used for alignment.</p>
@@ -571,34 +574,34 @@ https://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.</code></pre
 <p>step = 1 → 1-hour sampling</p>
 <p>step = 1/60 → 1-minute sampling</p>
 <p>step = 1/3600 → 1-second sampling</p>
-</section><section id="min_matched_sample" class="level3" data-number="6.2.4"><h3 data-number="6.2.4" class="anchored" data-anchor-id="min_matched_sample">
-<span class="header-section-number">6.2.4</span> min_matched_sample</h3>
+</section><section id="min_matched_sample" class="level3" data-number="6.2.5"><h3 data-number="6.2.5" class="anchored" data-anchor-id="min_matched_sample">
+<span class="header-section-number">6.2.5</span> min_matched_sample</h3>
 <p>Type: Integer</p>
 <p>Default: 10</p>
 <p>Purpose: Minimum number of overlapping (non-missing) samples required after alignment. If fewer matched samples remain, the function returns NULL to avoid unstable correlations.</p>
-</section><section id="progressbar" class="level3" data-number="6.2.5"><h3 data-number="6.2.5" class="anchored" data-anchor-id="progressbar">
-<span class="header-section-number">6.2.5</span> progressbar</h3>
+</section><section id="progressbar" class="level3" data-number="6.2.6"><h3 data-number="6.2.6" class="anchored" data-anchor-id="progressbar">
+<span class="header-section-number">6.2.6</span> progressbar</h3>
 <p>Type: Logical</p>
 <p>Default: TRUE</p>
 <p>Purpose: Whether to display progress information. Particularly useful when applying the function to many pairs of series in batch analyses.</p>
-</section><section id="align_method" class="level3" data-number="6.2.6"><h3 data-number="6.2.6" class="anchored" data-anchor-id="align_method">
-<span class="header-section-number">6.2.6</span> align_method</h3>
+</section><section id="align_method" class="level3" data-number="6.2.7"><h3 data-number="6.2.7" class="anchored" data-anchor-id="align_method">
+<span class="header-section-number">6.2.7</span> align_method</h3>
 <p>Type: Character string</p>
 <p>Options: “linear” or “constant”</p>
 <p>Default: “linear”</p>
 <p>Purpose: Method used for interpolation when mapping the irregular time-series onto the regular grid.</p>
 <p>“linear”: Interpolates linearly between neighboring observations.</p>
 <p>“constant”: Uses the nearest neighbor (step-wise constant).</p>
-</section><section id="cor_method" class="level3" data-number="6.2.7"><h3 data-number="6.2.7" class="anchored" data-anchor-id="cor_method">
-<span class="header-section-number">6.2.7</span> cor_method</h3>
+</section><section id="cor_method" class="level3" data-number="6.2.8"><h3 data-number="6.2.8" class="anchored" data-anchor-id="cor_method">
+<span class="header-section-number">6.2.8</span> cor_method</h3>
 <p>Type: Character string</p>
 <p>Options: “spearman” or “pearson”</p>
 <p>Default: “spearman”</p>
 <p>Purpose: The statistical correlation measure.</p>
 <p>“pearson”: Measures linear correlation between the raw values.</p>
 <p>“spearman”: Measures rank correlation, robust to monotonic but non-linear relationships and less sensitive to outliers.</p>
-</section><section id="calculation-1" class="level3" data-number="6.2.8"><h3 data-number="6.2.8" class="anchored" data-anchor-id="calculation-1">
-<span class="header-section-number">6.2.8</span> Calculation</h3>
+</section><section id="calculation-1" class="level3" data-number="6.2.9"><h3 data-number="6.2.9" class="anchored" data-anchor-id="calculation-1">
+<span class="header-section-number">6.2.9</span> Calculation</h3>
 <div class="cell">
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">result_1</span> <span class="op">&lt;-</span> <span class="fu">lagci</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/lagci/man/calculate_lagged_correlation.html">calculate_lagged_correlation</a></span><span class="op">(</span></span>
 <span>  x <span class="op">=</span> <span class="va">heart_data</span><span class="op">$</span><span class="va">heart</span>,</span>
@@ -632,7 +635,7 @@ Parameters
 -------------------- 
 pacakge_name: lagci 
 function_name: calculate_lagged_correlation 
-time: 2025-09-21 12:27:33.517029 
+time: 2025-09-22 00:16:24.710992 
 parameters:
 time_tol : 0.5 
 step : 0.0166666666666667 
@@ -675,7 +678,7 @@ Parameters
 -------------------- 
 pacakge_name: lagci 
 function_name: calculate_lagged_correlation 
-time: 2025-09-21 12:27:33.574925 
+time: 2025-09-22 00:16:24.89312 
 parameters:
 time_tol : 0.5 
 step : 0.0166666666666667 
