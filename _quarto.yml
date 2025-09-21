@@ -4,6 +4,12 @@ project:
 
 book:
   title: "lagci Tutorial"
+  reader-mode: false
+  page-footer:
+    left: |
+      lagci is developed by Shen Lab @ Nanyang Technological University Singapore.
+    right: |
+      © 2025 <a href="https://www.shen-lab.org/">Shen Lab</a>.
   author: "Xiaotao SHEN & Zirui QIANG & Shunpeng BAI & Yitong WU"
   date: "2025-08-04"
   favicon: "images/lagci_logo.png"
@@ -24,7 +30,7 @@ book:
         - 1-2-Docker Version of lagci.qmd
         # - 1-3-Docker Version of lagcishiny.qmd
         - 1-4-Build your own Docker Image.qmd
-        - references.qmd
+        # - references.qmd
 
     - part: "Raw Data Processing and Preview"
       chapters:
@@ -55,5 +61,6 @@ format:
     theme:
       light: cosmo
       dark: superhero
+    code-link: true
 
 editor: visual

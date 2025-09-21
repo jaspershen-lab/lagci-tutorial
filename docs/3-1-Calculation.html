@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>7&nbsp; Calculation – lagci Tutorial</title>
+<title>6&nbsp; Calculation – lagci Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -67,6 +63,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <link href="./3-2-Extract Data form Calculation Result.html" rel="next">
 <link href="./2-2-Time Plot.html" rel="prev">
+<link href="./images/lagci_logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -78,10 +75,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4824bc4fcff8d7c1e04965ee072d4f81.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-74f8b4ddaf00f3547105089a5f5b11eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-4824bc4fcff8d7c1e04965ee072d4f81.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-2b762d6eed5d016e804f4003944f3325.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -108,11 +104,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-
-
 </head>
-
-<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -277,29 +270,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Calculation.html">Calculation and Plotting</a></li><li class="breadcrumb-item"><a href="./3-1-Calculation.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Calculation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Calculation.html">Calculation and Plotting</a></li><li class="breadcrumb-item"><a href="./3-1-Calculation.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Calculation</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/lagci_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
+      <img src="./images/lagci_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">lagci Tutorial</a> 
         <div class="sidebar-tools-main">
@@ -315,7 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
@@ -323,14 +309,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Install lagci and Docker</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1-1-Installation and Update.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installation and Update</span></span></a>
@@ -348,37 +334,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Build your own Docker Image</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">references.html</span></span></a>
-  </div>
-</li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Raw Data Processing and Preview</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./2-1-Raw Data Processing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Raw Data Processing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Raw Data Processing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./2-2-Time Plot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Time Plot</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Time Plot</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -387,74 +367,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3-1-Calculation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Calculation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Calculation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3-2-Extract Data form Calculation Result.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Extract Data form Calculation Result</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Extract Data form Calculation Result</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3-3-Alignment Plot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Alignment Plot</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Alignment Plot</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3-4-Scatter Plot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Scatter Plot</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Scatter Plot</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3-5-Evaluated Plot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Evaluated Plot</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Evaluated Plot</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">lagcishiny Web Application</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./4-1-Installation of lagcishiny.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Installation of lagcishiny</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Installation of lagcishiny</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1-3-Docker Version of lagcishiny.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Docker Version of lagcishiny</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Docker Version of lagcishiny</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./4-2-Run lagcishiny on your PC.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Run lagcishiny on your PC</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Run lagcishiny on your PC</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./4-3-Deploy lagcishiny on your server.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Deploy lagcishiny on your server</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Deploy lagcishiny on your server</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./FAQ and Citation.html" class="sidebar-item-text sidebar-link">
@@ -462,37 +442,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#prepare-your-data" id="toc-prepare-your-data" class="nav-link active" data-scroll-target="#prepare-your-data"><span class="header-section-number">7.1</span> Prepare your data</a></li>
-  <li><a href="#calculation" id="toc-calculation" class="nav-link" data-scroll-target="#calculation"><span class="header-section-number">7.2</span> Calculation</a>
+<li><a href="#prepare-your-data" id="toc-prepare-your-data" class="nav-link active" data-scroll-target="#prepare-your-data"><span class="header-section-number">6.1</span> Prepare your data</a></li>
+  <li>
+<a href="#calculation" id="toc-calculation" class="nav-link" data-scroll-target="#calculation"><span class="header-section-number">6.2</span> Calculation</a>
   <ul class="collapse">
-  <li><a href="#time1-time2" id="toc-time1-time2" class="nav-link" data-scroll-target="#time1-time2"><span class="header-section-number">7.2.1</span> time1, time2</a></li>
-  <li><a href="#time_tol" id="toc-time_tol" class="nav-link" data-scroll-target="#time_tol"><span class="header-section-number">7.2.2</span> time_tol</a></li>
-  <li><a href="#step" id="toc-step" class="nav-link" data-scroll-target="#step"><span class="header-section-number">7.2.3</span> step</a></li>
-  <li><a href="#min_matched_sample" id="toc-min_matched_sample" class="nav-link" data-scroll-target="#min_matched_sample"><span class="header-section-number">7.2.4</span> min_matched_sample</a></li>
-  <li><a href="#progressbar" id="toc-progressbar" class="nav-link" data-scroll-target="#progressbar"><span class="header-section-number">7.2.5</span> progressbar</a></li>
-  <li><a href="#align_method" id="toc-align_method" class="nav-link" data-scroll-target="#align_method"><span class="header-section-number">7.2.6</span> align_method</a></li>
-  <li><a href="#cor_method" id="toc-cor_method" class="nav-link" data-scroll-target="#cor_method"><span class="header-section-number">7.2.7</span> cor_method</a></li>
-  <li><a href="#calculation-1" id="toc-calculation-1" class="nav-link" data-scroll-target="#calculation-1"><span class="header-section-number">7.2.8</span> Calculation</a></li>
-  </ul></li>
+<li><a href="#time1-time2" id="toc-time1-time2" class="nav-link" data-scroll-target="#time1-time2"><span class="header-section-number">6.2.1</span> time1, time2</a></li>
+  <li><a href="#time_tol" id="toc-time_tol" class="nav-link" data-scroll-target="#time_tol"><span class="header-section-number">6.2.2</span> time_tol</a></li>
+  <li><a href="#step" id="toc-step" class="nav-link" data-scroll-target="#step"><span class="header-section-number">6.2.3</span> step</a></li>
+  <li><a href="#min_matched_sample" id="toc-min_matched_sample" class="nav-link" data-scroll-target="#min_matched_sample"><span class="header-section-number">6.2.4</span> min_matched_sample</a></li>
+  <li><a href="#progressbar" id="toc-progressbar" class="nav-link" data-scroll-target="#progressbar"><span class="header-section-number">6.2.5</span> progressbar</a></li>
+  <li><a href="#align_method" id="toc-align_method" class="nav-link" data-scroll-target="#align_method"><span class="header-section-number">6.2.6</span> align_method</a></li>
+  <li><a href="#cor_method" id="toc-cor_method" class="nav-link" data-scroll-target="#cor_method"><span class="header-section-number">6.2.7</span> cor_method</a></li>
+  <li><a href="#calculation-1" id="toc-calculation-1" class="nav-link" data-scroll-target="#calculation-1"><span class="header-section-number">6.2.8</span> Calculation</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/edit/main/3-1-Calculation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/blob/main/3-1-Calculation.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/edit/main/3-1-Calculation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/blob/main/3-1-Calculation.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Calculation.html">Calculation and Plotting</a></li><li class="breadcrumb-item"><a href="./3-1-Calculation.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Calculation</span></a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Calculation</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Calculation.html">Calculation and Plotting</a></li><li class="breadcrumb-item"><a href="./3-1-Calculation.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Calculation</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Calculation</span>
+</h1>
 </div>
 
 
@@ -506,15 +483,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<p>This tutorial will help you to calculate the lagged correlation between two time series. It will use <code>calculate_lagged_correlation</code> function of <code>lagci</code> package.</p>
-<section id="prepare-your-data" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="prepare-your-data"><span class="header-section-number">7.1</span> Prepare your data</h2>
+</header><p>This tutorial will help you to calculate the lagged correlation between two time series. It will use <code>calculate_lagged_correlation</code> function of <code>lagci</code> package.</p>
+<section id="prepare-your-data" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="prepare-your-data">
+<span class="header-section-number">6.1</span> Prepare your data</h2>
 <p>You can get started with the example data in <code>lagci</code> package. And the format of <code>time</code> column is <code>POSIXct</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lagci)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">lagci</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in fun(libname, pkgname): mzR has been built against a different Rcpp version (1.0.14)
 than is installed on your system (1.1.0). This might lead to errors
@@ -536,10 +510,10 @@ https://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.</code></pre
 ✖ methods::kronecker() masks base::kronecker()
 ✖ dplyr::lag()         masks stats::lag()</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"heart_data"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"step_data"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(heart_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"heart_data"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"step_data"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">heart_data</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 time heart
 1 2019-04-29 00:00:08    64
@@ -549,7 +523,7 @@ https://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.</code></pre
 5 2019-04-29 00:00:33    64
 6 2019-04-29 00:00:38    61</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(step_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">step_data</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 time step
 1 2019-04-29 00:00:00    0
@@ -559,30 +533,28 @@ https://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.</code></pre
 5 2019-04-29 00:04:00    0
 6 2019-04-29 00:05:00    0</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(heart_data<span class="sc">$</span>time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">heart_data</span><span class="op">$</span><span class="va">time</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "POSIXct" "POSIXt" </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(step_data<span class="sc">$</span>time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">step_data</span><span class="op">$</span><span class="va">time</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "POSIXct" "POSIXt" </code></pre>
 </div>
 </div>
-</section>
-<section id="calculation" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="calculation"><span class="header-section-number">7.2</span> Calculation</h2>
+</section><section id="calculation" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="calculation">
+<span class="header-section-number">6.2</span> Calculation</h2>
 <p>Calculate with <code>calculate_lagged_correlation</code> function of <code>lagci</code> package. ### x, y</p>
 <p>Type: Numeric vectors</p>
 <p>Purpose: The two time-series to be compared.</p>
 <p>Details: Each vector represents the observed values of one variable. Internally, both vectors are standardized (centered and scaled to unit variance) to make the correlation unbiased by different magnitudes or units.</p>
-<section id="time1-time2" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="time1-time2"><span class="header-section-number">7.2.1</span> time1, time2</h3>
+<section id="time1-time2" class="level3" data-number="6.2.1"><h3 data-number="6.2.1" class="anchored" data-anchor-id="time1-time2">
+<span class="header-section-number">6.2.1</span> time1, time2</h3>
 <p>Type: POSIXct vectors (or convertible to POSIXct)</p>
 <p>Purpose: Timestamps corresponding to x and y.</p>
 <p>Role: Used to align the two time-series onto a shared, regularly spaced timeline before computing correlations.</p>
-</section>
-<section id="time_tol" class="level3" data-number="7.2.2">
-<h3 data-number="7.2.2" class="anchored" data-anchor-id="time_tol"><span class="header-section-number">7.2.2</span> time_tol</h3>
+</section><section id="time_tol" class="level3" data-number="6.2.2"><h3 data-number="6.2.2" class="anchored" data-anchor-id="time_tol">
+<span class="header-section-number">6.2.2</span> time_tol</h3>
 <p>Type: Numeric (hours)</p>
 <p>Default: 1</p>
 <p>Meaning: The maximum time lag to evaluate in both positive and negative directions.</p>
@@ -590,9 +562,8 @@ https://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.</code></pre
 <p>time_tol = 1 → ±1 hour</p>
 <p>time_tol = 0.5 → ±30 minutes</p>
 <p>time_tol = 1/60 → ±1 minute</p>
-</section>
-<section id="step" class="level3" data-number="7.2.3">
-<h3 data-number="7.2.3" class="anchored" data-anchor-id="step"><span class="header-section-number">7.2.3</span> step</h3>
+</section><section id="step" class="level3" data-number="6.2.3"><h3 data-number="6.2.3" class="anchored" data-anchor-id="step">
+<span class="header-section-number">6.2.3</span> step</h3>
 <p>Type: Numeric (hours)</p>
 <p>Default: 1/60 (i.e., 1 minute)</p>
 <p>Meaning: The resolution of the regular time grid used for alignment.</p>
@@ -600,52 +571,47 @@ https://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.</code></pre
 <p>step = 1 → 1-hour sampling</p>
 <p>step = 1/60 → 1-minute sampling</p>
 <p>step = 1/3600 → 1-second sampling</p>
-</section>
-<section id="min_matched_sample" class="level3" data-number="7.2.4">
-<h3 data-number="7.2.4" class="anchored" data-anchor-id="min_matched_sample"><span class="header-section-number">7.2.4</span> min_matched_sample</h3>
+</section><section id="min_matched_sample" class="level3" data-number="6.2.4"><h3 data-number="6.2.4" class="anchored" data-anchor-id="min_matched_sample">
+<span class="header-section-number">6.2.4</span> min_matched_sample</h3>
 <p>Type: Integer</p>
 <p>Default: 10</p>
 <p>Purpose: Minimum number of overlapping (non-missing) samples required after alignment. If fewer matched samples remain, the function returns NULL to avoid unstable correlations.</p>
-</section>
-<section id="progressbar" class="level3" data-number="7.2.5">
-<h3 data-number="7.2.5" class="anchored" data-anchor-id="progressbar"><span class="header-section-number">7.2.5</span> progressbar</h3>
+</section><section id="progressbar" class="level3" data-number="6.2.5"><h3 data-number="6.2.5" class="anchored" data-anchor-id="progressbar">
+<span class="header-section-number">6.2.5</span> progressbar</h3>
 <p>Type: Logical</p>
 <p>Default: TRUE</p>
 <p>Purpose: Whether to display progress information. Particularly useful when applying the function to many pairs of series in batch analyses.</p>
-</section>
-<section id="align_method" class="level3" data-number="7.2.6">
-<h3 data-number="7.2.6" class="anchored" data-anchor-id="align_method"><span class="header-section-number">7.2.6</span> align_method</h3>
+</section><section id="align_method" class="level3" data-number="6.2.6"><h3 data-number="6.2.6" class="anchored" data-anchor-id="align_method">
+<span class="header-section-number">6.2.6</span> align_method</h3>
 <p>Type: Character string</p>
 <p>Options: “linear” or “constant”</p>
 <p>Default: “linear”</p>
 <p>Purpose: Method used for interpolation when mapping the irregular time-series onto the regular grid.</p>
 <p>“linear”: Interpolates linearly between neighboring observations.</p>
 <p>“constant”: Uses the nearest neighbor (step-wise constant).</p>
-</section>
-<section id="cor_method" class="level3" data-number="7.2.7">
-<h3 data-number="7.2.7" class="anchored" data-anchor-id="cor_method"><span class="header-section-number">7.2.7</span> cor_method</h3>
+</section><section id="cor_method" class="level3" data-number="6.2.7"><h3 data-number="6.2.7" class="anchored" data-anchor-id="cor_method">
+<span class="header-section-number">6.2.7</span> cor_method</h3>
 <p>Type: Character string</p>
 <p>Options: “spearman” or “pearson”</p>
 <p>Default: “spearman”</p>
 <p>Purpose: The statistical correlation measure.</p>
 <p>“pearson”: Measures linear correlation between the raw values.</p>
 <p>“spearman”: Measures rank correlation, robust to monotonic but non-linear relationships and less sensitive to outliers.</p>
-</section>
-<section id="calculation-1" class="level3" data-number="7.2.8">
-<h3 data-number="7.2.8" class="anchored" data-anchor-id="calculation-1"><span class="header-section-number">7.2.8</span> Calculation</h3>
+</section><section id="calculation-1" class="level3" data-number="6.2.8"><h3 data-number="6.2.8" class="anchored" data-anchor-id="calculation-1">
+<span class="header-section-number">6.2.8</span> Calculation</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>result_1 <span class="ot">&lt;-</span> lagci<span class="sc">::</span><span class="fu">calculate_lagged_correlation</span>(</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> heart_data<span class="sc">$</span>heart,</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> step_data<span class="sc">$</span>step,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">time1 =</span> heart_data<span class="sc">$</span>time,</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">time2 =</span> step_data<span class="sc">$</span>time,</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">time_tol =</span> <span class="fl">0.5</span>,</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">step =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">60</span>,</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">align_method =</span> <span class="st">"linear"</span>,</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">cor_method =</span> <span class="st">"spearman"</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(result_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">result_1</span> <span class="op">&lt;-</span> <span class="fu">lagci</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/lagci/man/calculate_lagged_correlation.html">calculate_lagged_correlation</a></span><span class="op">(</span></span>
+<span>  x <span class="op">=</span> <span class="va">heart_data</span><span class="op">$</span><span class="va">heart</span>,</span>
+<span>  y <span class="op">=</span> <span class="va">step_data</span><span class="op">$</span><span class="va">step</span>,</span>
+<span>  time1 <span class="op">=</span> <span class="va">heart_data</span><span class="op">$</span><span class="va">time</span>,</span>
+<span>  time2 <span class="op">=</span> <span class="va">step_data</span><span class="op">$</span><span class="va">time</span>,</span>
+<span>  time_tol <span class="op">=</span> <span class="fl">0.5</span>,</span>
+<span>  step <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">60</span>,</span>
+<span>  align_method <span class="op">=</span> <span class="st">"linear"</span>,</span>
+<span>  cor_method <span class="op">=</span> <span class="st">"spearman"</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">result_1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>-------------------- 
 Brief information 
@@ -666,7 +632,7 @@ Parameters
 -------------------- 
 pacakge_name: lagci 
 function_name: calculate_lagged_correlation 
-time: 2025-09-20 19:31:23.986201 
+time: 2025-09-21 12:27:33.517029 
 parameters:
 time_tol : 0.5 
 step : 0.0166666666666667 
@@ -677,18 +643,18 @@ cor_method : spearman </code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>result_2 <span class="ot">&lt;-</span> lagci<span class="sc">::</span><span class="fu">calculate_lagged_correlation</span>(</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> heart_data<span class="sc">$</span>heart,</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> step_data<span class="sc">$</span>step,</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">time2 =</span> heart_data<span class="sc">$</span>time,</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">time1 =</span> step_data<span class="sc">$</span>time,</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">time_tol =</span> <span class="fl">0.5</span>, <span class="co"># </span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">step =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">60</span>,</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">align_method =</span> <span class="st">"linear"</span>,</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">cor_method =</span> <span class="st">"spearman"</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(result_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">result_2</span> <span class="op">&lt;-</span> <span class="fu">lagci</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/lagci/man/calculate_lagged_correlation.html">calculate_lagged_correlation</a></span><span class="op">(</span></span>
+<span>  y <span class="op">=</span> <span class="va">heart_data</span><span class="op">$</span><span class="va">heart</span>,</span>
+<span>  x <span class="op">=</span> <span class="va">step_data</span><span class="op">$</span><span class="va">step</span>,</span>
+<span>  time2 <span class="op">=</span> <span class="va">heart_data</span><span class="op">$</span><span class="va">time</span>,</span>
+<span>  time1 <span class="op">=</span> <span class="va">step_data</span><span class="op">$</span><span class="va">time</span>,</span>
+<span>  time_tol <span class="op">=</span> <span class="fl">0.5</span>, <span class="co"># </span></span>
+<span>  step <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">60</span>,</span>
+<span>  align_method <span class="op">=</span> <span class="st">"linear"</span>,</span>
+<span>  cor_method <span class="op">=</span> <span class="st">"spearman"</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">result_2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>-------------------- 
 Brief information 
@@ -709,7 +675,7 @@ Parameters
 -------------------- 
 pacakge_name: lagci 
 function_name: calculate_lagged_correlation 
-time: 2025-09-20 19:31:24.042094 
+time: 2025-09-21 12:27:33.574925 
 parameters:
 time_tol : 0.5 
 step : 0.0166666666666667 
@@ -721,11 +687,7 @@ cor_method : spearman </code></pre>
 </div>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1136,22 +1098,30 @@ cor_method : spearman </code></pre>
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./2-2-Time Plot.html" class="pagination-link" aria-label="Time Plot">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Time Plot</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Time Plot</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./3-2-Extract Data form Calculation Result.html" class="pagination-link" aria-label="Extract Data form Calculation Result">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Extract Data form Calculation Result</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Extract Data form Calculation Result</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>lagci is developed by Shen Lab @ Nanyang Technological University Singapore.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/edit/main/3-1-Calculation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/blob/main/3-1-Calculation.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>© 2025 <a href="https://www.shen-lab.org/">Shen Lab</a>.</p>
+</div>
+  </div>
+</footer>
 
 
-
-
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/edit/main/3-1-Calculation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/blob/main/3-1-Calculation.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+</body></html>

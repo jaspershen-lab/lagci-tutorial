@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>9&nbsp; Alignment Plot – lagci Tutorial</title>
+<title>8&nbsp; Alignment Plot – lagci Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,7 +54,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -67,6 +63,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <link href="./3-4-Scatter Plot.html" rel="next">
 <link href="./3-2-Extract Data form Calculation Result.html" rel="prev">
+<link href="./images/lagci_logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -78,10 +75,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4824bc4fcff8d7c1e04965ee072d4f81.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-74f8b4ddaf00f3547105089a5f5b11eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-4824bc4fcff8d7c1e04965ee072d4f81.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-2b762d6eed5d016e804f4003944f3325.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -108,11 +104,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-
-
 </head>
-
-<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -277,33 +270,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Calculation.html">Calculation and Plotting</a></li><li class="breadcrumb-item"><a href="./3-3-Alignment Plot.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Alignment Plot</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Calculation.html">Calculation and Plotting</a></li><li class="breadcrumb-item"><a href="./3-3-Alignment Plot.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Alignment Plot</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/laggedcor_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
+      <img src="./images/lagci_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">lagci Tutorial</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/ZiruiQIANG/laggedcor-tutorial" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/jaspershen-lab/lagci-tutorial" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -315,7 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
@@ -323,14 +309,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Install lagci and Docker</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1-1-Installation and Update.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installation and Update</span></span></a>
@@ -348,37 +334,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Build your own Docker Image</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">references.html</span></span></a>
-  </div>
-</li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Raw Data Processing and Preview</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./2-1-Raw Data Processing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Raw Data Processing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Raw Data Processing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./2-2-Time Plot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Time Plot</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Time Plot</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -387,74 +367,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3-1-Calculation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Calculation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Calculation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3-2-Extract Data form Calculation Result.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Extract Data form Calculation Result</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Extract Data form Calculation Result</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3-3-Alignment Plot.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Alignment Plot</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Alignment Plot</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3-4-Scatter Plot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Scatter Plot</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Scatter Plot</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3-5-Evaluated Plot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Evaluated Plot</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Evaluated Plot</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">lagcishiny Web Application</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./4-1-Installation of lagcishiny.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Installation of lagcishiny</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Installation of lagcishiny</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1-3-Docker Version of lagcishiny.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Docker Version of lagcishiny</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Docker Version of lagcishiny</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./4-2-Run lagcishiny on your PC.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Run lagcishiny on your PC</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Run lagcishiny on your PC</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./4-3-Deploy lagcishiny on your server.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Deploy lagcishiny on your server</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Deploy lagcishiny on your server</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./FAQ and Citation.html" class="sidebar-item-text sidebar-link">
@@ -462,32 +442,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#calculation" id="toc-calculation" class="nav-link active" data-scroll-target="#calculation"><span class="header-section-number">9.1</span> Calculation</a></li>
-  <li><a href="#alignment-plot" id="toc-alignment-plot" class="nav-link" data-scroll-target="#alignment-plot"><span class="header-section-number">9.2</span> Alignment Plot</a>
+<li><a href="#calculation" id="toc-calculation" class="nav-link active" data-scroll-target="#calculation"><span class="header-section-number">8.1</span> Calculation</a></li>
+  <li>
+<a href="#alignment-plot" id="toc-alignment-plot" class="nav-link" data-scroll-target="#alignment-plot"><span class="header-section-number">8.2</span> Alignment Plot</a>
   <ul class="collapse">
-  <li><a href="#which" id="toc-which" class="nav-link" data-scroll-target="#which"><span class="header-section-number">9.2.1</span> which</a></li>
-  <li><a href="#x_limit" id="toc-x_limit" class="nav-link" data-scroll-target="#x_limit"><span class="header-section-number">9.2.2</span> x_limit</a></li>
-  <li><a href="#point" id="toc-point" class="nav-link" data-scroll-target="#point"><span class="header-section-number">9.2.3</span> point</a></li>
-  </ul></li>
+<li><a href="#which" id="toc-which" class="nav-link" data-scroll-target="#which"><span class="header-section-number">8.2.1</span> which</a></li>
+  <li><a href="#x_limit" id="toc-x_limit" class="nav-link" data-scroll-target="#x_limit"><span class="header-section-number">8.2.2</span> x_limit</a></li>
+  <li><a href="#point" id="toc-point" class="nav-link" data-scroll-target="#point"><span class="header-section-number">8.2.3</span> point</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ZiruiQIANG/laggedcor-tutorial/edit/main/3-3-Alignment Plot.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ZiruiQIANG/laggedcor-tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/ZiruiQIANG/laggedcor-tutorial/blob/main/3-3-Alignment Plot.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/edit/main/3-3-Alignment Plot.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/blob/main/3-3-Alignment Plot.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Calculation.html">Calculation and Plotting</a></li><li class="breadcrumb-item"><a href="./3-3-Alignment Plot.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Alignment Plot</span></a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Alignment Plot</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-1-Calculation.html">Calculation and Plotting</a></li><li class="breadcrumb-item"><a href="./3-3-Alignment Plot.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Alignment Plot</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Alignment Plot</span>
+</h1>
 </div>
 
 
@@ -501,13 +478,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<section id="calculation" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="calculation"><span class="header-section-number">9.1</span> Calculation</h2>
+</header><section id="calculation" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="calculation">
+<span class="header-section-number">8.1</span> Calculation</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lagci)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">lagci</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in fun(libname, pkgname): mzR has been built against a different Rcpp version (1.0.14)
 than is installed on your system (1.1.0). This might lead to errors
@@ -529,146 +503,131 @@ https://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.</code></pre
 ✖ methods::kronecker() masks base::kronecker()
 ✖ dplyr::lag()         masks stats::lag()</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"heart_data"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"step_data"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> lagci<span class="sc">::</span><span class="fu">calculate_lagged_correlation</span>(</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> heart_data<span class="sc">$</span>heart,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> step_data<span class="sc">$</span>step,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">time1 =</span> heart_data<span class="sc">$</span>time,</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">time2 =</span> step_data<span class="sc">$</span>time,</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">time_tol =</span> <span class="fl">0.5</span>,</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">step =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">60</span>,</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">align_method =</span> <span class="st">"linear"</span>,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">cor_method =</span> <span class="st">"spearman"</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"heart_data"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"step_data"</span><span class="op">)</span></span>
+<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">lagci</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/lagci/man/calculate_lagged_correlation.html">calculate_lagged_correlation</a></span><span class="op">(</span></span>
+<span>  x <span class="op">=</span> <span class="va">heart_data</span><span class="op">$</span><span class="va">heart</span>,</span>
+<span>  y <span class="op">=</span> <span class="va">step_data</span><span class="op">$</span><span class="va">step</span>,</span>
+<span>  time1 <span class="op">=</span> <span class="va">heart_data</span><span class="op">$</span><span class="va">time</span>,</span>
+<span>  time2 <span class="op">=</span> <span class="va">step_data</span><span class="op">$</span><span class="va">time</span>,</span>
+<span>  time_tol <span class="op">=</span> <span class="fl">0.5</span>,</span>
+<span>  step <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">60</span>,</span>
+<span>  align_method <span class="op">=</span> <span class="st">"linear"</span>,</span>
+<span>  cor_method <span class="op">=</span> <span class="st">"spearman"</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="alignment-plot" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="alignment-plot"><span class="header-section-number">9.2</span> Alignment Plot</h2>
+</section><section id="alignment-plot" class="level2" data-number="8.2"><h2 data-number="8.2" class="anchored" data-anchor-id="alignment-plot">
+<span class="header-section-number">8.2</span> Alignment Plot</h2>
 <p>Here is an example plot:</p>
 <p>This call draws an alignment view of the two series in <code>result</code> at the <strong>peak lag</strong> (<code>which = "max"</code>), coloring the x-series blue and the y-series red (<code>x_color</code>, <code>y_color</code>) with axis labels set by <code>x_name = "x"</code> and <code>y_name = "y"</code>.</p>
 <p>It limits the plotted <strong>x-values</strong> to the numeric range <code>c(1, 100000)</code> (<code>x_limit</code>), plots <strong>points</strong> for matched samples (<code>add_point = TRUE</code>) with sizes controlled by <code>x_point_size</code> and <code>y_point_size</code>, and renders any <strong>unmatched</strong> observations with a tiny marker (<code>non_matched_point_size = 0.1</code>) so they’re visible but unobtrusive.</p>
 <p>With <code>integrated = FALSE</code> the two time series are shown on separate tracks rather than overlaid; <code>add_connect_line = FALSE</code> suppresses segment lines between matched pairs (turn this on to emphasize pairings).</p>
 <p>Finally, <code>time_gap = 12</code> spaces major time ticks about every 12 hours, which helps readability over long windows; if the figure looks cramped, either increase <code>time_gap</code>, reduce the point sizes, and if you want a direct overlay switch to <code>integrated = TRUE</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lagged_alignment_plot</span>(<span class="at">object =</span> result,</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">x_color =</span> <span class="st">"blue"</span>,</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y_color =</span> <span class="st">"red"</span>,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">x_name =</span> <span class="st">"x"</span>,</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y_name =</span> <span class="st">"y"</span>,</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">which =</span> <span class="st">"max"</span>,</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">x_limit =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">100000</span>),</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">non_matched_point_size =</span> <span class="fl">0.1</span>,</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y_point_size =</span> <span class="dv">1</span>,</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">x_point_size =</span> <span class="dv">1</span>,</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                      <span class="at">integrated =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">add_connect_line =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                      <span class="at">add_point =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                      <span class="at">time_gap =</span> <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lagci/man/lagged_alignment_plot.html">lagged_alignment_plot</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">result</span>,</span>
+<span>                      x_color <span class="op">=</span> <span class="st">"blue"</span>,</span>
+<span>                      y_color <span class="op">=</span> <span class="st">"red"</span>,</span>
+<span>                      x_name <span class="op">=</span> <span class="st">"x"</span>,</span>
+<span>                      y_name <span class="op">=</span> <span class="st">"y"</span>,</span>
+<span>                      which <span class="op">=</span> <span class="st">"max"</span>,</span>
+<span>                      x_limit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">100000</span><span class="op">)</span>,</span>
+<span>                      non_matched_point_size <span class="op">=</span> <span class="fl">0.1</span>,</span>
+<span>                      y_point_size <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>                      x_point_size <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>                      integrated <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>                      add_connect_line <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>                      add_point <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>                      time_gap <span class="op">=</span> <span class="fl">12</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<section id="which" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="which"><span class="header-section-number">9.2.1</span> which</h3>
+<section id="which" class="level3" data-number="8.2.1"><h3 data-number="8.2.1" class="anchored" data-anchor-id="which">
+<span class="header-section-number">8.2.1</span> which</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>p_global <span class="ot">&lt;-</span> <span class="fu">lagged_alignment_plot</span>(result, <span class="at">which =</span> <span class="st">"global"</span>, <span class="at">add_point =</span> <span class="cn">TRUE</span>,<span class="at">x_limit =</span> <span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">50000</span>),)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>p_max    <span class="ot">&lt;-</span> <span class="fu">lagged_alignment_plot</span>(result, <span class="at">which =</span> <span class="st">"max"</span>,    <span class="at">add_point =</span> <span class="cn">TRUE</span>,<span class="at">x_limit =</span> <span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">50000</span>),)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>p_global; p_max</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p_global</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lagci/man/lagged_alignment_plot.html">lagged_alignment_plot</a></span><span class="op">(</span><span class="va">result</span>, which <span class="op">=</span> <span class="st">"global"</span>, add_point <span class="op">=</span> <span class="cn">TRUE</span>,x_limit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2000</span>,<span class="fl">50000</span><span class="op">)</span>,<span class="op">)</span></span>
+<span><span class="va">p_max</span>    <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lagci/man/lagged_alignment_plot.html">lagged_alignment_plot</a></span><span class="op">(</span><span class="va">result</span>, which <span class="op">=</span> <span class="st">"max"</span>,    add_point <span class="op">=</span> <span class="cn">TRUE</span>,x_limit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2000</span>,<span class="fl">50000</span><span class="op">)</span>,<span class="op">)</span></span>
+<span><span class="va">p_global</span>; <span class="va">p_max</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="x_limit" class="level3" data-number="9.2.2">
-<h3 data-number="9.2.2" class="anchored" data-anchor-id="x_limit"><span class="header-section-number">9.2.2</span> x_limit</h3>
+</section><section id="x_limit" class="level3" data-number="8.2.2"><h3 data-number="8.2.2" class="anchored" data-anchor-id="x_limit">
+<span class="header-section-number">8.2.2</span> x_limit</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>p_limit_1 <span class="ot">&lt;-</span> <span class="fu">lagged_alignment_plot</span>(result, <span class="at">x_limit =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5000</span>),<span class="at">time_gap =</span> <span class="dv">1</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>p_limit_2  <span class="ot">&lt;-</span> <span class="fu">lagged_alignment_plot</span>(result, <span class="at">x_limit =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10000</span>),<span class="at">time_gap =</span> <span class="dv">1</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>p_limit_3  <span class="ot">&lt;-</span> <span class="fu">lagged_alignment_plot</span>(result, <span class="at">x_limit =</span> <span class="fu">c</span>(<span class="dv">5000</span>, <span class="dv">50000</span>),<span class="at">time_gap =</span> <span class="dv">12</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>p_limit_1; p_limit_2; p_limit_3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p_limit_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lagci/man/lagged_alignment_plot.html">lagged_alignment_plot</a></span><span class="op">(</span><span class="va">result</span>, x_limit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">5000</span><span class="op">)</span>,time_gap <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">p_limit_2</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lagci/man/lagged_alignment_plot.html">lagged_alignment_plot</a></span><span class="op">(</span><span class="va">result</span>, x_limit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10000</span><span class="op">)</span>,time_gap <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">p_limit_3</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lagci/man/lagged_alignment_plot.html">lagged_alignment_plot</a></span><span class="op">(</span><span class="va">result</span>, x_limit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5000</span>, <span class="fl">50000</span><span class="op">)</span>,time_gap <span class="op">=</span> <span class="fl">12</span><span class="op">)</span></span>
+<span><span class="va">p_limit_1</span>; <span class="va">p_limit_2</span>; <span class="va">p_limit_3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-4-3.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-4-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="point" class="level3" data-number="9.2.3">
-<h3 data-number="9.2.3" class="anchored" data-anchor-id="point"><span class="header-section-number">9.2.3</span> point</h3>
+</section><section id="point" class="level3" data-number="8.2.3"><h3 data-number="8.2.3" class="anchored" data-anchor-id="point">
+<span class="header-section-number">8.2.3</span> point</h3>
 <p>These two calls produce the same alignment view except for whether <strong>matched pairs are drawn as points</strong>.</p>
 <p><code>p_points</code> enables <code>add_point = TRUE</code>, so matched x–y samples appear as dots (sizes set by <code>x_point_size</code> and <code>y_point_size</code>), while unmatched observations are shown very small via <code>non_matched_point_size = 0.1</code>;</p>
 <p>this is useful to judge how dense and well-aligned the pairings are. <code>p_points_no</code> switches <code>add_point = FALSE</code>, hiding those pairing dots so you can focus on the aligned trajectories without point clutter.</p>
 <p>In both, <code>x_limit = c(1, 10000)</code> restricts the plotted range of the x-series (handy for clipping extreme values). Print both objects (<code>p_points; p_points_no</code>) to compare clarity; if overplotting remains heavy, shrink point sizes or widen the limits, and if you want an overlay instead of separate tracks, set <code>integrated = TRUE</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>p_points <span class="ot">&lt;-</span> <span class="fu">lagged_alignment_plot</span>(result, </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">add_point =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">x_limit =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10000</span>),</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">x_point_size =</span> <span class="dv">1</span>,</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">y_point_size =</span> <span class="dv">1</span>, </span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">non_matched_point_size =</span> <span class="fl">0.1</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>p_points_no   <span class="ot">&lt;-</span> <span class="fu">lagged_alignment_plot</span>(result, </span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">add_point =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">x_limit =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10000</span>),</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">x_point_size =</span> <span class="dv">1</span>,</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">y_point_size =</span> <span class="dv">1</span>, </span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">non_matched_point_size =</span> <span class="fl">0.1</span>)</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>p_points; p_points_no</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p_points</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lagci/man/lagged_alignment_plot.html">lagged_alignment_plot</a></span><span class="op">(</span><span class="va">result</span>, </span>
+<span>                                        add_point <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>                                        x_limit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10000</span><span class="op">)</span>,</span>
+<span>                                        x_point_size <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>                                        y_point_size <span class="op">=</span> <span class="fl">1</span>, </span>
+<span>                                        non_matched_point_size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">p_points_no</span>   <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lagci/man/lagged_alignment_plot.html">lagged_alignment_plot</a></span><span class="op">(</span><span class="va">result</span>, </span>
+<span>                                        add_point <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>                                        x_limit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">10000</span><span class="op">)</span>,</span>
+<span>                                        x_point_size <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>                                        y_point_size <span class="op">=</span> <span class="fl">1</span>, </span>
+<span>                                        non_matched_point_size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">p_points</span>; <span class="va">p_points_no</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="3-3-Alignment-Plot_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1079,22 +1038,30 @@ https://github.com/sneumann/mzR/wiki/mzR-Rcpp-compiler-linker-issue.</code></pre
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./3-2-Extract Data form Calculation Result.html" class="pagination-link" aria-label="Extract Data form Calculation Result">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Extract Data form Calculation Result</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Extract Data form Calculation Result</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./3-4-Scatter Plot.html" class="pagination-link" aria-label="Scatter Plot">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Scatter Plot</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Scatter Plot</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>lagci is developed by Shen Lab @ Nanyang Technological University Singapore.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/edit/main/3-3-Alignment Plot.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/jaspershen-lab/lagci-tutorial/blob/main/3-3-Alignment Plot.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>© 2025 <a href="https://www.shen-lab.org/">Shen Lab</a>.</p>
+</div>
+  </div>
+</footer>
 
 
-
-
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ZiruiQIANG/laggedcor-tutorial/edit/main/3-3-Alignment Plot.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ZiruiQIANG/laggedcor-tutorial/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/ZiruiQIANG/laggedcor-tutorial/blob/main/3-3-Alignment Plot.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+</body></html>

@@ -21,9 +21,14 @@ It combines sliding windows, LOESS smoothing and bootstrap correction to estimat
 
 ### 📬 Contact us
 
--   📧 Email [xiaotao.shen\@outlook.com](mailto:xiaotao.shen@outlook.com)\
--   🔗 Shen Lab website [shen-lab.org](https://shen-lab.org)\
--   💬 WeChat @jaspershen1990\
--   🐦 Twitter [\@xiaotaoshen1990](https://twitter.com/xiaotaoshen1990)
+-   📧 Email [xiaotao.shen\@outlook.com](mailto:xiaotao.shen@outlook.com)
+-   🔗 Shen Lab website [shen-lab.org](https://shen-lab.org)
+-   💬 WeChat [jaspershen1990](https://www.jaspershenlab.com/image/wechat_QR.jpg)
+-   🐦 Twitter [xiaotaoshen1990](https://twitter.com/xiaotaoshen1990)
+
+### 🔗 More links
+
+- 📖 [Citation](https://www.shen-lab.org/mapa-website/)
+- ☁️ [Online lagci Shiny ](https://lagcishiny.jaspershenlab.com/)
 
 Welcome to the **lagci** tutorial! Enjoy, and feel free to send pull requests!
